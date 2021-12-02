@@ -7,6 +7,42 @@
 // コンパイルされたバイナリが実行されるとこの関数が呼び出されます
 fn main() 
 {
+    // 変数定義 "let <変数名> = <代入物>;"
+    // Rust では変数はデフォルトで不変
+    let test_val = "変数の中身";
+    // 引数に投げれば出力可能
+    println!("{}", test_val);
+
+    // let の後に mut を入れれば可変変数にできる
+    let mut mutable_val = "可変変数だお";
+    println!("{}", mutable_val);
+    mutable_val = "可変変数だネ"; // 書き換え
+    println!("{}", mutable_val);
+
+    // 別に定数もある。定数名は必ず大文字である、そして注釈が必要
+    const TEST_TEISU:u32 = 64_000; // 64,000
+    println!("{}", TEST_TEISU);
+
+    // let を再度使って元の変数と同じ名前で変数を定義できる
+    // これを覆い隠しという
+    // 可変変数とは違い定義(覆隠)後、不変変数とできる
+    let z = 16;
+    println!("{}", z); // 16
+    let z = z*2; // 2倍
+    println!("{}", z); // 32
+    let z = z*2; //2倍
+    println!("{}", z); // 64
+    // 可変変数でも型は変えられないが、覆い隠しでは型も変えられる
+    let spaces = "   "; // こいつは文字列
+    let spaces = spaces.len(); // こいつは数値になる
+    println!("{}", spaces);
+
+    let atai = "128";
+    println!("{}", atai);
+    // str を u32になるように覆い隠す
+    let atai:u32 = atai.parse().unwrap();
+    println!("{}", atai*2); // 2倍にしてみる
+
     // pythonの f"{}" みたいなやつ。
     // ただし引数に代入するものを置く
     println!("1 {} 3 {}", 2, 4);
