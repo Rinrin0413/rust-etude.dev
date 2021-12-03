@@ -43,6 +43,8 @@ fn main()
     let atai:u32 = atai.parse().unwrap();
     println!("{}", atai*2); // 2倍にしてみる
 
+   //✔データ型については ./data-types.rs を参照
+    
     // pythonの f"{}" みたいなやつ。
     // ただし引数に代入するものを置く
     println!("1 {} 3 {}", 2, 4);
