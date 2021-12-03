@@ -26,12 +26,12 @@ fn main()
     // let を再度使って元の変数と同じ名前で変数を定義できる
     // これを覆い隠しという
     // 可変変数とは違い定義(覆隠)後、不変変数とできる
-    let z = 16;
-    println!("{}", z); // 16
-    let z = z*2; // 2倍
-    println!("{}", z); // 32
-    let z = z*2; //2倍
-    println!("{}", z); // 64
+    let shad = 16;
+    println!("{}", shad); // 16
+    let shad = shad*2; // 2倍
+    println!("{}", shad); // 32
+    let shad = shad*2; //2倍
+    println!("{}", shad); // 64
     // 可変変数でも型は変えられないが、覆い隠しでは型も変えられる
     let spaces = "   "; // こいつは文字列
     let spaces = spaces.len(); // こいつは数値になる
@@ -39,7 +39,7 @@ fn main()
 
     let atai = "128";
     println!("{}", atai);
-    // str を u32になるように覆い隠す
+    // str であるatai変数を u32になるように覆い隠す
     let atai:u32 = atai.parse().unwrap();
     println!("{}", atai*2); // 2倍にしてみる
 
