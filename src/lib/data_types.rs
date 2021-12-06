@@ -124,4 +124,24 @@ pub fn complex() {
     println!("{:?}", kaimono_list);
     kaimono_list.2 = "ピータン豆腐";
     println!("{:?}", kaimono_list); // ジーマーミ豆腐がピータン豆腐に置き換わっている
+
+   // 2.配列型(list)
+    // 配列型は全要素が同じ型でなければならない。そして長さ(容量)が一定なので注意
+    // 上の買い物リストは全要素が同じ型なので配列を使う方がよろしい
+    let mut kaimono_list_t= ["报連草", "占地", "皮蛋豆腐"];
+
+    // 分配には大括弧を使用
+    let [kaimono0, kaimono1, kaimono2] = kaimono_list_t;
+    println!(
+        "○买物刂ヌト\n・{}\n・{}\n・{}",
+        kaimono0,
+        kaimono1,
+        kaimono2
+    );
+
+    // 直接アクセスは <配列名>[<index>]
+    println!("{}", kaimono_list_t[0]);
+    // 同じく可変なら上書きできる
+    kaimono_list_t[0] = "折耳根";
+    println!("{}", kaimono_list_t[0]); // 皮蛋豆腐が折耳根に置き換わっている
 }
