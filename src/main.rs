@@ -46,7 +46,8 @@ fn main()
     println!("{}", atai*2); // 2倍にしてみる
 
    //✔データ型のソースコードは lib/data-types.rs を参照
-    lib::data_types::scala();
+    lib::data_types::scala(); // スカラ型
+    lib::data_types::complex(); // 複合型
     
     // pythonの f"{}" みたいなやつ。
     // ただし引数に代入するものを置く
