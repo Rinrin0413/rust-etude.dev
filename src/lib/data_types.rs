@@ -68,4 +68,12 @@ pub fn scala() {
 	println!("{}", multipl);
 	let remain = X % Z; // 除法の余り
 	println!("{}", remain);
+
+   // 3.論理値型(bool)
+	// 真偽値のこと。if文などで使う
+	// 取りうる値は true と false の2つのみ
+	let bool_t:bool = true; // 真
+    let bool_f:bool = false; // 偽
+	println!("{0} or {1}", bool_t, bool_f);
+	// 注釈を入れているが別に必須ではない
 }
