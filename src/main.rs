@@ -1,4 +1,5 @@
-//https://doc.rust-jp.rs/rust-by-example-ja/hello.html
+// https://doc.rust-jp.rs/rust-by-example-ja/hello.html
+// https://doc.rust-jp.rs/book-ja/
 
 // これはコメントアウト。
 /* コンパイラ時に無視される */
