@@ -94,13 +94,34 @@ pub fn scala() {
 }
 
 pub fn complex() {
-    // [複合型] (Complex)
+  // [複合型] (Complex)
       // 複数の値を1つの型にまとめたもの
   
-     // 1.タプル型
-      // 丸括弧の中にカンマ区切りのリストを書いて生成する
-      // タプルの位置ごとに型を設定でき、 タプル内の値はそれぞれ別々の型でも良き。
-      let complex_tuple:(i32, f64, bool, char) = (128, 10.24, true, 'X');
-      println!("{:?}", complex_tuple); // そのまま出力するには :? が必要
-      // ここでは、注釈をあえて(説明の為)追加
+   // 1.タプル型
+    // 丸括弧の中にカンマ区切りのリストを書いて生成する
+     // タプルの位置ごとに型を設定でき、 タプル内の値はそれぞれ別々の型でも良き。
+    let complex_tuple:(i32, f64, bool, char) = (128, 10.24, true, 'X');
+    println!("{:?}", complex_tuple); // そのまま出力するには :? が必要
+    // ここでは、注釈をあえて(説明の為)追加
+
+    // タプルは let とパターンを使って分配できる
+    let (val0, val1, val2, val3) = complex_tuple;
+    println!(
+        "タプルの要素は [ {}, {}, {}, {} ]",
+        val0,
+        val1,
+        val2,
+        val3
+    );
+
+    // 直接要素にアクセスすることも可能
+    // <タプルの変数>.<index>
+    let elem3 = complex_tuple.3;
+    println!("第3要素は {}", elem3);
+
+    // アクセスだけでなく上書きも可能(可変の場合)
+    let mut kaimono_list = ("ほうれん草", "しめじ", "ジーマーミ豆腐");
+    println!("{:?}", kaimono_list);
+    kaimono_list.2 = "ピータン豆腐";
+    println!("{:?}", kaimono_list); // ジーマーミ豆腐がピータン豆腐に置き換わっている
 }
