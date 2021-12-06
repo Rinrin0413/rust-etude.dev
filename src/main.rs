@@ -50,10 +50,10 @@ fn main()
     lib::data_types::scala(); // スカラ型
     lib::data_types::complex(); // 複合型
     
+   // println!関数特集
     // pythonの f"{}" みたいなやつ。
     // ただし引数に代入するものを置く
     println!("1 {} 3 {}", 2, 4);
-
 
     // 引数のインデックスを入力して並替可能
     println!("A{1}C{0}", "D", "B");
@@ -84,7 +84,17 @@ fn main()
     println!("( 'ω'){kao:^dist$}ｿｰｼｬﾙﾃﾞｨｽﾀﾝｽ 5m", kao="('ω' )", dist=10);
     // [なんか動かない] 空白の代わりに0を使うことも可能
     // [なんか動かない] println!("( 'ω'){kao: >0dist$}ｿｰｼｬﾙﾃﾞｨｽﾀﾝｽ {dist}m", kao="('ω' )", dist=10);
-    
+
+   // 関数定義と引数
+    // 関数の定義は  fn <関数名>([引数]) { <処理> }  でできます
+    // 引数は必ず型を指定しなければならない
+    // 複数の引数を持たせる場合はカンマで区切ることで可能
+    // この例では main関数の外で関数を定義しています
+    another_function(64, 1024);
+
+
+
+
     // i32 を保持する Structure という名の構造体を定義
     #[derive(Debug)]//#[allow(dead_code)]
     struct Structure(i32);
@@ -93,4 +103,11 @@ fn main()
     // :? だとそのまま文字列として出力(?)
     // :#? で見やすくする
     println!("This struct `{:#?}` won't print...", Structure(3));
+}
+
+
+fn another_function(x:i32, y:i32) {
+    println!("第1引数 : {}", x);
+    println!("第2引数 : {}", y);
+    println!("全引数の和 : {}", x + y);
 }
