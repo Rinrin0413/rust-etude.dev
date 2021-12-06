@@ -92,9 +92,21 @@ fn main()
     // この例では main関数の外で関数を定義しています
     another_function(64, 1024);
 
+   // 式と文
+    // 文は、なんらかの動作をして値を返さない命令です
+    // 式は、結果値に評価されるものです
+
+    // let で変数を定義する部分は文(let文)
+    let hensu = "x";
+    // println!関数で hensu変数を呼び出す部分は式
+    println!("{}", hensu);
+    // そして関数の定義する部分は文となる
+
+    // 文は値を返さないので、let文を変数に代入することは出来ません
+    // 例:  let x = (let y = 6);
 
 
-
+    
     // i32 を保持する Structure という名の構造体を定義
     #[derive(Debug)]//#[allow(dead_code)]
     struct Structure(i32);
