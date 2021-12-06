@@ -105,8 +105,17 @@ fn main()
     // 文は値を返さないので、let文を変数に代入することは出来ません
     // 例:  let x = (let y = 6);
 
+    // スコープを作る波括弧 {} は式です
+    // 故に let y = { 8 + 5 }  のようなことをしても返せる
+    let modo = 5;
+    let weyi = { let modo = 3; modo + 1 };
+    println!("y変数の中身 : {}", weyi); // 4
+    println!("元のスコープでのx : {}", modo); // 5
+    // ここで modo + 1 にセミコロンを付けてしまった場合
+    // 式である modo + 1 が文になってしまう
 
-    
+
+
     // i32 を保持する Structure という名の構造体を定義
     #[derive(Debug)]//#[allow(dead_code)]
     struct Structure(i32);
