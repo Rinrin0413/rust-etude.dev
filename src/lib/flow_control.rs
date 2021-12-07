@@ -27,4 +27,10 @@ pub fn bi_if() {
     } else {
         println!("数値は4, 3, 2で割り切れない");
     }
+
+   // let文内でif式を使う
+    // if式は式なので let文に持ってくることができる
+    let kedshi = if true { 5 } else { 6 };
+    println!("{}", kedshi);
+    // 変数は単独の型でなければならない故一連の if式内で返り値の型が全て同じでないとエラー
 }
