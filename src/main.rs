@@ -127,6 +127,7 @@ fn main()
     lib::flow_control::bi_if(); // if
     lib::flow_control::lp_loop(); // loop
     lib::flow_control::lp_while(); // while
+    lib::flow_control::lp_for(); // for
 
 
 
