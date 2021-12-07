@@ -126,6 +126,7 @@ fn main()
    //✔フロー制御(条件分岐やループ)のソースコードは lib/flow_control.rs を参照
     lib::flow_control::bi_if(); // if
     lib::flow_control::lp_loop(); // loop
+    lib::flow_control::lp_while(); // while
 
 
 
