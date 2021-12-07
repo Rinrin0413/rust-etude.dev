@@ -1,8 +1,8 @@
 // https://doc.rust-jp.rs/rust-by-example-ja/hello.html
 // https://doc.rust-jp.rs/book-ja/
 
-// これはコメントアウト。
-/* コンパイラ時に無視される */
+// 2連スラッシュを打つととそこからその行の後ろはコメントアウトと見なされる。
+/* コンパイラに無視されます */
 
 mod lib; // data_types.jsonを関連付けてる
 
