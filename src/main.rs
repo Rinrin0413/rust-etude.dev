@@ -123,6 +123,11 @@ fn main()
     // もちろん引数に値を入れて演算の結果を返すことも可能
     println!("{}", plus_one(16)); 
 
+   //✔フロー制御(条件分岐やループ)のソースコードは lib/flow_control.rs を参照
+    lib::flow_control::bi_if(); // loop
+
+
+
 
 
     // i32 を保持する Structure という名の構造体を定義
