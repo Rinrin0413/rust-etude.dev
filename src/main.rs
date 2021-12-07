@@ -46,7 +46,7 @@ fn main()
     let atai:u32 = atai.parse().unwrap();
     println!("{}", atai*2); // 2倍にしてみる
 
-   //✔データ型のソースコードは lib/data-types.rs を参照
+   //✔データ型のソースコードは lib/data_types.rs を参照
     lib::data_types::scala(); // スカラ型
     lib::data_types::complex(); // 複合型
     
