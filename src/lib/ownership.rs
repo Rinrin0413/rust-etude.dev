@@ -49,4 +49,23 @@ pub fn type_string() {
     // String の関連関数new で空の String型 を生成できる
     let string_new = String::new();
     println!("{}", string_new); //< 
-} 
+}
+
+   // メモリと確保
+    // &str型は中身がコンパイル時に判明しているため、文字列が直接出力される
+    // なので &str型は高速で効率的になるがしかしこの型ではコンパイル時にサイズ不明という状況は作れない
+    // String型は可変かつ伸長可能で、コンパイル時にサイズ不明な状況でヒープに確保することが可能
+
+pub fn interact_method() {
+  // 変数とデータの相互作用法
+  
+   // 1.ムーブ
+    // String型は以下のようなデータで構成されている
+    // { "ptr":["H","e","l","l","o"], "len":5, capacity:5 }
+    // ptr はヒープに保管され、len は文字列の大きさ(byte)、capacityは許容量
+    // もし String型の変数a を変数b にそのまま代入した場合、変数b は変数a と同じ場所にある ptr を参照する
+    // そして変数b　の出現により変数aは排除される。このことを「a は b にムーブされた」という
+    let string1_mv = String::from("Hello");
+    let string2_mv = string1_mv;
+    // ここで string1 はもう使えない
+}
