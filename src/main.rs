@@ -132,6 +132,7 @@ fn main()
    //✔変換のスコープやString型, 所有権についての説明, ソースコードは ./lib/ownership.rs を参照
     lib::ownership::val_and_scope(); // 変数とスコープ
     lib::ownership::type_string(); // String型
+    lib::ownership::interact_method(); // 変数とデータの相互作用法
 
 
 
