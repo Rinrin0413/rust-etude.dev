@@ -68,4 +68,26 @@ pub fn interact_method() {
     let string1_mv = String::from("Hello");
     let string2_mv = string1_mv;
     // ここで string1 はもう使えない
+
+   // 2.クローン
+    // もし仮に万が一どうしてもヒープデータ(String型でいう ptr)の複製が必要ならば cloneメソッドを使います
+    let string1_cl = String::from("Hi, there");
+    let string2_cl = string1_cl.clone(); // ヒープデータをコピー
+    println!("{}\n{}", string1_cl, string2_cl); //< Hi, there\nHi, there
+    // ヒープデータが2倍になる為、もし仮に万が一どうしても必要な時にのみクローンをする
+
+   // 3.コピー
+    // i32型は先ほど話した通りスタックに保管されるため以下エラーを出さない
+    let x_cp = 8;
+    let y_cp = x_cp;
+    println!("x_cp = {}\ny_cp = {}", x_cp, y_cp);
+
+    // Rustには Copyトレイトという特別な注釈があり、 スタックに保持される型に配置することができる
+    // Copy の実装された型はスタックに保持される
+    // 例としては以下の型が Copy の実装された型だ
+    //    全整数型(int)
+    //    論理値型(bool)
+    //    全浮動小数点型(float)
+    //    文字型(char)
+    //    Copy の実装された型だけを持つタプル  例えば (i32, i32) は Copy だが (i32, String) は違う
 }
