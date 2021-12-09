@@ -46,7 +46,7 @@ fn main()
     let atai:u32 = atai.parse().unwrap();
     println!("{}", atai*2); // 2倍にしてみる
 
-   //✔データ型のソースコードは lib/data_types.rs を参照
+   //✔データ型のソースコードは ./lib/data_types.rs を参照
     lib::data_types::scala(); // スカラ型
     lib::data_types::complex(); // 複合型
     
@@ -123,11 +123,13 @@ fn main()
     // もちろん引数に値を入れて演算の結果を返すことも可能
     println!("{}", plus_one(16)); 
 
-   //✔フロー制御(条件分岐やループ)のソースコードは lib/flow_control.rs を参照
+   //✔フロー制御(条件分岐やループ)のソースコードは ./lib/flow_control.rs を参照
     lib::flow_control::bi_if(); // if
     lib::flow_control::lp_loop(); // loop
     lib::flow_control::lp_while(); // while
     lib::flow_control::lp_for(); // for
+
+   //✔変換のスコープやString型, 所有権についてのソースコードは ./lib/ownership.rs を参照
 
 
 
