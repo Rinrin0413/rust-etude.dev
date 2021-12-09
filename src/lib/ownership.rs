@@ -91,3 +91,53 @@ pub fn interact_method() {
     //    文字型(char)
     //    Copy の実装された型だけを持つタプル  例えば (i32, i32) は Copy だが (i32, String) は違う
 }
+
+pub fn fun_and_ownership() {
+  // 所有権と関数
+    // 関数に変数を入れることも代入と似た挙動となる
+
+    let hasnt_copy = String::from("Oveve"); // hasnt_copy変数がスコープに出現
+    takes_ownership(hasnt_copy); // hasnt_copy が takes_ownership関数にムーブされ、hasnt_copy変数は排除される
+    // hasnt_copy変数は死んだので使えない
+    let has_copy = 5; // has_copy変数がスコープに出現
+    makes_copy(has_copy); // has_copy変数が makes_copy関数にムーブされるが、i32型は Copy 故そのままコピーされる
+    // has_copy変数 は生存し続けた為ここでも使用可能
+
+   // 戻り値とスコープ
+    // 値を返す事でも所有権は移動する
+
+    // 適当なスコープ
+    {
+        let saitou = String::from("たいせつな財産");
+        let gokudow_kumichow = nusumu(saitou); // サイトウの財産が nusumu()によってムーブされその返り値が組長にムーブされる
+    } // ここで gokudow_kumichowはスコープを抜けて財産が捨てられる( drop() )
+
+    // 関数に入れた時に所有権を奪われないようにするには(正確には複製)
+
+    //適当な スコープ
+    {
+        let kimura = String::from("岩倉具視入門書");
+        let (kimura, kumichow) = copy(kimura); // キムラが本をコピーする(いけません)
+                                               // 同時にコピーされた本が組長に返される
+        println!("組長 has {}\nキムラ has {}", kumichow, kimura);
+    }
+}
+
+fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
+    println!("{}", arg);
+} // ここで hasnt_copy変数がスコープを抜け、drop関数(使われていたメモリを開放する)が呼ばれる。
+
+fn makes_copy(arg: i32) { // has_copy変数がスコープに降臨
+    println!("{}", arg);
+} // has_copy変数 はスコープから抜ける。以上。それだけ。
+
+// 財産を盗み手に入れる
+//        vvvvvvvvvv     
+fn nusumu(zaysan:String) -> String { 
+    zaysan // 組長の手に渡る ^^^^^^^
+}
+
+fn copy(hon: String) -> (String, String) {
+    let hon_copy = hon.clone(); // 本をコピー(はんざいです)
+    (hon, hon_copy) // タプルにオリジナルの本とコピーの本を入れて戻り値で組長が手にとる
+}
