@@ -130,7 +130,8 @@ fn main()
     lib::flow_control::lp_for(); // for
 
    //✔変換のスコープやString型, 所有権についての説明, ソースコードは ./lib/ownership.rs を参照
-    lib::ownership::val_and_scope(); // Valiant & Scope
+    lib::ownership::val_and_scope(); // 変数とスコープ
+    lib::ownership::type_string(); // String型
 
 
 

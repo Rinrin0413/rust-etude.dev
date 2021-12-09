@@ -28,3 +28,25 @@ pub fn val_and_scope() {
     } // このスコープは終わった為 val は使えない
     // つまり、val がスコープに入ると有効に、スコープを抜けるまで有効なままである
 }
+
+pub fn type_string() {
+   // String型
+    // doc.3-2で学んだ型は全てスタックに保管され、スコープが終わるとスタックから排除される
+    // ヒープに確保されるデータ型を観察し、コンパイラがどう それを排除すべきタイミングを求めているかを見ていく
+    // ここではヒープに保管される型の例として String型を使用する
+
+    // &str型は扱いやすいが不変。しかし String型は可変故ユーザ入力に応じた文字列の変更も可能
+    // この型はヒープにメモリを確保する為、コンパイル時にサイズ不明なテキストも保持することが可能
+
+    // from関数で文字列リテラルから始まる String型を生成できる
+    let mut string_hello = String::from("Hello");
+    // この二重コロンは String型直下の from関数(Stringの関連関数)を特定する演算子
+
+    // String型の変数に push_str関数でリテラルを付け加える事が可能
+    string_hello.push_str(", World!");
+    println!("{}", string_hello); //< Hello, World!
+
+    // String の関連関数new で空の String型 を生成できる
+    let string_new = String::new();
+    println!("{}", string_new); //< 
+} 
