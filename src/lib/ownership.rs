@@ -182,7 +182,7 @@ pub fn mutable_ref() {
 
     fn kami() -> String {
     let s = String::from("Helloo");
-        s // ここで所有権がムーブされます！
+        s // ここで所有権がムーブされる
     } 
     
     */
