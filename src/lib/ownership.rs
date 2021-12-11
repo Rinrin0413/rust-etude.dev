@@ -123,6 +123,27 @@ pub fn fun_and_ownership() {
     }
 }
 
+pub fn return_and_scope() {
+  // 戻り値とスコープ
+    // 値を返す事でも所有権は移動する
+
+    // 適当なスコープ
+    {
+        let saitou = String::from("たいせつな財産");
+        let gokudow_kumichow = nusumu(saitou); // サイトウの財産が nusumu()によってムーブされその返り値が組長にムーブされる
+    } // ここで gokudow_kumichowはスコープを抜けて財産が捨てられる( drop() )
+
+    // 関数に入れた時に所有権を奪われないようにするには
+
+    //適当な スコープ
+    {
+        let kimura = String::from("岩倉具視入門書");
+        let (kimura, kumichow) = copy(kimura); // キムラが本をコピーする(いけません)
+                                               // 同時にコピーされた本が組長に返される
+        println!("組長 has {}\nキムラ has {}", kumichow, kimura);
+    }
+}
+
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
 } // ここで hasnt_copy変数がスコープを抜け、drop関数(使われていたメモリを開放する)が呼ばれる。
