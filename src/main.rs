@@ -133,7 +133,8 @@ fn main()
     lib::ownership::val_and_scope(); // 変数とスコープ
     lib::ownership::type_string(); // String型
     lib::ownership::interact_method(); // 変数とデータの相互作用法
-    lib::ownership::fun_and_ownership(); // 関数と所有権
+    lib::ownership::fun_and_ownership(); //所有権と関数
+    lib::ownership::return_and_scope(); // 戻り値とスコープ
 
 
 
