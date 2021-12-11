@@ -170,6 +170,23 @@ pub fn mutable_ref() {
     //let tebt3 = &mut nyatod; これはだめ、エラー
 }
 
+   // 宙に浮いた参照
+    /*
+
+    fn gomi() -> &String {
+    let s = String::from("Helloo"); // 新しい String型
+    &s // s を返す...
+    } // ところがここで s を drop()してしまい、&Stringが存在しない値を参照しようとしてしまい危険
+
+    // 下の館数ならおｋ
+
+    fn kami() -> String {
+    let s = String::from("Helloo");
+        s // ここで所有権がムーブされます！
+    } 
+    
+    */
+
 
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
