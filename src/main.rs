@@ -136,6 +136,9 @@ fn main()
     lib::ownership::fun_and_ownership(); //所有権と関数
     lib::ownership::return_and_scope(); // 戻り値とスコープ
 
+   //✔参照や借用についての説明, ソースコードも同じく ./lib/ownership.rs を参照
+    lib::ownership::ref_and_bor(); // 参照と借用
+
 
 
 
