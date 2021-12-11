@@ -125,6 +125,52 @@ pub fn return_and_scope() {
     }
 }
 
+// 参照と借用について...
+
+pub fn ref_and_bor() {
+  // 参照と借用
+    // 所有権を奪わない代わりに引数で値を参照してみます
+    let hii = String::from("Hiiiii!");
+    let hii_len = cal_len(&hii); // cal_len関数は 変数hiiを参照する。故にhii変数は参照されただけなので生存
+    println!("`{}`の長さは {}", hii, hii_len); // 変数hii, hii_len 共に使用可能
+    // このように関数の引数に参照を取ることを借用と呼ぶ
+    // 借用した値は変数と同じくデフォルトでは不変
+}
+
+pub fn mutable_ref() {
+   // 可変な参照
+    // 可変にするためには
+    // まず参照する変数が可変出なければならない
+    let mut mut_hii = String::from("Hiiiii!");
+    // そして、&mut で可変参照を作る
+    change(&mut mut_hii);
+
+    // しかし、1つのデータの可変な参照は特定のスコープで1つしか作れない
+    let mut soime = String::from("Hatefu");
+    let soime_a = &mut soime;
+    //let soime_b = &mut soime; これはだめ、エラー
+
+    // 上記の仕様の利点としてコンパイルのにデータ競合を防ぐことができること
+    // データ競合とは以下のようなことをいう
+    //   2つ以上のポインタが同じデータに同時にアクセスする。
+    //   少なくとも1つのポインタがデータに書き込みを行っている。
+    //   データへのアクセスを同期する機構が使用されていない。
+
+    // とはいえその可変参照が消滅すれば再度作ることが可能
+    let mut sheto = String::from("Etchev");
+    {
+        let kode1 = &mut sheto;
+    } // ここで変数kode1 がスコープを抜ける為、変数sheto の新しい可変参照を作ることが出来る
+    let kode2 = &mut sheto;
+
+    // なお、不変参照をしている間は可変参照をすることはできない
+    let mut nyatod = String::from("Shydampa");
+    let tebt1 = &nyatod;
+    let tebt2 = &nyatod;
+    //let tebt3 = &mut nyatod; これはだめ、エラー
+}
+
+
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
 } // ここで hasnt_copy変数がスコープを抜け、drop関数(使われていたメモリを開放する)が呼ばれる。
@@ -142,4 +188,14 @@ fn nusumu(zaysan:String) -> String {
 fn copy(hon: String) -> (String, String) {
     let hon_copy = hon.clone(); // 本をコピー(はんざいです)
     (hon, hon_copy) // タプルにオリジナルの本とコピーの本を入れて戻り値で組長が手にとる
+}
+
+fn cal_len(arg:&String) -> usize { 
+    arg.len() 
+} // ここで arg はスコープから抜けるが参照しているだなため drop関数も呼ばない
+
+//            vvv 関数定義側でも mut はつける
+fn change(arg:&mut String) {
+    arg.push_str(" Wooold!!");
+    println!("{}", arg);
 }
