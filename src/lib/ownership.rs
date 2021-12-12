@@ -267,6 +267,14 @@ pub fn stringslice_in_arg() {
    println!("{}", first_word3("HAKATA NO SHIO")); //< HAKATA
 }
 
+pub fn other_slice() {
+   // 他のスライス
+    // 文字以外も一部の参照が可能
+    let kotue = [1, 2, 3, 4, 5];
+    let sackew = &kotue[2..4]; // [3, 4] :&[i32]
+    println!("{:?}", sackew);
+}
+
 
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
