@@ -214,6 +214,38 @@ pub fn slice() {
     // ただしこれでは abab が改変された際に word が同期されず、ただの役立たずと化す
 }
 
+pub fn string_slice() {
+   // 文字列スライス
+    // String の一部への参照のこと
+    //``` &val[start_index..end_index]
+    // start_index はスライスの開始地点(index)で、end_index は最終地点(index)+1
+    // そして start_index や end_index は書かなかった場合それぞれ String の先頭, 末尾になる
+    // `..` のみの場合 String全体となる
+    let kelpa = String::from("SU KONBU");
+    let su = &kelpa[..2]; // SU
+    let konbu = &kelpa[3..]; // KONBU 
+    let u_kon = &kelpa[1..6]; // U KON
+    println!("{}\n{}\n{}", su, konbu, u_kon); //< SU\nKONBU\nU KON
+
+    // これを用いて先ほどの first_word関数を書き直します
+    fn first_word2(arg:&String) -> &str {
+        let bytes = arg.as_bytes();
+        for (i, &item) in bytes.iter().enumerate() {
+            // --ここまでは一緒
+            if item == b' ' { return &arg[0..i]; } // if が通ったら arg の先頭から空白までの文字列スライス(つまり arg の初めの単語)を返す
+        }
+        // 空白がなかったら全体を返す
+        // なお普通に arg を返すと String型になってしまうため
+        // 文字列スライスで全体を &str として抜き取る
+        &arg[..]
+    }
+    let mut pnf = String::from("Page not found:("); // あとであることを解説するので可変にする
+    let word2 = first_word2(&pnf); // pnf の 初めの単語となる "Page" を word2 に代入
+    // 何かへ不変参照がある時、さらに可変参照を得ることはできない故以下のようなことをするとエラーが出る
+    //pnf.push_str("\n404");
+    println!("{}", word2); //< Page
+}
+
 
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
