@@ -246,6 +246,27 @@ pub fn string_slice() {
     println!("{}", word2); //< Page
 }
 
+pub fn str_slice() {
+   // 文字列リテラルはスライスである
+   let strrr = "MOJI!!!";
+   // ここでの strrr は &str型
+   // バイナリのその特定の位置を指すスライス
+   // そしてこれが文字列が不変である理由にもなっている。要するに &strは不変な参照である
+
+  // 引数での文字列スライス
+   // しかし first_word2関数のままでは引数に &str型を入れることができない
+
+   // 先程まで関数シグネチャで引数の型を String と指定していたが、
+   // &str にすれば String型, &str型 両方を受け付けれる
+   // そして文字列スライスされた値は &str ...
+   // つまり &str にすることによって first_word2関数の引数に文字列スライスを使えるようにできる
+   fn first_word3(arg:&str) -> &str { let bytes = arg.as_bytes();
+       for (i, &item) in bytes.iter().enumerate() { if item == b' ' {return &arg[0..i];} }
+       &arg[..]
+   }
+   println!("{}", first_word3("HAKATA NO SHIO")); //< HAKATA
+}
+
 
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
