@@ -143,6 +143,7 @@ fn main()
    //✔スライス型について説明、ソースコードも同じく ./lib/ownership.rs を参照
     lib::ownership::slice(); // スライス型
     lib::ownership::string_slice(); // 文字列スライス
+    lib::ownership::stringslice_in_arg(); // 引数での文字列スライス
 
 
 
