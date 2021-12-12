@@ -140,6 +140,9 @@ fn main()
     lib::ownership::ref_and_bor(); // 参照と借用
     lib::ownership::mutable_ref(); // 可変な参照
 
+   //✔スライス型について説明、ソースコードも同じく ./lib/ownership.rs を参照
+    lib::ownership::slice(); // スライス型
+
 
 
 

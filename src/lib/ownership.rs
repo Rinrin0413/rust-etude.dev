@@ -187,6 +187,33 @@ pub fn mutable_ref() {
     
     */
 
+pub fn slice() {
+   // スライス型
+    // スライスは所有権のないデータ型
+
+    // それはさておき as_bytesメソッドで String型をバイト配列(ここでは u8型の配列)にしてみる
+    let abab = String::from("AB ab");
+    println!("{:?}", abab.as_bytes()); //< [65, 66, 97, 98]
+
+    // それはさておき以下の関数シグネチャを見てみます
+    // ※シグネチャ = 宣言  (シグニチャともいう)
+    fn first_word(arg:&String) -> usize {
+        let bytes = arg.as_bytes(); // arg をバイト配列に:&[u8]
+        // iterメソッドで bytes配列の要素を返し、enumerateメソッドでそのまま返す
+        for (i, &bytes_elm) in bytes.iter().enumerate() { // i はなんかいるもの
+            // byutes_elm に `b' '` が来たら i を返す
+            // `b' '` は半角空白のバイトリテラル
+            // つまり bytes の半角スペースがある位置(インデックス)を返す
+            if bytes_elm == b' ' { return i; }
+        }
+        // 半角空白が見つからなかったら arg の長さを返す
+        arg.len()
+    }
+    let word = first_word(&abab); // "AB ab" を入れてみる
+    println!("{}", word); //< 2
+    // ただしこれでは abab が改変された際に word が同期されず、ただの役立たずと化す
+}
+
 
 fn takes_ownership(arg: String) { // hasnt_copy変数がスコープに出現
     println!("{}", arg);
