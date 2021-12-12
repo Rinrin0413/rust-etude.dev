@@ -246,13 +246,13 @@ pub fn string_slice() {
     println!("{}", word2); //< Page
 }
 
-pub fn str_slice() {
    // 文字列リテラルはスライスである
-   let strrr = "MOJI!!!";
-   // ここでの strrr は &str型
-   // バイナリのその特定の位置を指すスライス
-   // そしてこれが文字列が不変である理由にもなっている。要するに &strは不変な参照である
+    /*let strrr = "MOJI!!!"; */
+    // ここでの strrr は &str型
+    // バイナリのその特定の位置を指すスライス
+    // そしてこれが文字列が不変である理由にもなっている。要するに &strは不変な参照である
 
+pub fn stringslice_in_arg() {
   // 引数での文字列スライス
    // しかし first_word2関数のままでは引数に &str型を入れることができない
 
