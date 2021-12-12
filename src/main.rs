@@ -144,6 +144,7 @@ fn main()
     lib::ownership::slice(); // スライス型
     lib::ownership::string_slice(); // 文字列スライス
     lib::ownership::stringslice_in_arg(); // 引数での文字列スライス
+    lib::ownership::other_slice(); // その他のスライス
 
 
 
