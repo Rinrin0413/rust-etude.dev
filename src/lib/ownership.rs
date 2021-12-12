@@ -105,7 +105,7 @@ pub fn fun_and_ownership() {
 }
 
 pub fn return_and_scope() {
-  // 戻り値とスコープ
+   // 戻り値とスコープ
     // 値を返す事でも所有権は移動する
 
     // 適当なスコープ
