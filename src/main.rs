@@ -142,6 +142,7 @@ fn main()
 
    //✔スライス型について説明、ソースコードも同じく ./lib/ownership.rs を参照
     lib::ownership::slice(); // スライス型
+    lib::ownership::string_slice(); // 文字列スライス
 
 
 
