@@ -136,7 +136,7 @@ fn main()
     lib::ownership::fun_and_ownership(); //所有権と関数
     lib::ownership::return_and_scope(); // 戻り値とスコープ
 
-   //✔参照や借用についての説明, ソースコードも同じく ./lib/ownership.rs を参照
+   //✔参照や借用についての説明, ソースコードは同じく ./lib/ownership.rs を参照
     lib::ownership::ref_and_bor(); // 参照と借用
     lib::ownership::mutable_ref(); // 可変な参照
 
@@ -145,6 +145,9 @@ fn main()
     lib::ownership::string_slice(); // 文字列スライス
     lib::ownership::stringslice_in_arg(); // 引数での文字列スライス
     lib::ownership::other_slice(); // その他のスライス
+
+   //✔構造体についての説明、ソースコードは ./lib/structure.rs を参照
+    lib::structure::structure(); // 構造体とインスタンス化
 
 
 
