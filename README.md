@@ -23,3 +23,17 @@
 
     </div>
 </details>
+
+<br />
+
+> Rust Documents etc...
+
+- [The Rust Programming Language 日本語版](https://doc.rust-jp.rs/book-ja/)
+
+- [Rust By Example 日本語版](https://doc.rust-jp.rs/rust-by-example-ja/)
+
+- [The Rust Standard Library](https://doc.rust-lang.org/std/index.html)
+
+- [Rustの日本語ドキュメント](https://doc.rust-jp.rs/)
+
+- [Rust裏本](https://doc.rust-jp.rs/rust-nomicon-ja/)
