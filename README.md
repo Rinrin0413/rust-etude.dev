@@ -15,6 +15,7 @@
         - [データ型](./src/lib/data_types.rs)
         - [フロー制御](./src/lib/flow_control.rs)
         - [所有権](./src/lib/ownership.rs)
+        - [構造体](./src/lib/structure.rs)
 
 <br />
 
