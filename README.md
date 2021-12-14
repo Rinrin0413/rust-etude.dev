@@ -38,3 +38,7 @@
 - [Rustの日本語ドキュメント](https://doc.rust-jp.rs/)
 
 - [Rust裏本](https://doc.rust-jp.rs/rust-nomicon-ja/)
+
+<br />
+
+[![MIT](https://img.shields.io/github/license/Rinrin0413/rust-etude.dev?color=%23A11D32&style=for-the-badge)](./LICENSE)
