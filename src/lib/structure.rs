@@ -201,3 +201,6 @@ pub fn relate_fn() {
 	let sq = MthRect::square(16, 12);
 	println!("{:?}", sq); //< MthRect { wid: 16, hei: 12 }
 }
+
+   // 複数の implブロック
+	// さっきからやってますが1つの構造体に複数の implブロックを用意しても問題ないです
