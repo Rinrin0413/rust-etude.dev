@@ -148,6 +148,7 @@ fn main()
 
    //✔構造体についての説明、ソースコードは ./lib/structure.rs を参照
     lib::structure::structure(); // 構造体とインスタンス化
+    lib::structure::ex_refactoring(); // 構造化を用いたリファクタリング
 
 
 

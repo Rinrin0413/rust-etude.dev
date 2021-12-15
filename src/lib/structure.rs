@@ -83,3 +83,72 @@ pub fn structure() {
     struct Unitkozotay();
     // 使用場面はいずれ勉強する
 }
+
+pub fn ex_refactoring() {
+  // 構造体を使ったプログラム例
+    // 長方形の幅と高さをピクセルで指定しその面積を求めるプログラムを見て
+    // リファクタリングしてみる
+    // ↓ソースコード
+    let width1 = 30;
+    let height1 = 50;
+    fn area(width: u32, height: u32) -> u32 { width * height }
+    println!(
+        "The area of the rectangle is {} square pixels.", 
+        area(width1, height1)
+    ); //< The area of the rectangle is 1500 square pixels.
+
+   // タプルでリファクタリング
+    // 幅と高さは1つにまとめる
+    let rect = (30, 50);
+    fn area_kay(rect:(u32, u32)) -> u32 { rect.0*rect.1 }
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area_kay(rect)
+    );
+    // しかし rect.0*rect.1 では計算の意味が分かりづらい
+    // タプルのインデックス 0が幅で、1が高さ ということを覚えておかなければならない
+    // 他者が見たりいじったりする際も非常に分かりづらい
+
+   // 構造体でリファクタリングし意味付けする
+    // フィールドに名前を付けたいので構造体を使う
+    struct Rect { width: u32, height: u32, }
+    fn area_kai_ii(rect:Rect) -> u32 {
+        rect.width * rect.height
+    }
+    let rect2 = Rect { width: 30, height: 50 };
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area_kai_ii(rect2)
+    );
+    // やっとプログラムの意図が分かり易くなりますた
+
+   // トレイトの導出で有用な機能を追加する
+    // 処理の途中で Rectインスタンスの内容を確認したいとする
+    let rect3 = Rect { width: 86, height: 32 };
+    //println!("{}", rect3);
+    // しかしそうはいかない
+    // println!マクロには様々な整形があるが 構造体を出力する形式が複数ある
+    // カンマが必要か、波かっこを出力するか、フィールドを全て表示するか、などなど
+    // これでは不明確で混乱
+
+    // println!マクロ第1引数の波括弧内に `:?` を入れてみる
+    //println!("{:?}", rect3);
+    // しかしながらエラー；；
+    // 構造体をデバック用の情報として出力するには特別な注釈が必要故
+    // 構造体定義直前に以下を置く
+    //`#[derive(Debug)]
+    // ではやってみる
+    #[derive(Debug)]
+    struct RectDebug { width: u32, height: u32, }
+    let rect4 = RectDebug { width: 860, height: 320 };
+    println!("{:?}", rect4); //< RectDebug { width: 860, height: 320 }
+
+    // println!マクロ第1引数の波括弧内の `:?` を `:#?` に変えると更に整形された形になる
+    println!("{:#?}", rect4);
+    //< RectDebug {
+    //<     width: 860,
+    //<     height: 320,
+    //< }
+
+    // `:?` はバックトレイトという
+}
