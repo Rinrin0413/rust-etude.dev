@@ -152,3 +152,36 @@ pub fn ex_refactoring() {
 
     // `:?` はバックトレイトという
 }
+
+pub fn method() {
+  // メソッド記法
+	// メソッドとは関数に似たもの
+	// しかし構造体のように定義する
+	// そして第1引数が必ず self となる
+
+   // メソッドを定義する
+   #[derive(Debug)]
+   struct MthRect { wid: u32, hei: u32, } // 構造体の定義
+   impl MthRect { // 構造体MthRect の文脈で関数を定義(つまりメソッドを定義)
+       fn mth_area(self) -> u32 { self.wid*self.hei } // この self は構造体MthRect のインスタンスとなる
+   }
+   let mth_rect1 = MthRect { wid: 28, hei: 16 }; // インスタンス生成
+   println!(
+       "The area of the rectangle is {} square pixels.",
+       mth_rect1.mth_area() // メソッド記法(インスタンスの後にピリオドを挟んでメソッドを呼ぶ)
+   ); //< The area of the rectangle is 448 square pixels.
+
+  // より引数の多いメソッド
+   impl MthRect {
+       fn area(self) -> u32 { self.wid*self.hei }
+       fn can_hold(&self, other:MthRect) -> bool { // 別の MthRectインスタンスを受け入れる
+           self.wid > other.wid && self.hei > other.hei // 第2引数に入ってきたインスタンス(の四角形)が self(の四角形)に収まるなら true を返す式
+       }
+   }
+   let meth_rect1 = MthRect { wid: 30, hei: 50 };
+   let meth_rect2 = MthRect { wid: 10, hei: 40 };
+   let meth_rect3 = MthRect { wid: 60, hei: 45 };
+   // can_holdメソッドに比べさせる
+   println!("Can rect1 hold meth_rect2? {}", meth_rect1.can_hold(meth_rect2)); //< Can rect1 hold meth_rect2? true
+   println!("Can rect1 hold meth_rect3? {}", meth_rect1.can_hold(meth_rect3)); //< Can rect1 hold meth_rect3? false
+}
