@@ -185,3 +185,19 @@ pub fn method() {
    println!("Can rect1 hold meth_rect2? {}", meth_rect1.can_hold(meth_rect2)); //< Can rect1 hold meth_rect2? true
    println!("Can rect1 hold meth_rect3? {}", meth_rect1.can_hold(meth_rect3)); //< Can rect1 hold meth_rect3? false
 }
+
+pub fn relate_fn() {
+    #[derive(Debug)]struct MthRect{wid:u32,hei:u32,}
+    impl MthRect{fn mth_area(self)->u32{self.wid*self.hei}}
+   // 関連関数
+	// implブロック内で引数に self を持たない関数も作れる
+	// 構造体に関連付いているので関連関数という
+	// そもそも関連関数はメソッドではなく関数
+	impl MthRect {
+		fn square(widyj:u32, height:u32) -> MthRect {
+			MthRect { wid: widyj, hei: height }
+		}
+	}
+	let sq = MthRect::square(16, 12);
+	println!("{:?}", sq); //< MthRect { wid: 16, hei: 12 }
+}
