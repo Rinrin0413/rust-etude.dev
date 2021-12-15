@@ -150,6 +150,7 @@ fn main()
     lib::structure::structure(); // 構造体とインスタンス化
     lib::structure::ex_refactoring(); // 構造化を用いたリファクタリング
     lib::structure::method(); // メソッド
+    lib::structure::relate_fn(); // 関連関数
 
 
 
