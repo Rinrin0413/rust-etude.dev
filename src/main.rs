@@ -152,9 +152,11 @@ fn main()
     lib::structure::method(); // メソッド
     lib::structure::relate_fn(); // 関連関数
 
-   //✔Enum とパターンマッチングについての説明、ソースコードは ./lib/enumerate.rs を参照
+   //✔Enum やパターンマッチングについての説明、ソースコードは ./lib/enumerate.rs を参照
     lib::enm_mch_iflet::enumerate(); // 列挙型
     lib::enm_mch_iflet::match_fc(); // match式
+    lib::enm_mch_iflet::if_let(); // if let記法
+
 
 
 
