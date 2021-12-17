@@ -164,3 +164,24 @@ pub fn match_fc() {
     // そラ思た贵樣には！
     // DOC.6-3 参照
 }
+
+pub fn if_let() {
+// DOC.6-3
+   // if letで簡潔なフロー制御
+    // if let記法で if と let を短くマッチさせられます
+    // 例えば Some(3) がマッチしたときに処理する分岐を match で書くと
+    let some_u8_value_ii = Some(0u8);
+    match some_u8_value_ii { Some(3) => println!("three"), _ => (), }
+    // 書かないといけない定型コードが多すぎます
+
+    // if let記法を使ってみると
+    if let Some(3) = some_u8_value_ii { println!("three"); }
+    // 短いです
+
+    // else も使えます match でいう _プレースホルダです
+    if let Some(5) = some_u8_value_ii {
+        println!("five"); 
+    } else {
+        println!("not five");
+    }
+}
