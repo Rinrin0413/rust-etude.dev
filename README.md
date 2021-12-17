@@ -16,6 +16,7 @@
         - [フロー制御](./src/lib/flow_control.rs)
         - [所有権](./src/lib/ownership.rs)
         - [構造体](./src/lib/structure.rs)
+        - [列挙子 / match式 / if-let記法](./src/lib/enm_mch_iflet.rs)
 
 <br />
 
