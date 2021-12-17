@@ -152,6 +152,9 @@ fn main()
     lib::structure::method(); // メソッド
     lib::structure::relate_fn(); // 関連関数
 
+   //✔Enum とパターンマッチングについての説明、ソースコードは ./lib/enumerate.rs を参照
+    lib::enumerate::enumerate(); // 列挙型について
+
 
 
 
