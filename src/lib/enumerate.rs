@@ -84,3 +84,83 @@ pub fn enumerate() {
     };
     //細かいことは次の章(6-2)で解説する
 }
+
+pub fn match_fc() {
+// DOC.6-2
+  // matchフロー制御演算子
+    // パターンによって条件分岐してくれるのが match です
+    // 札の種類で分けるやつを作ってみる
+    enum Bill {
+        SenYen,
+        GosenYen,
+        IchimanYen,
+    }
+    fn satsu_wake(bill:Bill) -> u32 {
+        match bill { // bill の返す値が以下のアームに合致するかによって処理を分岐する
+            Bill::SenYen => 1000, // 型が Bill で 列挙子が SenYen なら 1000 を
+            Bill::GosenYen => 5000, // 型が Bill で 列挙子が GosenYen なら 5000 を
+            Bill::IchimanYen => 10_000, // 型が Bill で 列挙子が IchimanYen なら 10,000 を
+            _ => { println!("それは↓札じゃねぇ↑( ﾟДﾟ)ﾉ⌒⑤"); 0 } // それ以外なら勝ちゼロって投げつける(アンダーバーはそれ以外という意)
+                                                               // この中括弧については真下で開設する
+        }
+    }
+
+    // アーム内で複数の処理を行いたい場合は新スコープ展開してやる
+    match 16i8 {
+        i8 => {
+            println!("贵樣ばi8た！");
+            println!("正レい.");
+        }
+        _ => println!("んなわけが..."),
+    }
+
+   // 値が束縛されるパターン
+    // まずデータを持つ列挙子を入れてみましょう
+    #[derive(Debug)]
+    enum Nioi { Kusai, Kusakunai }
+    enum BillII {
+        SenYen,
+        GosenYen,
+        IchimanYen,
+        NisenYen(Nioi),
+    }
+    fn nisenyen_kusaikana(bill:BillII) {
+        match bill {
+            BillII::NisenYen(status) => println!("この二千札は {:?}", status),
+            _ => println!("二千札だけよこしな"),
+        }
+    }
+    // アーム内にある status に列挙子が保持するデータを束縛して使えます
+    // 例えば以下の場合...
+    nisenyen_kusaikana(BillII::NisenYen(Nioi::Kusai)); //< この二千札は Kusai
+    // status には Nioi::Kusai が入る
+
+   // Option<T>とのマッチ
+    // Option<T> でも同じように♪
+    fn plus_one(x:Option<i32>) -> Option<i32> {
+        match x {
+            None => None, // 中に値がなければ関数はNone値を返す
+            Some(i) => Some(i + 1), // i に Some が持つ値に束縛されて、そのまま計算してまた Someとして返される
+        }
+    }
+    let five = Some(5);
+    let six = plus_one(five); //< 6
+    let none = plus_one(None);//< None
+
+   // マッチは包括的
+    // None の処理を忘れるとコンパイラがキレます
+
+   // _というプレースホルダー
+    // さっきからたまに使っていますが _ は else　みたいに動いてくれます
+    let some_u8_value:u8 = 0;
+    match some_u8_value {
+        1 => println!("one"),
+        3 => println!("three"),
+        5 => println!("five"),
+        7 => println!("seven"),
+        _ => (), // 1, 3, 5, 7 のいずれでもない場合ユニット型を返す(つまり何もしない)
+    }
+    // しっかしながいてずれ...
+    // そラ思た贵樣には！
+    // DOC.6-3 参照
+}
