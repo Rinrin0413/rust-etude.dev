@@ -157,6 +157,8 @@ fn main()
     lib::enm_mch_iflet::match_fc(); // match式
     lib::enm_mch_iflet::if_let(); // if let記法
 
+   //✔パッケージやクレート, モジュールについての説明、ソースコードは ./lib/enumerate.rs を参照
+
 
 
 
