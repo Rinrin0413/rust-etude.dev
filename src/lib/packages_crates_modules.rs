@@ -68,4 +68,16 @@
     // モジュールはmodキーワードを書き次にモジュールの名前を指定することで定義できます
     // モジュール内に他のモジュールを置くこともできます
     // その他の要素の定義も置くことができます ex:構造体, enum, 定数, トレイト, 関数 etc...
+
+    // 以下はモジュールツリーです
+    // crate
+    // └── front_end
+    //     ├── display
+    //     │   ├── show_icon
+    //     │   └── show_haeder
+    //     └── serving
+    //         ├── rotate_icon
+    //         └── scale_up_header_in_hover
+    // この場合 display と serving は兄弟の関係にあります
+    // そして show_icon は display の子, display は show_icon の親となります
 //}
