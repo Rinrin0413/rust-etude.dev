@@ -52,4 +52,20 @@
     // フロントエンドとバックエンドがありますね
     // 以下でライブラリを作成します
     //>>> cargo new --lib webdev
+    // 以下が webdev/src/lib.rs です
+    //mod front_end {
+    //    mod display {
+    //        fn show_icon() {}
+    //
+    //        fn show_haeder() {}
+    //    }
+    //    mod animation {
+    //        fn rotate_icon() {}
+    //
+    //        fn scale_up_header_in_hover() {}
+    //    }
+    //}
+    // モジュールはmodキーワードを書き次にモジュールの名前を指定することで定義できます
+    // モジュール内に他のモジュールを置くこともできます
+    // その他の要素の定義も置くことができます ex:構造体, enum, 定数, トレイト, 関数 etc...
 //}
