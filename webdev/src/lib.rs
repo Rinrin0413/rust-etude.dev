@@ -30,3 +30,8 @@ pub fn browse() { // browse関数定義
     // 親モジュールから始まる相対パスは super を最初につけることで作れる
     // ファイルパス表記でいう `../` に似ている
 }
+    // super の使用例
+fn oji() {}
+mod oya {
+    fn ko() { super::oji(); } 
+}
