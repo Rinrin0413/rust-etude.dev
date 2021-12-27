@@ -144,3 +144,9 @@ pub fn eat_at_restaurant_v() {
     //use std::io::Write;
     // self で中括弧以前そのものを指せる
 use std::io::{ self, Write };
+
+   // glob演算子
+    // そのパスで定義されている全公開要素をスコープに持ち込む場合は glob演算子( * ) をそのパスの後ろに書く
+use std::collections::*;
+
+    //✔以上で「useキーワードについてI」の参照終了。以降再び ../../src/lib/packages_crates_modules.rs で use節後参照
