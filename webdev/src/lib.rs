@@ -76,3 +76,23 @@ pub fn eat_at_restaurant() {
 }
 
     //✔以上で「パス指定やプライバシーの詳細についてI」の参照終了。以降再び ../../src/lib/packages_crates_modules.rs で path_and_privacy節後参照
+
+mod front_of_house { // front_of_houseモジュールの定義
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+use crate::front_of_house::hosting;
+// 上のおかげで front_of_house::hosting がこの改装で定義されているかのように使える
+pub fn eat_at_restaurant_iii() {
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+}
+
+    //  相対パスも使えます
+mod front_of_house_ii { pub mod hosting_ii {pub fn add_to_waitlist_ii() {}} }
+use self::front_of_house_ii::hosting_ii; // もちろん super でも良い
+pub fn eat_at_restaurant_iv() {
+    hosting_ii::add_to_waitlist_ii();
+}
