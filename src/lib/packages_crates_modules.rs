@@ -80,7 +80,7 @@
     //         └── scale_up_header_in_hover
     // この場合 display と serving は兄弟の関係にあります
     // そして show_icon は display の子, display は show_icon の親となります
-//}
+// }
 
 // path_and_privacy {
   // モジュールツリーの要素を示すためのパス
@@ -92,4 +92,12 @@
 
 	// show_icon関数を呼び出すには show_icon のパスが必要
 	//✔パス指定やプライバシーの詳細については ../../webdev/src/lib.rs の browse関数定義以下参照
-//}
+// }
+
+// use {
+  // useキーワードでパスをスコープに持ち込む
+    // パスはどうしても長くなって今う場合がある
+    // 繰り返し書くのも良いとは思えない
+    // useキーワードでパスをスコープに持ち込めば解決する
+    //✔以降は ../webdev/src/lib.rs の front_of_houseモジュール定義参照
+// }
