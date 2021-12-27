@@ -122,3 +122,25 @@ use std::io::Result as IoResult; // ioモジュールの Result型を IoResult �
 pub fn eat_at_restaurant_v() {
     hosting::add_to_waitlist(); // hosting を再公開しなければ add_to_waitlist関数は呼び出せなかった
 }
+
+   // 外部のパッケージを使う
+    // 乱数を生成するのに randパッケージを使う場合は Cargo.toml の [dependencies] の下に
+    //rand = "0.5.5"
+    // と記載し rand を依存として追加し、use rand::Rng; でスコープに持ち込むことが出来る
+
+    // 標準ライブラリ(std)も自分のパッケージの外部にあるクレートですが
+    // 標準ライブラリは Rust に同封されているので Cargo.toml で std を使うように表記する必要はありません
+    // しかしその要素をスコープに持ち込むには use を使う必要があります
+
+   // 巨大なuseのリストをネストしたパスを使って整理する
+    // 以下のように一部が同じ場合はまとめることができます
+    //use std::cmp::Ordering;
+    //use std::io;
+    // この例では std:: が同一ですので以下のように表記できます
+    //use std::{ cmp::Ordering, io };
+
+    // 例外として以下のような場合は
+    //use std::io;
+    //use std::io::Write;
+    // self で中括弧以前そのものを指せる
+use std::io::{ self, Write };
