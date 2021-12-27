@@ -96,3 +96,29 @@ use self::front_of_house_ii::hosting_ii; // もちろん super でも良い
 pub fn eat_at_restaurant_iv() {
     hosting_ii::add_to_waitlist_ii();
 }
+
+   // 慣例に従ったuseパスを作る
+    // なぜ以下のようにしなかったか疑問に思うかもしれない
+    //use crate::front_of_house::hosting::add_to_waitlist;
+    // さすれば add_to_waitlist() だけで呼び出せるのに... と
+    // もちろん動きますが
+    // フルパスを書かずして、関数がローカルで定義されていないことが分かるようにするには
+    // こちらの方が合理的
+
+    // なお同じ名前を持つ親が異なる要素は二つ以上同じスコープに存在できません
+
+   // 新しい名前をasキーワードで与える
+    // 同じ名前の2つの要素をuseで同じスコープに持ち込むにはパスの後に as と新しいローカル名を指定するよ良い
+    // 例で二種類の Result型の片方を as でリネームする
+use std::fmt::Result;
+use std::io::Result as IoResult; // ioモジュールの Result型を IoResult にリネーム
+    // これによって衝突しない
+
+   // pub useを使って名前を再公開する
+    // use で要素スコープに持ち込んでもその要素は非公開です(持ち込んだ物自体は兄弟であれば参照可能)
+    // pub use を使えば再度公開できます
+    // これを再公開という
+    //pub use crate::front_of_house::hosting; // 再公開
+pub fn eat_at_restaurant_v() {
+    hosting::add_to_waitlist(); // hosting を再公開しなければ add_to_waitlist関数は呼び出せなかった
+}
