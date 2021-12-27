@@ -64,15 +64,15 @@ pub fn eat_at_restaurant() {
 
     // 一方で enum は公開するとその変数はすべて公開される
     // pub は enumキーワード の前にだけおけばよい
-mod back_of_house {
+mod back_of_house_ii {
     pub enum Appetizer {
         Soup,
         Salad,
     }
 }
-pub fn eat_at_restaurant() {
-    let order1 = back_of_house::Appetizer::Soup;
-    let order2 = back_of_house::Appetizer::Salad;
+pub fn eat_at_restaurant_ii() {
+    let order1 = back_of_house_ii::Appetizer::Soup;
+    let order2 = back_of_house_ii::Appetizer::Salad;
 }
 
     //✔以上で「パス指定やプライバシーの詳細についてI」の参照終了。以降再び ../../src/lib/packages_crates_modules.rs で path_and_privacy節後参照
