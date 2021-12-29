@@ -101,3 +101,9 @@
     // useキーワードでパスをスコープに持ち込めば解決する
     //✔以降は ../webdev/src/lib.rs の front_of_houseモジュール定義参照
 // }
+
+// separate_modules {
+   // モジュールを複数のファイルに分割する
+    // モジュールを複数のファイルに分割することもできる
+	//✔続きは ..webdev/src/lib.rs の `mod front_of_house_iii;` 行以降参照
+// }
