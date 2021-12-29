@@ -150,3 +150,11 @@ use std::io::{ self, Write };
 use std::collections::*;
 
     //✔以上で「useキーワードについてI」の参照終了。以降再び ../../src/lib/packages_crates_modules.rs で use節後参照
+
+mod front_of_house_iii; // modキーワードで {} を使わずに ; で終わらせるとモジュールの中身をモジュールと同じ名前の別のファイルから読み込む
+                        // この例では ./front_of_house_iii.rs
+pub use crate::front_of_house_iii::hosting_iii;
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist_iii();
+}
+    //✔試しに ./front_of_house_iii.rs 参照
