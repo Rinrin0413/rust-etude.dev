@@ -18,7 +18,7 @@
         - [構造体](./src/lib/structure.rs)
         - [列挙子 / match式 / if-let記法](./src/lib/enm_mch_iflet.rs)
         - [パッケージ / クレート / モジュール](./src/lib/packages_crates_modules.rs)
-            - [テストライブラリwebdev](./webdev/src/lib.rs)
+            - [テストライブラリwebdev](./webdev/src/)
 
 <br />
 
