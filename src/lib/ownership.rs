@@ -260,7 +260,8 @@ pub fn stringslice_in_arg() {
    // &str にすれば String型, &str型 両方を受け付けれる
    // そして文字列スライスされた値は &str ...
    // つまり &str にすることによって first_word2関数の引数に文字列スライスを使えるようにできる
-   fn first_word3(arg:&str) -> &str { let bytes = arg.as_bytes();
+   fn first_word3(arg:&str) -> &str { 
+       let bytes = arg.as_bytes();
        for (i, &item) in bytes.iter().enumerate() { if item == b' ' {return &arg[0..i];} }
        &arg[..]
    }
