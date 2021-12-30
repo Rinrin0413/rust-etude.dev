@@ -160,6 +160,7 @@ fn main()
    //✔パッケージやクレート, モジュールについての説明、ソースコードは ./lib/enumerate.rs を参照
 
    //✔std のコレクションについての説明、ソースコードは ./lib/collections.rs を参照
+    lib::collections::vector(); // ベクタ
 
 
 
