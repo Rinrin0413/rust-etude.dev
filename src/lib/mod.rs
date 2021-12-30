@@ -4,3 +4,4 @@ pub mod ownership;
 pub mod structure;
 pub mod enm_mch_iflet;
 pub mod packages_crates_modules;
+pub mod collections;
