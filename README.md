@@ -19,6 +19,7 @@
         - [列挙子 / match式 / if-let記法](./src/lib/enm_mch_iflet.rs)
         - [パッケージ / クレート / モジュール](./src/lib/packages_crates_modules.rs)
             - [テストライブラリwebdev](./webdev/src/)
+        - [コレクション( vector / strings / hash-maps )](./src/lib/collections.rs)
 
 <br />
 
