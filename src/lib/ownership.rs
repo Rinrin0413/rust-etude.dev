@@ -174,14 +174,14 @@ pub fn mutable_ref() {
     /*
 
     fn gomi() -> &String {
-    let s = String::from("Helloo"); // 新しい String型
-    &s // s を返す...
+        let s = String::from("Helloo"); // 新しい String型
+        &s // s を返す...
     } // ところがここで s を drop()してしまい、&Stringが存在しない値を参照しようとしてしまい危険
 
     // 下の関数ならおｋ
 
     fn kami() -> String {
-    let s = String::from("Helloo");
+        let s = String::from("Helloo");
         s // ここで所有権がムーブされる
     } 
     
