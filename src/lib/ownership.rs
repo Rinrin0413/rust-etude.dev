@@ -178,7 +178,7 @@ pub fn mutable_ref() {
     &s // s を返す...
     } // ところがここで s を drop()してしまい、&Stringが存在しない値を参照しようとしてしまい危険
 
-    // 下の館数ならおｋ
+    // 下の関数ならおｋ
 
     fn kami() -> String {
     let s = String::from("Helloo");
