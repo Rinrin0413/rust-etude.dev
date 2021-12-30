@@ -92,4 +92,20 @@ pub fn vector() {
 	let mut v_iv = vec![100, 32, 57];
 	for i in &mut v_iv { *i += 50; }
 	// 可変参照が参照している値を変更するには +=演算子を使用する前に参照外し演算子(*)を使用して i の値に辿り着かないといけない
+
+   // Enumを使って複数の型を保持する
+	// ベクタは同じ型の値しか保持できない
+	// しかし enum の列挙子は同じ enum の型の元に定義される故ベクタに異なる型の要素を持たせたいなら enum を使用するとよい
+	enum SpreadsheetCell {
+		Int(i32),
+		Float(f64),
+		Text(String),
+	}
+	let row = vec![
+		SpreadsheetCell::Int(3),
+		SpreadsheetCell::Text(String::from("blue")),
+		SpreadsheetCell::Float(10.12),
+	];
+	// rowベクタの中身は全て SpreadsheetCell型となる
+	// 列挙子は違うため別の型を保持できる
 }
