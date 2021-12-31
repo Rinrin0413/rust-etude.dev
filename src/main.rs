@@ -161,6 +161,7 @@ fn main()
 
    //✔std のコレクションについての説明、ソースコードは ./lib/collections.rs を参照
     lib::collections::vector(); // ベクタ
+    lib::collections::string(); // 文字列
 
 
 
