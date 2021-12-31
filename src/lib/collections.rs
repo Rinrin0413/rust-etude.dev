@@ -121,4 +121,34 @@ pub fn string() {
 	// Rust において「文字列」は どちらかではなく String と&str(文字列スライス)のことを指す
 	// また std には他の文字列型も含まれている 例 OsString, OsStr, CString, CStr etc...
 	// それらの名前が全て String か Str で終わっているのは、所有権ありと借用されたバージョンを指している
+
+  // 新規文字列を生成する
+	// Vec<T> で出来る処理の殆どが String でも使える
+	// 空の文字列の生成は　String:new関数です
+	let mut s = String::new();
+
+	// to_stringメソッドで文字列の初期値を決める
+	let data = "初期値!";
+	let s_ii = data.to_string();
+	
+	// 文字列リテラルに直接連結も可能
+	let s_iii = "初期値!".to_string();
+
+	// String::from関数でも同じようなことが可能
+	let s_iv = String::from("初期値!");
+
+	// 文字列は色々な所で使うので多くの異なる API が用意されていて、たくさんの選択肢がある
+	// 文字列は UTF-8エンコードされているので以下の文字は全て有効です
+	let hello_ar = String::from("السلام عليكم");
+	let hello_cs = String::from("Dobrý den");
+	let hello_en = String::from("Hello");
+	let hello_hb = String::from("שָׁלוֹם");
+	let hello_ay = String::from("贵樣");
+	let hello_hi = String::from("नमस्ते");
+	let hello_ja = String::from("こんにちは");
+	let hello_ko = String::from("안녕하세요");
+	let hello_zh = String::from("你好");
+	let hello_pt = String::from("Olá");
+	let hello_ru = String::from("Здравствуйте");
+	let hello_spa = String::from("Hola");
 }
