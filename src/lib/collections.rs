@@ -151,4 +151,25 @@ pub fn string() {
 	let hello_pt = String::from("Olá");
 	let hello_ru = String::from("Здравствуйте");
 	let hello_spa = String::from("Hola");
+
+  // 文字列を更新する
+	// String はサイズを伸ばすことができ Vec<T> の中身のように追加のデータをプッシュすれば中身も変化する
+	// つまり String値を連結する +演算子や format!マクロを使用することができるということ
+
+   // 1.push_str と push で文字列に追加する
+	// push_strメソッドで文字列スライスを追記することで String を伸ばすことができる
+	let mut yushu = String::from("优秀の");
+	yushu.push_str("人材");
+	println!("{}", yushu); //< 优秀の人材
+
+    // なお、push_str関数に値を利用されても所有権は奪われません
+	let mut tapioka = String::from("夕匕オ力に");
+	let towshi = "投資ずゑ";
+	tapioka.push_str(towshi); // towshi はまだ使える
+	println!("{}", tapioka); //< 夕匕オ力に投資ずゑ
+	
+	// pushメソッドでは char型で追加できます
+	let mut kisama = String::from("贵");
+	kisama.push('樣'); // char型なのでシングルクォート
+	println!("{}", kisama);
 }
