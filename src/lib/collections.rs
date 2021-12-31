@@ -201,4 +201,11 @@ pub fn string() {
 	let sin_ii = String::from("sine"); // sin変数だけ死んでるので再定義
 	let trig_fn_ii = format!("{}-{}-{}", sin_ii, cos, tan);
 	println!("{}", trig_fn_ii); //< sine-cosine-tangent
+
+  // 文字列に添え字アクセスする
+	// 他の多くのプログラミング言語では文字列中の文字に添え字で参照してアクセスすることが出来きます
+	// しかし Rust では添え字記法で String の一部にアクセスしようとするとエラる
+	let reima = String::from("Makidmo");
+	//let h = reima[0]; // エラー
+	// これは Rust のメモリでの文字列保持方法によるもの
 }
