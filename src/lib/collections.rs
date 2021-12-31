@@ -172,4 +172,33 @@ pub fn string() {
 	let mut kisama = String::from("贵");
 	kisama.push('樣'); // char型なのでシングルクォート
 	println!("{}", kisama);
+
+   // 2.+演算子または format!マクロで連結
+	// 2つの文字列(String)を組み合わせたい場合は +演算子で連結できる
+	let hello = String::from("Hello, ");
+	let world = String::from("World!");
+	let h_w = hello + &world; // hello はムーブされて使えなくなる
+	println!("{}", h_w); //< Hello, world!
+	// +演算子(addメソッドで定義されている)では足す数(右)が &String でも &str に型強制する(関数の引数の仕様)
+	// その後コンパイラは参照外し型強制をして &world を &world[..] に、つまり文字列スライスにします
+	// 参照外し型強制についてはいずれ学ぶ
+	// +演算子が引数の所有権を奪わないので world は引き続き使える
+	// しかし足される数(左)の所有権は奪います
+	// メソッドの引数部分の self に & がついていないからです
+	// つまり上の +演算子による計算では hello の値を奪って world　の値をコピーして連結していることになる
+
+	// 複数の文字列を連結しようとすると +演算子のこの仕様は面倒くさくなってきます
+	let sin = String::from("sine");
+	let cos = String::from("cosine");
+	let tan = String::from("tangent");
+	let trig_fn = sin + "-" + &cos + "-" + &tan;
+	println!("{}", trig_fn); //< sine-cosine-tangent
+	// 非常に見ずらいです
+
+	// このような複雑な連結には format!マクロが有用
+	// println!マクロのように使えますがスクリーン出力ではなく中身を String　で返す
+	// 引数の所有権を奪わない上に見やすいです
+	let sin_ii = String::from("sine"); // sin変数だけ死んでるので再定義
+	let trig_fn_ii = format!("{}-{}-{}", sin_ii, cos, tan);
+	println!("{}", trig_fn_ii); //< sine-cosine-tangent
 }
