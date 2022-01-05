@@ -379,4 +379,11 @@ pub fn hash_map() {
 	// 古い値を保持して新しい値を無視しキーにまだ値がない場合に新しい値を追加するだけにすることもできる
 	// 他には古い値と新しい値を組み合わせることもできまる
 	// 各方法について見ていく
+
+   // 値を上書きする
+	// キーと値をハッシュマップに挿入し同じキーを異なる値で挿入するればそのキーのパートナーの値は上書きされる
+	let mut scores_iv = HashMap::new();
+	scores_iv.insert(String::from("Blue"), 10);
+	scores_iv.insert(String::from("Blue"), 25); // 上書き
+	println!("{:?}", scores_iv); //< {"Blue": 25}
 }
