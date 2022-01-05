@@ -361,4 +361,14 @@ pub fn hash_map() {
 	// ここでは blue_score はブルーチームに紐づけられた値になり結果は Some(&10) となる
 	// 結果はSomeに包まれる。何故なら get は Option<&V> を返すから
 	// キーに対応する値がハッシュマップになかったら get は None を返す。
+
+
+  // ベクタと同じく forループでハッシュマップのキーと値のペアを走査できる
+	let mut scores_iii = HashMap::new();
+	scores_iii.insert(String::from("Blue"), 10);
+	scores_iii.insert(String::from("Yellow"), 50);
+	for (key, value) in &scores {
+		println!("{}: {}", key, value); //< Yellow: 50
+										//..Blue: 10
+	}
 }
