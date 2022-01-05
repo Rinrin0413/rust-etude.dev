@@ -350,4 +350,15 @@ pub fn hash_map() {
 	// field_name と field_value はもう使えない
 	// もちろん参照をハッシュマップに挿入すれば値はハッシュマップにムーブされない
 	// 参照している値は最低でもハッシュマップが有効な間は死んではいけない。これらの問題について詳細いずれ学ぶ
+
+  // ハッシュマップの値にアクセスする
+	// getメソッドにキーを教えればハッシュマップから値を取り出すことができる
+	let mut scores_ii = HashMap::new();
+	scores_ii.insert(String::from("Blue"), 10);
+	scores_ii.insert(String::from("Yellow"), 50);
+	let team_name = String::from("Blue"); // 青チームのキー名を格納
+	let blue_score = scores.get(&team_name); // getメソッドに引数を介してキーを教えて blue_score に代入
+	// ここでは blue_score はブルーチームに紐づけられた値になり結果は Some(&10) となる
+	// 結果はSomeに包まれる。何故なら get は Option<&V> を返すから
+	// キーに対応する値がハッシュマップになかったら get は None を返す。
 }
