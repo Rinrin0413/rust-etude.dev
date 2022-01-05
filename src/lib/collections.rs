@@ -400,4 +400,20 @@ pub fn hash_map() {
 	println!("{:?}", scores_v); //< {"Blue": 10, "Yellow": 50}
 	// or_insertメソッドはキーに値があった場合にそのキーの値への可変参照を返し、
 	// キーに値が無いという列挙子が見えたら or_insertメソッドの引数をそのキーの新しい値として挿入して新しい値への可変参照を返す
+
+   // 古い値に基づいて値を更新する
+	// ハッシュマップの他の使用例はとしてキーの値を探し古い値に基づいてそれを更新すること
+	// 以下のコードは各単語がある変数に何回出現するかを数え上げるコードを示している
+	// キーに単語を入れたハッシュマップを使ってその単語を何回見かけたかを追跡する
+	// 始めて単語を見かけたら まず0という値を挿入する
+	let text = "hello world wonderful world";
+	let mut map_ii = HashMap::new();
+	for word in text.split_whitespace() { // text を split_whitespace関数で空白で区切って1つずつ返して word に投げる
+		let count = map_ii.entry(word).or_insert(0); // map_ii に走査されてきた単語についての記録が無ければ0を単語として追加して次のループ
+													 // 値があればスルーして残りの処理を(可変参照を返す)
+		*count += 1; // count が可変参照を保持しているので参照外しをして
+	}
+	println!("{:?}", map); //< {"world": 2, "hello": 1, "wonderful": 1}
+	// or_insert関数は元々 キーに対する値への可変参照(&mut V)を返す
+	// ここでその可変参照を count変数に保持しているのでその値に代入するにはまず * で count を参照外ししなければならない
 }
