@@ -386,4 +386,18 @@ pub fn hash_map() {
 	scores_iv.insert(String::from("Blue"), 10);
 	scores_iv.insert(String::from("Blue"), 25); // 上書き
 	println!("{:?}", scores_iv); //< {"Blue": 25}
+
+   // キーに値がなかった時のみ値を挿入する
+	// キーに値があるか確認することや値が存在しない時に値を挿入することはよくある
+	// ハッシュマップにはこれを行うための entry と呼ばれる なAPI がある
+	// これは引数としてチェックしたいキーを取る
+	// entryメソッドの戻り値は Entry という enum で、これは存在するかの列挙値を持つ
+	// イエローチームのキーに値が紐づけられていなかったら値に 50 を挿入, ブルーチームに対しても同様の処理をしてみる
+	let mut scores_v = HashMap::new();
+	scores_v.insert(String::from("Blue"), 10); // Blue に 10 を紐づける
+	scores_v.entry(String::from("Yellow")).or_insert(50); // 値がないので引数にある50を挿入
+	scores_v.entry(String::from("Blue")).or_insert(50); // すでに値があるのでスルー
+	println!("{:?}", scores_v); //< {"Blue": 10, "Yellow": 50}
+	// or_insertメソッドはキーに値があった場合にそのキーの値への可変参照を返し、
+	// キーに値が無いという列挙子が見えたら or_insertメソッドの引数をそのキーの新しい値として挿入して新しい値への可変参照を返す
 }
