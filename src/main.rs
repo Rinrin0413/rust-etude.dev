@@ -164,6 +164,8 @@ fn main()
     lib::collections::string(); // 文字列
     lib::collections::hash_map(); // ハッシュマップ
 
+   //✔エラー処理についての説明、ソースコードは ./lib/error_handl.rs を参照
+
 
 
 
