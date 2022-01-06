@@ -65,4 +65,13 @@ pub fn panic() {
     // この様な脆弱性からプログラムを保護するためにも、
     // 存在しない添え字の要素を読もうとしたら Rust は実行を中止して継続を諦める
     // 以下のエラーは自分のものではない vec.rs ファイルを指す
+    /*
+    $ cargo run
+       Compiling panic v0.1.0 (file:///projects/panic)
+        Finished dev [unoptimized + debuginfo] target(s) in 0.27 secs
+         Running `target/debug/panic`
+    thread 'main' panicked at 'index out of bounds: the len is 3 but the index is
+    99', /checkout/src/liballoc/vec.rs:1555:10
+    note: Run with `RUST_BACKTRACE=1` for a backtrace.
+    */
 }
