@@ -165,6 +165,7 @@ fn main()
     lib::collections::hash_map(); // ハッシュマップ
 
    //✔エラー処理についての説明、ソースコードは ./lib/error_handl.rs を参照
+    lib::error_handl::panic(); // パニック
 
 
 
