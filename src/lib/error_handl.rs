@@ -37,7 +37,7 @@ pub fn panic() {
         //panic = 'abort'
 
     // 取り敢えず呼ぶ
-    panic!("クラッシュして大炎上");
+    //panic!("クラッシュして大炎上");
     // こうなると以下のエラーが出る
     //thread 'main' panicked at 'クラッシュして炎上', src\main.rs:41:5
     //note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -52,8 +52,8 @@ pub fn panic() {
    // panic!バックトレースを使用する
     // 別の例でライブラリで panic!呼び出しが発生するとどうなるか診てみる
     // 添え字でベクタの要素にアクセスを試みるコードです
-    //let v = vec![1, 2, 3];
-    //v[99];
+    let v = vec![1, 2, 3];
+    //v[99]; // 範囲外へのアクセスでパニック
     // ここではベクタの100番目の要素へのアクセスを試みているがベクタには3つしか要素がない
     // このコードでは Rustはパニックする
     // []の使用は要素を返すと想定されるが 無効な添え字を渡せば Rust が返せて正しいと思われる要素は何もない
