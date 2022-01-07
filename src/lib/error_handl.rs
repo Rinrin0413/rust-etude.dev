@@ -74,4 +74,7 @@ pub fn panic() {
     99', /checkout/src/liballoc/vec.rs:1555:10
     note: Run with `RUST_BACKTRACE=1` for a backtrace.
     */
+    // 標準ライブラリの Vec<T> の実装です
+    // ベクタv に対し[]を使った時に走るコードは vec.rs にありここで実際に panic! が発生している(ソース: let v = vec![1, 2, 3];v[99];)
+    // その次の注釈行(note)は RUST_BACKTRACE環境変数をセットして 何が起きてエラーが発生したかのバックトレースを得られることを教えてくれている
 }
