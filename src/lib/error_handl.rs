@@ -83,4 +83,45 @@ pub fn panic() {
     // そこが問題の根源になる。自分のファイルを表している場所以前は自分のコードで呼び出したコードになり、以後は自分のコードを呼び出しているコードになる
     // これらの行には Rust の核となるコードや std のコードや使用しているクレートなどが含まれる可能性がある
     // RUST_BACKTRACE環境変数を0以外の値にセットしてバックトレースを出力してみると以下のように出力される
+/*
+    $ RUST_BACKTRACE=1 cargo run
+        Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+         Running `target/debug/panic`
+    thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', /checkout/src/liballoc/vec.rs:1555:10
+    stack backtrace:
+       0: std::sys::imp::backtrace::tracing::imp::unwind_backtrace
+                 at /checkout/src/libstd/sys/unix/backtrace/tracing/gcc_s.rs:49
+       1: std::sys_common::backtrace::_print
+                 at /checkout/src/libstd/sys_common/backtrace.rs:71
+       2: std::panicking::default_hook::{{closure}}
+                 at /checkout/src/libstd/sys_common/backtrace.rs:60
+                 at /checkout/src/libstd/panicking.rs:381
+       3: std::panicking::default_hook
+                 at /checkout/src/libstd/panicking.rs:397
+       4: std::panicking::rust_panic_with_hook
+                 at /checkout/src/libstd/panicking.rs:611
+       5: std::panicking::begin_panic
+                 at /checkout/src/libstd/panicking.rs:572
+       6: std::panicking::begin_panic_fmt
+                 at /checkout/src/libstd/panicking.rs:522
+       7: rust_begin_unwind
+                 at /checkout/src/libstd/panicking.rs:498
+       8: core::panicking::panic_fmt
+                 at /checkout/src/libcore/panicking.rs:71
+       9: core::panicking::panic_bounds_check
+                 at /checkout/src/libcore/panicking.rs:58
+      10: <alloc::vec::Vec<T> as core::ops::index::Index<usize>>::index
+                 at /checkout/src/liballoc/vec.rs:1555
+      11: panic::main
+                 at src/main.rs:4
+      12: __rust_maybe_catch_panic
+                 at /checkout/src/libpanic_unwind/lib.rs:99
+      13: std::rt::lang_start
+                 at /checkout/src/libstd/panicking.rs:459
+                 at /checkout/src/libstd/panic.rs:361
+                 at /checkout/src/libstd/rt.rs:61
+      14: main
+      15: __libc_start_main
+      16: <unknown>
+    */
 }
