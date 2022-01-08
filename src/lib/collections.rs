@@ -431,18 +431,22 @@ pub fn hash_map() {
 	mod statistics {
 		//平均値
 		pub fn mean(i_l:&[i32]) -> f64 {
-			//let i_l = i_l as f64; // as f64 で明示的型変換
 			use std::collections::HashMap;
-			let mut material_mean = HashMap::new();
-			material_mean.entry("num_of_elem").or_insert(i_l.len());
+			let mut material_mean:HashMap<&str,i32> = HashMap::new();
 			material_mean.entry("sum").or_insert(0);
-			for i in i_l.iter_mut() {
-				material_mean.entry("sum").or_insert(i);
+			for e in i_l.iter() {
+				let total = material_mean.entry("sum").or_insert(*e);
+				*total += *e;
 			}
-			return i_l
+			material_mean.entry("num of elem").or_insert(i_l.len() as i32);
+			println!("sum {}", *material_mean.get("sum").unwrap() as f64);
+			println!("n of e {}", *material_mean.get("num of elem").unwrap() as f64);
+			let result = *material_mean.get("sum").unwrap() as f64 / *material_mean.get("num of elem").unwrap() as f64;
+			return result
 		}
 	}
 
+	// 使用例
 	let int = [ 43, 57, 57, 63, 66, 82, 98 ];
-	statistics::mean(int);
+	println!("平均値: {}", statistics::mean(&int)); // 平均値
 }
