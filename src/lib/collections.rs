@@ -357,7 +357,7 @@ pub fn hash_map() {
 	scores_ii.insert(String::from("Blue"), 10);
 	scores_ii.insert(String::from("Yellow"), 50);
 	let team_name = String::from("Blue"); // 青チームのキー名を格納
-	let blue_score = scores.get(&team_name); // getメソッドに引数を介してキーを教えて blue_score に代入
+	let blue_score = scores_ii.get(&team_name); // getメソッドに引数を介してキーを教えて blue_score に代入
 	// ここでは blue_score はブルーチームに紐づけられた値になり結果は Some(&10) となる
 	// 結果はSomeに包まれる。何故なら get は Option<&V> を返すから
 	// キーに対応する値がハッシュマップになかったら get は None を返す。
@@ -425,4 +425,24 @@ pub fn hash_map() {
 	// トレイトを実装する型のことです。トレイトについてとその実装方法については、第10章で語ります。 必ずしも独自のhasherを1から作り上げる必要はありません;
 	// 必ずしも独自の hasher を1から作り上げる必要はない
 	// crates.ioに、他のRustユーザによって共有された多くの一般的なハッシュアルゴリズムを実装した hasher を提供するライブラリがある
+
+// *:+-_ 実践 _-+:*
+	// 平均値, 中央値, 最頻値 の出力
+	mod statistics {
+		//平均値
+		pub fn mean(i_l:&[i32]) -> f64 {
+			//let i_l = i_l as f64; // as f64 で明示的型変換
+			use std::collections::HashMap;
+			let mut material_mean = HashMap::new();
+			material_mean.entry("num_of_elem").or_insert(i_l.len());
+			material_mean.entry("sum").or_insert(0);
+			for i in i_l.iter_mut() {
+				material_mean.entry("sum").or_insert(i);
+			}
+			return i_l
+		}
+	}
+
+	let int = [ 43, 57, 57, 63, 66, 82, 98 ];
+	statistics::mean(int);
 }
