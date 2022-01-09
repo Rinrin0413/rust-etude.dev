@@ -443,17 +443,13 @@ pub fn hash_map() {
 			return result
 		}
 		// 中央値
-		pub fn median(i_l:&mut [i32]) -> f64{
+		pub fn median(i_l:&mut [i32]) -> f64 {
 			i_l.sort();
+			let mid = i_l.len()/2;
 			if i_l.len()%2 == 0 { // eve
-				let result:f64 = (
-					i_l[i_l.len()/2-1] as f64 
-					+ i_l[i_l.len()/2] as f64
-				) / 2.;
-				return result
+				return ( i_l[mid-1] as f64  + i_l[mid] as f64 )/ 2.
 			} else { // odd
-				let result = i_l[i_l.len()/2] as f64;
-				return result
+				return i_l[mid] as f64
 			}
 		}
 	}
