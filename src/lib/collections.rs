@@ -367,7 +367,7 @@ pub fn hash_map() {
 	let mut scores_iii = HashMap::new();
 	scores_iii.insert(String::from("Blue"), 10);
 	scores_iii.insert(String::from("Yellow"), 50);
-	for (key, value) in &scores {
+	for (key, value) in &scores_iii {
 		println!("{}: {}", key, value); //< Yellow: 50
 										//..Blue: 10
 	}
@@ -452,16 +452,35 @@ pub fn hash_map() {
 				return i_l[mid] as f64
 			}
 		}
+		// 最頻値
+		pub fn mode(i_l:& [i32]) -> Vec<i32> {
+			use std::collections::HashMap;
+			let mut num_count:HashMap<String,i32> = HashMap::new();
+			for n in i_l.iter() {
+				let ct = num_count.entry(n.to_string()).or_insert(0);
+				*ct += 1;
+			}
+			let mut ct_vec:Vec<&i32> = Vec::new();
+			for (k, v) in num_count.iter() { ct_vec.push(v); }
+			let mut result:Vec<i32> = Vec::new();
+			for (k, v) in  num_count.iter() {
+				if v == ct_vec.iter().max().unwrap() as &i32 { 
+					result.push( k.parse().unwrap() ); 
+				}
+			}
+			result.sort();
+			return result
+		}
 	}
 
    // 使用例
 	// 平均値
 	let int_i = [ 43, 57, 57, 63, 66, 82, 98 ];
-	println!("平均値: {}", statistics::mean(&int_i));
+	println!("平均値: {}", statistics::mean(&int_i)); //< 平均値: 66.57142857142857
 
 	// 中央値
 	let mut int_ii_eve = [ 57, 43, 63, 57, 98, 66, 82, 100 ];
 	let mut int_ii_odd = [ 57, 43, 63, 57, 98, 66, 82 ];
-	println!("中央値1: {}", statistics::median(&mut int_ii_eve));
-	println!("中央値2: {}", statistics::median(&mut int_ii_odd));
+	println!("中央値1: {}", statistics::median(&mut int_ii_eve)); // < 中央値1: 64.5
+	println!("中央値2: {}", statistics::median(&mut int_ii_odd)); //< 中央値2: 63
 }
