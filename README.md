@@ -20,6 +20,7 @@
         - [パッケージ / クレート / モジュール](./src/lib/packages_crates_modules.rs)
             - [テストライブラリwebdev](./webdev/src/)
         - [コレクション( vector / strings / hash-maps )](./src/lib/collections.rs)
+            - [統計学モジュール]()
         - [エラー処理](./src/lib/error_handl.rs)
 
 <br />
