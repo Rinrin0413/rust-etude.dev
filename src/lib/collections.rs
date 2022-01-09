@@ -427,7 +427,7 @@ pub fn hash_map() {
 	// crates.ioに、他のRustユーザによって共有された多くの一般的なハッシュアルゴリズムを実装した hasher を提供するライブラリがある
 
 // *:+-_ 実践 _-+:*
-	// 平均値, 中央値, 最頻値 の出力
+   // 平均値, 中央値, 最頻値 の出力
 	mod statistics {
 		//平均値
 		pub fn mean(i_l:&[i32]) -> f64 {
@@ -444,9 +444,24 @@ pub fn hash_map() {
 			let result = *material_mean.get("sum").unwrap() as f64 / *material_mean.get("num of elem").unwrap() as f64;
 			return result
 		}
+		// 中央値
+		pub fn median(i_l:&mut [i32]) -> f64{
+			i_l.sort();
+			if i_l.len()%2 == 0 { // eve
+				let result:f64 = (
+					i_l[i_l.len()/2-1] as f64 
+					+ i_l[i_l.len()/2] as f64
+				) / 2.;
+				return result
+			} else { // odd
+				let result = i_l[i_l.len()/2] as f64;
+				return result
+			}
+		}
 	}
 
-	// 使用例
-	let int = [ 43, 57, 57, 63, 66, 82, 98 ];
-	println!("平均値: {}", statistics::mean(&int)); // 平均値
+   // 使用例
+	// 平均値
+	let int_i = [ 43, 57, 57, 63, 66, 82, 98 ];
+	println!("平均値: {}", statistics::mean(&int_i));
 }
