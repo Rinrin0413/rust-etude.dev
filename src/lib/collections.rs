@@ -464,4 +464,10 @@ pub fn hash_map() {
 	// 平均値
 	let int_i = [ 43, 57, 57, 63, 66, 82, 98 ];
 	println!("平均値: {}", statistics::mean(&int_i));
+
+	// 中央値
+	let mut int_ii_eve = [ 57, 43, 63, 57, 98, 66, 82, 100 ];
+	let mut int_ii_odd = [ 57, 43, 63, 57, 98, 66, 82 ];
+	println!("中央値1: {}", statistics::median(&mut int_ii_eve));
+	println!("中央値2: {}", statistics::median(&mut int_ii_odd));
 }
