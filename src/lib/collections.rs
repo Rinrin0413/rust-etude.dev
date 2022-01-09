@@ -439,8 +439,6 @@ pub fn hash_map() {
 				*total += *e;
 			}
 			material_mean.entry("num of elem").or_insert(i_l.len() as i32);
-			println!("sum {}", *material_mean.get("sum").unwrap() as f64);
-			println!("n of e {}", *material_mean.get("num of elem").unwrap() as f64);
 			let result = *material_mean.get("sum").unwrap() as f64 / *material_mean.get("num of elem").unwrap() as f64;
 			return result
 		}
