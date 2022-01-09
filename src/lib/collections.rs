@@ -483,4 +483,12 @@ pub fn hash_map() {
 	let mut int_ii_odd = [ 57, 43, 63, 57, 98, 66, 82 ];
 	println!("中央値1: {}", statistics::median(&mut int_ii_eve)); // < 中央値1: 64.5
 	println!("中央値2: {}", statistics::median(&mut int_ii_odd)); //< 中央値2: 63
+
+	// 最頻値
+	let int_iii_a = [ 43, 57, 57, 63, 66, 82, 98 ];
+	let int_iii_b = [ 43, 57, 57, 63, 66, 66, 98 ];
+	let int_iii_c = [ 0, 1, 2, 3, 4, 5 ];
+	println!("最頻値1: {:?}", statistics::mode(&int_iii_a)); //< 最頻値1: [57]
+	println!("最頻値2: {:?}", statistics::mode(&int_iii_b)); //< 最頻値2: [57, 66]
+	println!("最頻値3: {:?}", statistics::mode(&int_iii_c)); //< 最頻値3: [0, 1, 2, 3, 4, 5]
 }
