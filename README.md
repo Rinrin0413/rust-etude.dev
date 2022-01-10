@@ -23,6 +23,7 @@
             - [テストライブラリwebdev](./webdev/src/)
         - [コレクション( vector / strings / hash-maps )][cl]
             - [統計学モジュール][cl]
+            - [ピッグ・ラテンモジュール][cl]
         - [エラー処理](./src/lib/error_handl.rs)
 
 <br />
