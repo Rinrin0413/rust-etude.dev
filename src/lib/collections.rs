@@ -427,7 +427,8 @@ pub fn hash_map() {
 	// crates.ioに、他のRustユーザによって共有された多くの一般的なハッシュアルゴリズムを実装した hasher を提供するライブラリがある
 
 // *:+-_ 実践 _-+:*
-   // 平均値, 中央値, 最頻値 の出力
+  // 平均値, 中央値, 最頻値 の出力
+   // 定義
 	mod statistics {
 		//平均値
 		pub fn mean(i_l:&[i32]) -> f64 {
@@ -491,4 +492,30 @@ pub fn hash_map() {
 	println!("最頻値1: {:?}", statistics::mode(&int_iii_a)); //< 最頻値1: [57]
 	println!("最頻値2: {:?}", statistics::mode(&int_iii_b)); //< 最頻値2: [57, 66]
 	println!("最頻値3: {:?}", statistics::mode(&int_iii_c)); //< 最頻値3: [0, 1, 2, 3, 4, 5]
+
+  // 単語のピッグ・ラテンへの簡易変換
+   // 定義
+	mod pig_latin {
+		pub fn convert(txt:&str) -> String {
+			let mut is_vowel = false;
+			let first_char = txt.chars().next().unwrap();
+			if "AaIiUuEeOo".contains(first_char) { is_vowel = true; }
+			if is_vowel {
+				return format!("{}hay", txt)
+			} else {
+				let origin:String = txt.chars().take(txt.len()).skip(1).collect(); // Hello -> ello
+				return format!(
+					"{origin}{flex}ay", 
+					origin = origin, 
+					flex = first_char
+				)
+			}
+		}
+	}
+   // 使用例
+	println!("{}", pig_latin::convert("hello")); // ellohay
+	println!("{}", pig_latin::convert("japan")); // apanjay
+	println!("{}", pig_latin::convert("enum")); // enumhay
+	println!("{}", pig_latin::convert("open")); // openhay
+	println!("{}", pig_latin::convert("贵樣")); // 樣贵ay
 }
