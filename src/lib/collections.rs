@@ -497,10 +497,8 @@ pub fn hash_map() {
    // 定義
 	mod pig_latin {
 		pub fn word_to(txt:&str) -> String {
-			let mut is_vowel = false;
 			let first_char = txt.chars().next().unwrap();
-			if "AaIiUuEeOo".contains(first_char) { is_vowel = true; }
-			if is_vowel {
+			if "AaIiUuEeOo".contains(first_char) {
 				return format!("{}hay", txt)
 			} else {
 				let origin:String = txt.chars().take(txt.len()).skip(1).collect(); // Hello -> ello
