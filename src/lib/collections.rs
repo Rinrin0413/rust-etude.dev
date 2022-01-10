@@ -496,7 +496,7 @@ pub fn hash_map() {
   // 単語のピッグ・ラテンへの簡易変換
    // 定義
 	mod pig_latin {
-		pub fn convert(txt:&str) -> String {
+		pub fn word_to(txt:&str) -> String {
 			let mut is_vowel = false;
 			let first_char = txt.chars().next().unwrap();
 			if "AaIiUuEeOo".contains(first_char) { is_vowel = true; }
@@ -513,9 +513,9 @@ pub fn hash_map() {
 		}
 	}
    // 使用例
-	println!("{}", pig_latin::convert("hello")); // ellohay
-	println!("{}", pig_latin::convert("japan")); // apanjay
-	println!("{}", pig_latin::convert("enum")); // enumhay
-	println!("{}", pig_latin::convert("open")); // openhay
-	println!("{}", pig_latin::convert("贵樣")); // 樣贵ay
+	println!("{}", pig_latin::word_to("hello")); // ellohay
+	println!("{}", pig_latin::word_to("japan")); // apanjay
+	println!("{}", pig_latin::word_to("enum")); // enumhay
+	println!("{}", pig_latin::word_to("open")); // openhay
+	println!("{}", pig_latin::word_to("贵樣")); // 樣贵ay
 }
