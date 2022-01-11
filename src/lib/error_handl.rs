@@ -197,5 +197,13 @@ pub fn result() {
         Ok(file) => file, // Ok値が返されたらそのまま返す
         Err(error) => panic!("ファイルを開く時に問題が発生: {:?}", error), // Err値が返されたら エラー文を返す
     };
-    // Option enum と同じく Result en
+    // Option enum と同じく Result enum とその列挙子は初期化処理でインポートされている故、
+    // matchアーム内で Ok と Err列挙子の前に Result:: を書かなくてもよい
+    // ここでは結果が Ok の時に Ok列挙子から中身の file値を返すように指示し、
+    // それからそのファイルハンドル値を変数f_iii に代入している match の後にはファイルハンドルを使用して読み込んだり書き込むことができる
+    // match のもう1つのアームは File::open から Err値与えらっれたときに処理される
+    // この例では panic!マクロを呼び出している。カレントディレクトリ(現在のdir)に hello.py というファイルがなく、
+    // このコードを走らせたら panic!マクロからの以下のような出力される
+    //thread 'main' panicked at 'ファイルを開く時に問題が発生: Os { code: 2, kind: NotFound, message: "指定されたファイルが見つかりません。" }', src\main.rs:197:23
+    // この出力は一体何がおかしくなったのかを物語っている
 }
