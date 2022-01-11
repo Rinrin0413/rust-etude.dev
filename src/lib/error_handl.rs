@@ -166,4 +166,17 @@ pub fn result() {
     // File::open の戻り値の型は u32 ではないと分かっているので let文を臨時で以下のように変更してみる
     //let f_ii:u32 = File::open("hello.py");
     // エラー↓
+
+    /*
+    error[E0308]: mismatched types
+       --> src\main.rs:164:20
+        |
+    164 |     let f_ii:u32 = File::open("hello.py");
+        |              ---   ^^^^^^^^^^^^^^^^^^^^^^^ expected `u32`, found enum `std::result::Result`
+        |              |
+        |              expected due to this
+        |
+        = note: expected type `u32`
+                   found enum `std::result::Result<File, std::io::Error>`
+    */
 }
