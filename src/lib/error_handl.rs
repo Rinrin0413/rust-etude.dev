@@ -226,4 +226,10 @@ pub fn result() {
         Err(error) => panic!("ファイルを開く時に問題が発生: {:?}", error), // それ以外のエラー
     };
     println!("{:?}", f_iv); //< File { handle: 0xa8, path: "\\\\?\\root\\static\\hello.py" }
+
+    // File::open が Err列挙子に含めて返す値の型は io::Error型
+    // これは std で提供されている構造体。これには io::ErrorKind値が得られる kindメソッドがある
+    // io::ErrorKind という enum は std で提供されていて io処理から発生する色々な種類のエラーを表す列挙子がある
+    // 今回使用したい列挙子は開こうとしているファイルがまだ存在しないことを示唆する ErrorKind::NotFound
+
 }
