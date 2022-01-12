@@ -305,4 +305,12 @@ pub fn result() {
     // そして match で返ってくる Result値を扱って Err値が来たら関数から早期リターンして、
     // エラー値として File::open から得たエラー値を返す
     // File::open が成功すればファイルハンドルを変数f_vii に保管して継続する
+
+    // そして可変変数s に空の String を生成して、
+    // f_vii のファイルハンドルに対し read_to_string を呼び出しファイルの中身を s に読み出す
+    // File::open に成功していても read_to_stringメソッドでも失敗する可能性があるので、
+    // また Result を返却する。その Result を処理するために別の match が必要になる
+    // read_to_string が成功したら 関数は成功し今は Ok に包まれた s に入っているファイルのユーザ名を返す
+    // read_to_string が失敗したら File::open の方と同じ様にエラー値を返す
+    // しかし 明示的に return を述べる必要はない。これが関数の最後の式故に
 }
