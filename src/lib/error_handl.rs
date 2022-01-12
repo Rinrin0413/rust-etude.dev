@@ -347,4 +347,13 @@ pub fn result() {
     // エラーが発生したら ?演算子により関数全体から早期リターンしてあらゆる Err値を返す
     // 同じ法則が read_to_string 呼出末尾の `?` にも適用される
     // ?演算子により定型コードの多くが排除されて関数の実装を単純にできる
+
+    // 以下の様に `?` の直後のメソッド呼出を連結することで更にコードを短くすることができる
+    fn read_username_from_file_iii() -> Result<String, io::Error> {
+        let mut s = String::new();
+        File::open("hello.txt")?.read_to_string(&mut s)?;
+        Ok(s)
+    }
+    // s の新規 Stringの生成を関数の冒頭に移動した
+    // 変数f を生成する代わりに read_to_string に直接 連結させた
 }
