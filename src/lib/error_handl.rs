@@ -249,4 +249,10 @@ pub fn result() {
    // エラー時にパニックするショートカット: unwrap と expect
     // match の使用は十分合理的だが、長くなりすぎたり必ずしも意図をよく伝えるとは限らない
     // Result<T,E>型には色々な作業をするヘルパーメソッドが多く定義されている
+
+    // それらの関数の1つとして unwrap がある。match式と同じように実装された短絡メソッド
+    // Result値が Ok列挙子なら unwrap は Ok の中身を返し、
+    // Resultが Err列挙子なら unwrap は panic!マクロを呼ぶ
+    // こちらが実際に動作している unwrap の例
+    let f_v = File::open("./static/hello.py").unwrap();
 }
