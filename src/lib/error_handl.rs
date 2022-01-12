@@ -192,7 +192,7 @@ pub fn result() {
     // 失敗した場合 エラーの種類の情報を多く持つ Errインスタンスが f の値になる
     // 初めのコードに追記をして File::open が返す値に応じ 異なる動作をする必要がある
     // 以下は基礎的な道具(match式)を使って Result を扱う方法を一つ示している
-    let f_iii = File::open("hello.py");
+    let f_iii = File::open("./static/hello.py");
     let f_iii = match f_iii { // f_iiiの戻り値 ( つまりFile::open()の返り値 ) に応じて条件分岐
         Ok(file) => file, // Ok値が返されたらそのまま返す
         Err(error) => panic!("ファイルを開く時に問題が発生: {:?}", error), // Err値が返されたら エラー文を返す
