@@ -213,4 +213,17 @@ pub fn result() {
     // ファイルが存在しない故 File::open が失敗したらファイルを作成してその新しいファイルへのハンドルを返したい
     // 他の理由(例えばファイルを開く権限が無いなど)で File::open が失敗したらパニックさせたい
     // 以下を見てください。ここでは match に別のアームを追加している
+    use std::io::ErrorKind;
+    let f_iv = File::open("./static/hello.py");
+    let f_iv = match f_iv { // ファイル取得においてのエラーの有無で分岐
+        Ok(file) => file, // 問題なければそのままファイルのハンドルを返す
+        Err(ref error) if error.kind() == ErrorKind::NotFound => { // エラーNotFound だった場合
+            match File::create("./static/hello.py") { // ファイルを作成する
+                Ok(fc) => fc, // 成功すればそのファイルのハンドルを返す
+                Err(e) =>  panic!("ファイル作成を試みたが問題が発生: {:?}", e), // 作成に失敗でパニックさせる
+            }
+        },
+        Err(error) => panic!("ファイルを開く時に問題が発生: {:?}", error), // それ以外のエラー
+    };
+    println!("{:?}", f_iv); //< File { handle: 0xa8, path: "\\\\?\\root\\static\\hello.py" }
 }
