@@ -287,4 +287,9 @@ pub fn result() {
             Err(e) => Err(e), // 失敗したら Err値(io:Error)を返す
         }
     }
+
+    // まず関数の戻り値型に注目してください。 Result<String, io::Error> です
+    // つまりこの関数は Result<T, E>型の値を返しているということになる
+    // ここでジェネリック引数の T は具体型String が入る
+    // ジェネリック引数の E は具体型io::Error が入る
 }
