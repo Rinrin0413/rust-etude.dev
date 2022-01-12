@@ -255,4 +255,15 @@ pub fn result() {
     // Resultが Err列挙子なら unwrap は panic!マクロを呼ぶ
     // こちらが実際に動作している unwrap の例
     let f_v = File::open("./static/hello.py").unwrap();
+
+    // 別のメソッド expect は unwrap に似ているが panic!のエラーメッセージも選べる
+    let f_vi = File::open("./static/hello.py").expect("./static/hello.py を開くのに失敗");
+    // expect もファイルハンドルを返したり panic!マクロの呼出をする
+    // expect が panic!呼出で使用するエラーメッセージは unwrap が使うデフォルトの panic!メッセージではなく、 
+    // expect に渡した引数になる
+    // 例えば参照先ファイルを存在しない "./static/ahello.py" にした場合以下のようなエラーメッセージが出力される
+    //thread 'main' panicked at './static/hello.py を開くのに失敗: Os { code: 2, kind: NotFound, message: "指定されたファイルが見つかりません。" }', src\main.rs:259:49
+    // このエラーメッセージは自分で指定した物なのでどこでエラーメッセージが出力されたのかが分かりやすくなる
+    // 複数箇所で unwrap を使用していたら ズバリどのunwrapがパニックを引き起こしているのかを探すのに時間がかかります
+    // パニックする unwrap 呼出では全て同じメッセージを出力する故
 }
