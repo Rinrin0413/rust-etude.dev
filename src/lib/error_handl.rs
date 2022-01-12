@@ -275,4 +275,16 @@ pub fn result() {
     // 例えば以下のの関数はファイルからユーザ名を読み取る
     // ファイルが存在しなかったり読み込みできなければ この関数はそれに合ったエラーを呼び出し元のコードに返す
     use std::io::{ self, Read };
+    fn read_username_from_file() -> Result<String, io::Error> {
+        let f_vii = File::open("./static/name.txt");
+        let mut f_vii = match f_vii { // ファイルの読み込みの成功の合否で分岐
+            Ok(file) => file,
+            Err(e) => return Err(e), // 失敗した時点で Err値(io:Error)を返して関数の処理を終了
+        };
+        let mut s = String::new();
+        match f_vii.read_to_string(&mut s) { // read_to_string関数でファイルハンドルから内容の取得とsへの書込を試みて、
+            Ok(_) => Ok(s), // 成功したら Okケースに包まれた目標の名前を返して
+            Err(e) => Err(e), // 失敗したら Err値(io:Error)を返す
+        }
+    }
 }
