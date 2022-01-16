@@ -413,4 +413,6 @@ pub fn panic_or_not() {
     // 呼び出している処理が何であれ 自分の特定の場面では論理的に起こり得なくても 一般的にまだ失敗する可能性はある
     // 手動でコードを調査して Err列挙子は存在しないと確認できたら unwrap の呼び出しは合法となる
     // 以下が例
+    use std::net::IpAddr;
+    let home:IpAddr = "127.0.0.1".parse().unwrap(); // std::net::IpAddr型
 }
