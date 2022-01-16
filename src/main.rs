@@ -167,6 +167,7 @@ fn main()
    //✔エラー処理についての説明、ソースコードは ./lib/error_handl.rs を参照
     lib::error_handl::panic(); // パニック
     lib::error_handl::result(); // Result
+    lib::error_handl::panic_or_not(); // パニックの利点欠点
 
 
 
