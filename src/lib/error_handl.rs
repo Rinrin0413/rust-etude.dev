@@ -477,4 +477,19 @@ pub fn panic_or_not() {
     // 各々で別の挙動をするようにすれば親切なアプリケーションとなるはず
     // これをする1つの方法として ただの u32 の代わりに i32 として推測をパースして、
     // 負の数になる可能性を許可して それから数字が範囲に収まっているというチェックを追加すること
+    /*
+    loop {
+        //--略--
+        let guess: i32 = match guess.trim().parse() { // 負の数も受け入れる
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        if guess < 1 || guess > 100 { // 範囲外なら
+            println!("1 から 100 までの整数を推測して下さい"); // 範囲内で答えるように示唆して、
+            continue; // loopをコンティニュ
+        }
+        match guess.cmp(&secret_number) {
+        //--略--
+    }
+    */
 }
