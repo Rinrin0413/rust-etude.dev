@@ -517,4 +517,11 @@ pub fn panic_or_not() {
         // ↓ <Guessのインスタンス>.value() で呼び出す
         pub fn value(&self) -> u32 { self.value } // self (つまり連結元)の Guessインスタンスの中身を u32 として返す
     }
+    println!( "{}",  Guess::new(33).value() ); //< 33
+                                               // new関数で33を持つGuessインスタンスを生成
+                                               // この時1~100の範囲外の場合パニックする
+                                               // value関数を繋げてu32に戻す
+                                               // 33は範囲内なので無事33が出力される
+    println!( "{}",  Guess::new(1024).value() ); //< thread 'main' panicked at '予想の値は1から100の範囲でなければならないが、1024でした.', --以下略--
+                                                 // 1024は範囲内なのでパニック
 }
