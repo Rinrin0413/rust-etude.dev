@@ -502,4 +502,19 @@ pub fn panic_or_not() {
     // 代わりに新しい型を作って検証を関数内に閉じ込め、検証を全箇所で繰り返すのではなく その型のインスタンスを生成することができる
     // さすれば関数がその新しい型をシグニチャに用いて 受け取った値を自信を持って使用できるようになる
     // 以下に new関数が1から100までの値を受け取った時のみ Guess のインスタンスを生成する Guess型を定義する1つの方法を示した
+
+    pub struct Guess { value: u32, }
+    impl Guess { 
+        // Guessインスタンスの new関連関数
+        // ↓ Guess::new(value: u32) で呼び出す
+        pub fn new(value: u32) -> Guess {
+            if value < 1 || value > 100 {
+                panic!("予想の値は1から100の範囲でなければならないが、{}でした.", value);
+            }
+            Guess { value } // 1~100ならばその値を保持するGuess型を返す
+        }
+        // Guessインスタンスの valueメソッド(メソッド記法)
+        // ↓ <Guessのインスタンス>.value() で呼び出す
+        pub fn value(&self) -> u32 { self.value } // self (つまり連結元)の Guessインスタンスの中身を u32 として返す
+    }
 }
