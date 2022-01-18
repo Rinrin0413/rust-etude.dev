@@ -65,4 +65,7 @@ pub fn abstract_by_fun() {
     
     println!("最大値IV: {}", largest(&num_list_iv));
     println!("最大値V: {}", largest(&num_list_v));
+
+    // largest関数にある引数list は 関数に渡す可能性のある あらゆる i32値の具体的なスライスを示している
+    // 結果的に 関数呼出の際 コードは渡した特定の値に対して走る
 }
