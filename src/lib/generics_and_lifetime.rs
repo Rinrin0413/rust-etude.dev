@@ -52,4 +52,17 @@ pub fn abstract_by_fun() {
     // また コードを変更したい時に複数箇所を更新することになりかねない
     // この重複を排除するには 引数に与えられたリストに対し処理を行う関数を定義して抽象化できる
     // この解決策によってコードがより分かりやすく リストの最大値を探すという概念を抽象的に表現できる
+    fn largest(list: &[i32]) -> i32 {
+        let mut max = list[0];
+        for &item in list.iter() {
+            if item > max { max = item; }
+        }
+        max
+    }
+
+    let num_list_iv = vec![34, 50, 25, 100, 65];
+    let num_list_v = vec![102, 34, 6000, 89, 54, 2, 43, 8];
+    
+    println!("最大値IV: {}", largest(&num_list_iv));
+    println!("最大値V: {}", largest(&num_list_v));
 }
