@@ -508,7 +508,7 @@ pub fn panic_or_not() {
         // Guessインスタンスの new関連関数
         // ↓ Guess::new(value: u32) で呼び出す
         pub fn new(value: u32) -> Guess {
-            if value < 1 || value > 100 {
+            if 1 > value || 100 < value {
                 panic!("予想の値は1から100の範囲でなければならないが、{}でした.", value);
             }
             Guess { value } // 1~100ならばその値を保持するGuess型を返す
