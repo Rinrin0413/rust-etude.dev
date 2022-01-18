@@ -169,6 +169,9 @@ fn main()
     lib::error_handl::result(); // Result
     lib::error_handl::panic_or_not(); // パニックの利点欠点
 
+   //✔ジェネリクスやライフタイムについての説明 ソースコードは ./lib/generics_and_lifetime.rs を参照
+   lib::generics_and_lifetime::abstract_by_fun(); // 関数での抽象化
+
 
 
 
