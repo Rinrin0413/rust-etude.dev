@@ -34,4 +34,17 @@ pub fn abstract_by_fun() {
     // そしてリストの数字全部を走査して 走査されてきた n  が max に格納された数値よりも大きければ、
     // その変数の値を置き換える。リストの数値全てを走査した頃には max はリストの最大値を保持しているはず。今回は100になる
     // 2つの異なるリストから別々に最大値を取得するには 上記コードを複製して2箇所で同じロジック(機構)を使用できる
+    let num_list_ii = vec![34, 50, 25, 100, 65];
+    let mut max = num_list_ii[0];
+    for n in num_list_ii {
+        if n > max { max = n; }
+    }
+    println!("最大値II: {}", max);
+
+    let num_list_iii = vec![102, 34, 6000, 89, 54, 2, 43, 8];
+    let mut max = num_list_iii[0];
+    for n in num_list_iii {
+        if n > max { max = n; }
+    }
+    println!("最大値III: {}", max);
 }
