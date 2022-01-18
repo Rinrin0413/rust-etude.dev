@@ -54,7 +54,8 @@ pub fn structure() {
    // フィールドと変数が同名の時にフィールド初期化省略記法を使う
     // 初期化省略記法という記法を使うと更に短く書くことができる
     fn build_kachik2(species:String, price:u64, age:u32, is_alive:bool) -> Kachik {
-        Kachik { species,
+        Kachik { 
+            species,
             price,
             age,
             is_alive,
