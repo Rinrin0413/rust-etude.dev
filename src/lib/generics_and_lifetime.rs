@@ -109,4 +109,8 @@ pub fn generics() {
     let char_list = vec!['y', 'm', 'a', 'q'];
     println!("The largest num is {}", largest_i32(&num_list_vi)); //< The largest num is 100
     println!("The largest char is {}", largest_char(&char_list)); //< The largest char is y>
+
+    // largest_i32関数は i32スライスから最大の値を探す関数
+    // largest_char関数じゃ charスライスから最大の char を探す関数
+    // 各関数には重複したコードがあるので ジェネリックな型引数を導入して1つ関数にまとめる
 }
