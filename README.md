@@ -25,6 +25,7 @@
             - [統計学モジュール][cl]
             - [ピッグ・ラテンモジュール][cl]
         - [エラー処理](./src/lib/error_handl.rs)
+        - [ジェネリクス / トレイト / ライフタイム](./src/lib/generics_and_lifetime.rs)
 
 <br />
 
