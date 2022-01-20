@@ -129,4 +129,17 @@ pub fn generics() {
     // 「largest_ii関数は なんらかの型 T に関してジェネリックである」と
     // この関数には list という引数があり これは型T の値のスライス
     // largest_ii関数は同じ T型の値を返す
+
+    // 以下は シグネチャにジェネリックなデータ型を使用して largest_ii関数を定義している
+    // このコードは i32値か char値のどちらかで呼べる方法も示している
+    // ただしこれはまだコンパイルできないことに注意
+    /*
+    fn largest_ii<T>(list: &[T]) -> T {
+        let mut largest = list[0];
+        for &item in list.iter() {
+            if item > largest { largest = item; }
+        }
+        largest
+    }
+    */
 }
