@@ -153,4 +153,12 @@ pub fn generics() {
       |
       = note: an implementation of `std::cmp::PartialOrd` might be missing for `T` // 訳: `std::cmp::PartialOrd`の実装が`T`に対して存在しない可能性がある
     */
+
+    // 注釈(note)が std::cmp::PartialOrd について話している
+    // これは トレイト。トレイトについては次の章で学ぶ
+    // とりま、このエラーは largest_ii の本体は、「 T がなりうる全ての可能性のある型に対して動作できない」と言っている
+    // 本体で型T の値を比較したいが これでは「値が順序付け可能な型」でしか使えない
+    // 比較を可能にする為に std には型に実装できる std::cmp::PartialOrdトレイトがある
+    // ジェネリックな型が特定のトレイトを持つことを指定する方法はいずれ学ぶ
+    // 先にジェネリックな型引数を使用する他の方法を考える
 }
