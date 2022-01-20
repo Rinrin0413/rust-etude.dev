@@ -91,4 +91,22 @@ pub fn generics() {
     // ジェネリクスを使う関数を定義する際 通常は関数のシグニチャにジェネリクスを配置する
     // そうするとコードがより柔軟になり コードの重複を阻止しながら関数の呼出元により多くの機能を提供できるs
     // 以下ははどちらもスライスから最大値を探す2つの関数を示している
+    fn largest_i32(list: &[i32]) -> i32 {
+        let mut largest = list[0];
+        for &item in list.iter() {
+            if item > largest { largest = item; }
+        }
+        largest
+    }
+    fn largest_char(list: &[char]) -> char {
+        let mut largest = list[0];
+        for &item in list.iter() {
+            if item > largest { largest = item; }
+        }
+        largest
+    }
+    let num_list_vi = vec![34, 50, 25, 100, 65];
+    let char_list = vec!['y', 'm', 'a', 'q'];
+    println!("The largest num is {}", largest_i32(&num_list_vi)); //< The largest num is 100
+    println!("The largest char is {}", largest_char(&char_list)); //< The largest char is y>
 }
