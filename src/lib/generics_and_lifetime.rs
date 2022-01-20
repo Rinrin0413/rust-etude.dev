@@ -142,4 +142,15 @@ pub fn generics() {
         largest
     }
     */
+
+    // コンパイルすると以下のエラーが出るはず
+    /*
+    error[E0369]: binary operation `>` cannot be applied to type `T` // 訳: 2項演算`>`は、型`T`に適用できない
+     --> src/main.rs:X:X
+      |
+    X |         if item > largest { largest = item; }
+      |            ^^^^^^^^^^^^^^
+      |
+      = note: an implementation of `std::cmp::PartialOrd` might be missing for `T` // 訳: `std::cmp::PartialOrd`の実装が`T`に対して存在しない可能性がある
+    */
 }
