@@ -180,4 +180,8 @@ pub fn generics() {
     // x, y が両方ジェネリックだが 異なる型になり得る Pos構造体を定義するには、
     // 複数のジェネリックな型引数を使用すると良い
     // 例えば以下では 型T と U に関してジェネリックにして x が型T で y が型U になる
+    struct PosII<T, U> { x: T, y: U, }
+    let pos_ii_int = PosII { x: 5, y: 10 }; // 数値のみや、
+    let pos_ii_float = PosII { x: 1.0, y: 4.0 }; // 浮動小数点数のみにも対応できる上に、
+    let pos_ii_blend = PosII { x: 5, y: 4.0 }; // 型を混合できる
 }
