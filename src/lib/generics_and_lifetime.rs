@@ -210,4 +210,15 @@ pub fn generics() {
    // メソッド定義では
     // 定義にジェネリックな型を使うメソッドを 構造体や enum に実装することもでる
     // 以下は先ほど定義した Pos<T>構造体に x というメソッドを実装したもの
+    //struct Pos<T> { x: T, y: T, } // さっき定義したやつ
+    impl<T> Pos<T> { // Pos<T> であらゆる型を持つ Pos に実装することを示す
+        fn x(&self) -> &T { &self.x } // 関連関数x
+        fn y(&self) -> &T { &self.y } // 関連関数y
+    }
+    let pos = Pos { x: 5, y: 10 };
+    println!(
+        "x: {}\ny: {}", 
+        pos.x(), 
+        pos.y()
+    ); //< x: 5\ny: 10
 }
