@@ -193,4 +193,10 @@ pub fn generics() {
     // std が提供している Option<T> enum をもう一度見てみる
     enum Option<T> { Some(T), None, }
 
+    // ここでは Option<T> は型T に関してジェネリックで2つの列挙子のある enum となる
+    // その列挙子は型T の値を保持する Some と値を何も保持しない None
+    // Option<T> enum を使うことで オプショナルな値があるという抽象的な概念を表現できて、
+    // Option<T> はジェネリックなので 型に関わらず使用できる
+    // enum も複数のジェネリックな型を使える。Result<T> が一例です
+    enum Result<T, E> { Ok(T), Err(E), }
 }
