@@ -243,4 +243,14 @@ pub fn generics() {
     // 例えば以下は 先ほどののPos_ii<T, U>に mixupメソッドを定義している
     // このメソッドは 他の Pos を引数として取る。この引数は mixup を呼び出している self の Pos とは異なる型の可能性がある
     // このメソッドは 型T の self の Pos の x値と渡した型W Pos の y値から新しい Posインスタンスを生成する
+    impl<T, U> PosII<T, U> {
+        fn mixup<V, W>(self, other: PosII<V, W>) -> PosII<T, W> {
+            PosII { x: self.x, y: other.y, } // 連結元(self)の x座標と引数に入れた別の PosIIインスタンス(other)の y座標で、
+                                             // 新しい PosIIインスタンスを生成する
+        }
+    }
+    let pos_iia = PosII { x: 5, y: 10.4 };
+    let pos_iib = PosII { x: "Hello", y: 'c'};
+    let pos_iic = pos_iia.mixup(pos_iib); // PosII { x: 5, y: 'c' }
+    println!("x: {}\ny: {}", pos_iic.x, pos_iic.y); //< x: 5\ny: c
 }
