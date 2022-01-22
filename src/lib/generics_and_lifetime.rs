@@ -253,4 +253,9 @@ pub fn generics() {
     let pos_iib = PosII { x: "Hello", y: 'c'};
     let pos_iic = pos_iia.mixup(pos_iib); // PosII { x: 5, y: 'c' }
     println!("x: {}\ny: {}", pos_iic.x, pos_iic.y); //< x: 5\ny: c
+
+    // x に i32, y に f64 を持つ Posインスタンスpos_iia を定義して、
+    // x に文字列スライス, y に char を持つ Posインスタンスpos_iibも定義すた
+    // 引数に pos_iib を入れて pos_iia に mixup を呼び出すと、
+    // x が pos_iia由来の i32、y が pos_iib由来の char となるインスタンスが返される
 }
