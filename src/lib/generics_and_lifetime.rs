@@ -228,4 +228,9 @@ pub fn generics() {
     // 例えば ジェネリックな型を持つ Pos<T>インスタンスではなく、
     // Pos<f32> とすれば f32を保持するもののみに実装する ということも可能
     // 以下では具体的な型f32を使用している。つまり impl の後に型を宣言する必要がない
+    impl Pos<f32> {
+        fn distance_from_origin(&self) -> f32 {
+            (self.x.powi(2) + self.y.powi(2)).sqrt()
+        }
+    }
 }
