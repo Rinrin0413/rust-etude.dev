@@ -279,4 +279,16 @@ pub fn generics() {
     // それにより ジェネリックな定義を特定の定義と置き換える
     // 単相化されたバージョンのコードは 以下のようになる
     // ジェネリックな Option<T> が コンパイラが生成した特定の定義に置き換えられている
+    /*
+    enum Option_i32 { // コンパイラの特権なのか型名にアンダーバーが使える
+        Some(i32),
+        None,
+    }
+    enum Option_f64 {
+        Some(f64),
+        None,
+    }
+    let integer = Option_i32::Some(5);
+    let float = Option_f64::Some(5.0);
+    */
 }
