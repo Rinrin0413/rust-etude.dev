@@ -258,4 +258,6 @@ pub fn generics() {
     // x に文字列スライス, y に char を持つ Posインスタンスpos_iibも定義すた
     // 引数に pos_iib を入れて pos_iia に mixup を呼び出すと、
     // x が pos_iia由来の i32、y が pos_iib由来の char となるインスタンスが返される
+
+    // ジェネリックな引数V,W は `fn mixup` の後に宣言されている。何故ならこのメソッドにしか関係ないから
 }
