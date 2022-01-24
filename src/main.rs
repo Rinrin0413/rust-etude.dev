@@ -169,7 +169,7 @@ fn main()
     lib::error_handl::result(); // Result
     lib::error_handl::panic_or_not(); // パニックの利点欠点
 
-   //✔ジェネリクスやライフタイムについての説明 ソースコードは ./lib/generics_and_lifetime.rs を参照
+   //✔ジェネリクスやトレイトについての説明 ソースコードは ./lib/generics_and_traits.rs を参照
    lib::generics_and_traits::abstract_by_fun(); // 関数での抽象化
    lib::generics_and_traits::generics(); // ジェネリクス
    lib::generics_and_traits::traits(); // トレイト, ジェネリックな関数
