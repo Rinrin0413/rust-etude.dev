@@ -172,6 +172,7 @@ fn main()
    //✔ジェネリクスやライフタイムについての説明 ソースコードは ./lib/generics_and_lifetime.rs を参照
    lib::generics_and_lifetime::abstract_by_fun(); // 関数での抽象化
    lib::generics_and_lifetime::generics(); // ジェネリクス
+   lib::generics_and_lifetime::traits(); // トレイト, ジェネリックな関数
 
 
 
