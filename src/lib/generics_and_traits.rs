@@ -348,4 +348,11 @@ pub fn traits() {
     // implブロック内に トレイト定義で定義したメソッドシグニチャを置く
     // 各シグニチャの後には セミコロンではなく波括弧を使用し、メソッド本体に特定の型のトレイトのメソッドに欲しい特定の振る舞いをいれる
     // トレイトを実装後 普通のメソッド同様に NewsArticle や Tweet のインスタンスに対してこのメソッドを呼び出せる
+    let tweet_0 = Tweet {
+        username: String::from("龴亻クソソ㇇ㇳ"),
+        content: String::from("暇だしwindows12出すわw(適当)\nwin11の方はサポート終わりで(笑)"),
+        reply: true,
+        retweet: true,
+    };
+    println!("1件の新着のツイート: {}", tweet_0.summarize()); //< 1件の新着のツイート: 龴亻クソソ㇇ㇳ さんより\n暇だしwindows12出すわw(適当)\nwin11の方はサポート終わりで(笑)
 }
