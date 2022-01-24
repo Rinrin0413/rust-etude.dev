@@ -320,4 +320,26 @@ pub fn traits() {
     // 今や Summaryトレイトを使って目的の動作を定義できたので、メディア アグリゲータでこれを型に実装できる
     // 以下は Summaryトレイトを NewsArticle 構造体上に実装したもので、ヘッドライン, 著者, 地域情報を使って summarize の戻り値を作っている
     // Tweet構造体に関しては、ツイートの内容が既に280文字に制限されていると仮定して ユーザー名の後にツイートのテキスト全体が続くものとして summarize を定義する
+    pub struct NewsArticle {
+        pub headline: String,
+        pub location: String,
+        pub author: String,
+        pub content: String,
+    }
+    /*impl Summary for NewsArticle { // あとで邪魔になるので無効化
+        fn summarize(&self) -> String {
+            format!("{}, by {} ({})", self.headline, self.author, self.location)
+        }
+    }*/
+    pub struct Tweet {
+        pub username: String,
+        pub content: String,
+        pub reply: bool,
+        pub retweet: bool,
+    }
+    impl Summary for Tweet {
+        fn summarize(&self) -> String {
+            format!("{} さんより\n{}", self.username, self.content) // format!マクロの返り値はString
+        }
+    }
 }
