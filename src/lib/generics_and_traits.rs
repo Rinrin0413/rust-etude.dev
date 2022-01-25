@@ -391,4 +391,15 @@ pub fn traits() {
     // もはや NewsArticle に明示的に summarizeメソッドを定義していないが、
     // デフォルト実装を提供していて NewsArticle は Summaryトレイトを実装すると指定している
     // そのため NewsArticle のインスタンスに対して summarizeメソッドを呼び出すことができる
+    impl SummaryII for NewsArticle {}
+    let article = NewsArticle {
+        headline: String::from("悲报:龴亻クソソ㇇ㇳ、windows12を暇潰しで開発"),
+        location: String::from("Earth"),
+        author: String::from("Tom"),
+        content: String::from(
+            "龴亻クソソ㇇ㇳが先日windows12を暇潰しでリリース。\
+            これによってwindows11は放棄されるとのこと",
+        ),
+    };
+    println!("新着のニュース[{}]\n{}", article.headline, article.summarize()); //< 新着のニュース[悲报:龴亻クソソ㇇ㇳ、windows12を暇潰しで開発]\n(続きを読む)
 }
