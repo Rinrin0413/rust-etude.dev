@@ -418,4 +418,10 @@ pub fn traits() {
 
     // このバージョンの SummaryIII を使用するために型にトレイトを実装する際、
     // 実装する必要があるのは summarize_author のみとなる
+    pub struct TweetII { pub username: String, pub content: String, pub reply: bool, pub retweet: bool, } // 他の summarizeメソッドと被るので新しいのを
+    impl SummaryIII for TweetII {
+        fn summarize_author(&self) -> String {
+            format!("@{}", self.username)
+        }
+    }
 }
