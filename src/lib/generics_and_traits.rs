@@ -385,4 +385,12 @@ pub fn traits() {
     pub trait SummaryII {
         fn summarize(&self) -> String { String::from("(続きを読む)") }
     }
+
+}
+
+// 各型で独自の実装を定義するのではなく デフォルト実装を利用して NewsArticle のインスタンスをまとめるには、
+// `impl SummaryII for NewsArticle {}` と空のimplブロックを指定する
+// もはや NewsArticle に明示的に summarizeメソッドを定義していないが、
+// デフォルト実装を提供していて NewsArticle は Summaryトレイトを実装すると指定している
+// そのため NewsArticle のインスタンスに対して summarizeメソッドを呼び出すことができる
 }
