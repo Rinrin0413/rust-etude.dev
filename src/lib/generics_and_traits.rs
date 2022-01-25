@@ -424,4 +424,8 @@ pub fn traits() {
             format!("@{}", self.username)
         }
     }
+
+    // summarize_authorメソッド定義後 Tweet構造体のインスタンスに対して summarize を呼び出せ、
+    // summarizeのデフォルト実装は今提供した summarize_author の定義を呼び出す
+    // summarize_authorメソッドを実装したので追加のコードを書く必要なく SummaryIIIトレイトは summarizeメソッドの振る舞いを与えてくれた
 }
