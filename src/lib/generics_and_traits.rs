@@ -428,4 +428,11 @@ pub fn traits() {
     // summarize_authorメソッド定義後 Tweet構造体のインスタンスに対して summarize を呼び出せ、
     // summarizeのデフォルト実装は今提供した summarize_author の定義を呼び出す
     // summarize_authorメソッドを実装したので追加のコードを書く必要なく SummaryIIIトレイトは summarizeメソッドの振る舞いを与えてくれた
+    let tweet_1 = TweetII {
+        username: String::from("龴亻クソソ㇇ㇳ"),
+        content: String::from("不和 買収してくるわwww(守銭奴)"),
+        reply: true,
+        retweet: true,
+    };
+    println!("1件の新着のツイート: {}", tweet_1.summarize("ツイート")); //< 1件の新着のツイート: @龴亻クソソ㇇ㇳ氏のツイートの続きを読む
 }
