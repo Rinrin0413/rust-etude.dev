@@ -382,4 +382,7 @@ pub fn traits() {
     // さすれば 特定の型にトレイトを実装する際に 各メソッドのデフォルト実装を保持するかオーバーライドするか選べる
     // 以下はトレイト定義で メソッドシグニチャだけを定義するのではなく、
     // Summaryトレイトの summarizeメソッドにデフォルトの文字列を指定している
+    pub trait SummaryII {
+        fn summarize(&self) -> String { String::from("(続きを読む)") }
+    }
 }
