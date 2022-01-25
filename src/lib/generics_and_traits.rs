@@ -415,4 +415,7 @@ pub fn traits() {
             format!("{}氏の{}の続きを読む", self.summarize_author(), arg)
         }
     }
+
+    // このバージョンの SummaryIII を使用するために型にトレイトを実装する際、
+    // 実装する必要があるのは summarize_author のみとなる
 }
