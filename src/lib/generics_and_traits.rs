@@ -409,4 +409,10 @@ pub fn traits() {
     // こうすれば トレイトは多くの有用な機能を提供しつつ実装者は僅かな部分だけ指定すればよい
     // 例えば Summaryトレイトを実装者が内容を実装しなければならない summarize_authorメソッドを持つように定義し、
     // それから summarize_authorメソッドを呼び出すデフォルト実装を持つ summarizeメソッドを定義することもできる
+    pub trait SummaryIII {
+        fn summarize_author(&self) -> String;
+        fn summarize(&self, arg:&str) -> String {
+            format!("{}氏の{}の続きを読む", self.summarize_author(), arg)
+        }
+    }
 }
