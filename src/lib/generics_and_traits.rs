@@ -469,4 +469,8 @@ pub fn traits() {
     // 例えば Summaryトレイトを実装する2つのパラメータを持つような関数を考えることができる
     // impl Trait構文を使うとこのようになる
     //pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+
+    // この関数が受け取る item1 と item2 の型が異なっても良いなら impl Trai構文tは適切です
+    // 両方の引数が同じ型であることを強制するには 以下のようにトレイト境界を使って実装できる
+    //pub fn notify<T: Summary>(item1: &T, item2: &T) {
 }
