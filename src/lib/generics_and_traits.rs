@@ -447,4 +447,11 @@ pub fn traits() {
     pub fn notify(item: &impl Summary) {
         println!("速報[{}]", item.summarize());
     }
+
+    // 引数item には具体的な型の代わりに implキーワードとトレイト名を指定している
+    // この引数は指定されたトレイトを実装している型を受け付ける
+    // notify関数の中では summarizeメソッドのように Summaryトレイト由来の あらゆるメソッドを呼び出すことができる
+    // 私達は notify を呼び出して NewsArticle か Tweet のどんなインスタンスでも渡すことができる
+    // この関数を呼び出すときに String や i32 のような他の型を渡すようなコードを引数に入れるとコンパイルできない
+    // なぜなら これらの型は Summary を実装していないから
 }
