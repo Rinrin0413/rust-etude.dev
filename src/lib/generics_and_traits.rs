@@ -454,4 +454,11 @@ pub fn traits() {
     // 私達は notify を呼び出して NewsArticle か Tweet のどんなインスタンスでも渡すことができる
     // この関数を呼び出すときに String や i32 のような他の型を渡すようなコードを引数に入れるとコンパイルできない
     // なぜなら これらの型は Summary を実装していないから
+
+   // トレイト境界構文
+    // impl Trait構文は、より長い トレイト境界(trait bound) と呼ばれる姿の糖衣構文(syntax sugar)です
+    // 以下がそのトレイト境界です
+    pub fn notify_ii<T: Summary>(item: &T) {
+        println!("速報[{}]", item.summarize());
+    }
 }
