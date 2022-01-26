@@ -461,4 +461,12 @@ pub fn traits() {
     pub fn notify_ii<T: Summary>(item: &T) {
         println!("速報[{}]", item.summarize());
     }
+
+    // このより長い姿はimpl Trait構文の例と等価だが、より冗長
+    // 山括弧内にジェネリック型引数の宣言を書いて 型引数の後ろにコロンを挟んでトレイト境界を置いている
+    // 簡単なケースでは impl Trait構文は便利で コードを簡潔にしてくれる
+    // そうでないケースの場合 トレイト境界構文を使えば複雑な状態を表現できる
+    // 例えば Summaryトレイトを実装する2つのパラメータを持つような関数を考えることができる
+    // impl Trait構文を使うとこのようになる
+    //pub fn notify(item1: &impl Summary, item2: &impl Summary) {
 }
