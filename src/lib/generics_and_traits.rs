@@ -485,4 +485,7 @@ pub fn traits() {
 
     // +構文はジェネリック型につけたトレイト境界に対しても使える `TraitI + TraitII`
     //pub fn notify<T: Summary + Display>(item: &T) {
+
+    // これら2つのトレイト境界(Summary, Display)が指定されていれば、
+    // notify の中では summarize を呼び出すことと {} を使って item をフォーマット(画面出力)することの両方が行なえる
 }
