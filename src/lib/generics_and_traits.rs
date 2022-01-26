@@ -444,4 +444,7 @@ pub fn traits() {
     // ここで引数の item の summarizeメソッドを呼ぶ関数notify を定義することができる
     // ただし引数item は Summaryトレイトを実装している型であるとする
     // このようなことをするためには impl Trait構文を使うと良い
+    pub fn notify(item: &impl Summary) {
+        println!("速報[{}]", item.summarize());
+    }
 }
