@@ -498,4 +498,11 @@ pub fn traits() {
     // 例として、T が Displayトレイト及び Cloneトレイトの実装された型、
     // U が Cloneトレイト及び Debugトレイトの実装された型 とする
     //fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {
+
+    // where句を使うと
+    /*
+    fn some_function<T, U>(t: &T, u: &U) -> i32 where 
+        T: Display + Clone, 
+        U: Clone + Debug {
+    */
 }
