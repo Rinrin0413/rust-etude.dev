@@ -476,4 +476,11 @@ pub fn traits() {
 
     // 引数である item1 と item2 の型としてジェネリックな型T を指定した
     // これにより item1 と item2 の値の具体的な型が同一でなければならない、という制約を与えている
+
+   // 複数のトレイト境界を+構文で指定する
+    // 複数のトレイト境界の指定もできる。例えば notify に summarizeメソッドに加えて item の画面出力形式(ディスプレイフォーマット)を使わせたいとする
+    // その場合は notify の定義に item は Display と Summary の両方を実装していなくてはならないと指定することになる
+    // これは 以下のように +構文で行うことができる `&(impl TraitI + TraitII)`
+    //pub fn notify(item: &(impl Summary + Display)) {
+
 }
