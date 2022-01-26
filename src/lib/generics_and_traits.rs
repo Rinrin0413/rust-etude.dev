@@ -483,4 +483,6 @@ pub fn traits() {
     // これは 以下のように +構文で行うことができる `&(impl TraitI + TraitII)`
     //pub fn notify(item: &(impl Summary + Display)) {
 
+    // +構文はジェネリック型につけたトレイト境界に対しても使える `TraitI + TraitII`
+    //pub fn notify<T: Summary + Display>(item: &T) {
 }
