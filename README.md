@@ -29,8 +29,8 @@
 
 <br />
 
-- [自己解釈 Markdowns](./assets/md/日本語doc自己解釈)
-    - [日本語入門書より「導入」の自己解釈](./assets/md/日本語doc自己解釈/0.導入.md)
+- [自己解釈 Markdowns](./assets/md/jp_docs/)
+    - [日本語入門書の自己解釈](./assets/md/jp_docs/0.導入.md)
 
     </div>
 </details>
