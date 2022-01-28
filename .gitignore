@@ -1,3 +1,2 @@
-/target/
-/webdev/target/
-Cargo.lock
+**target/
+**Cargo.lock
