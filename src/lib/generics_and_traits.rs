@@ -518,4 +518,7 @@ pub fn traits() {
             retweet: true,
         }
     }
+
+    // 戻り値の型として impl Summary を使うことにより 具体的な型を言うことなく returns_summarizable関数は Summaryトレイトを実装している何らかの型を返す
+    // 今回 returns_summarizable は Tweet を返すが、この関数を呼び出すコードはそのことを知らない
 }
