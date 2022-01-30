@@ -527,4 +527,23 @@ pub fn traits() {
     // impl Trait構文を使えば 非常に長い型を書くことなく ある関数は Iteratorトレイトを実装するある型を返すのだと簡潔に指定することもできる
     // ただし impl Trait構文は一種類の型を返す場合にのみ使える
     // たとえば以下のように 戻り値の型は impl Summary で指定しつつ NewsArticle か Tweet のどちらかを返すようなコードは失敗する
+    /*
+    fn returns_summarizable(switch: bool) -> impl Summary {
+        if switch {
+            NewsArticle {
+                headline: String::from("Penguins win the Stanley Cup Championship!"),
+                location: String::from("Pittsburgh, PA, USA"),
+                author: String::from("Iceburgh"),
+                content: String::from("The Pittsburgh Penguins once again are the best\n hockey team in the NHL."),
+            }
+        } else {
+            Tweet {
+                username: String::from("horse_ebooks"),
+                content: String::from("of course, as you probably already know, people"),
+                reply: false,
+                retweet: false,
+            }
+        }
+    }
+    */
 }
