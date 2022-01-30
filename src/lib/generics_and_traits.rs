@@ -507,4 +507,15 @@ pub fn traits() {
     */
 
     // この関数シグニチャは トレイト境界を多く持たない関数と同じく 関数名, 引数リスト, 戻り値の型が一緒になって近くにある故見やすい
+
+  // トレイトを実装している型を返す
+    // 以下のように impl Trait構文を戻り値の型の部分で使うことで 指定したトレイトを実装する型を返すことができる
+    fn returns_summarizable() -> impl Summary {
+        Tweet {
+            username: String::from("龴亻クソソ㇇ㇳ"),
+            content: String::from("win12やっぱやめるめんどい(^^)v"),
+            reply: true,
+            retweet: true,
+        }
+    }
 }
