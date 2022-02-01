@@ -617,4 +617,13 @@ pub fn traits() {
 
     // Copyトレイトを実装する型だけを呼び出したいなら T のトレイト境界に Copy を追加すればよい
     // 以下は 関数に渡したスライスの値の型が PartialOrd 及び Copy を実装する限りコンパイルできる ジェネリックな largest_ii関数の定義のなる
+
+    fn largest_ii<T: PartialOrd + Copy>(list: &[T]) -> T {
+    //             ┗ PartialOrdトレイト(比較演算子を使うため) と Copyトレイト(スタックに保存したい) のみを受け入れる
+        let mut largest = list[0];
+        for &item in list {
+            if item > largest { largest = item; }
+        }
+        largest
+    }
 }
