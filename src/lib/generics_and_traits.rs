@@ -608,4 +608,10 @@ pub fn traits() {
 
     error: aborting due to 2 previous errors
     */
+
+    // このエラーの鍵となるのは `cannot move out of type [T]` と `a non-copy slice` です
+    // ジェネリックでない頃の largest関数は 最大の i32 か char を探すだけだった
+    // i32 や char のような型はスタックに格納できるので Copyトレイトを実装している
+    // しかし largest関数をジェネリックにすると、引数が Copyトレイトを実装しない型を含む可能性も出てきた
+    // 結果として list[0] から値を largest にムーブできず このエラーに陥った
 }
