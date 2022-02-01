@@ -561,4 +561,20 @@ pub fn traits() {
         largest
     }
     */
+
+    // トレイト境界で望んだ振る舞いを指定する方法が分かったので 上記の largest_ii関数の定義を修正する
+    // 上記のコードを実行しようとした時 こんなエラーが出ていたはず
+    /*
+    error[E0369]: binary operation `>` cannot be applied to type `T`
+     --> src/main.rs:X:X
+      |
+    X |         if item > largest { largest = item; }
+      |            ---- ^ ------- T
+      |            |
+      |            T
+      |
+      = note: `T` might need a bound for `std::cmp::PartialOrd`
+
+    error: aborting due to previous error
+    */
 }
