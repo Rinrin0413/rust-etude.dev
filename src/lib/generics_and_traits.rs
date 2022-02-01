@@ -577,4 +577,9 @@ pub fn traits() {
 
     error: aborting due to previous error
     */
+
+    // 関数では `>` を使って型T の値の比較を試みた。この >演算子は std の std::cmp::PartialOrdトレイトで、
+    // デフォルトメソッドとして定義されている故 largest_ii関数で T に対して利用するには、
+    // T のトレイト境界に PartialOrd を指定する必要がある。シグネチャを修正してみる
+    //fn largest<T: PartialOrd>(list: &[T]) -> T {
 }
