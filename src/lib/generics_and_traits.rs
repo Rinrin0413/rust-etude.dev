@@ -549,4 +549,16 @@ pub fn traits() {
 
     // NewsArticl か Tweet を返すというのは コンパイラの impl Trait構文の実装まわりの制約により許されていない
     // このような振る舞いをする関数を書く方法はいずれ学ぶ
+
+  // トレイト境界で largest関数を修正する
+    // 以下が前の節で作った largest_ii関数(コンパイルエラーで使えない)
+    /*
+    fn largest_ii<T>(list: &[T]) -> T {
+        let mut largest = list[0];
+        for &item in list.iter() {
+            if item > largest { largest = item; }
+        }
+        largest
+    }
+    */
 }
