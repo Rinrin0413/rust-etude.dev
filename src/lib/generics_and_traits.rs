@@ -626,4 +626,11 @@ pub fn traits() {
         }
         largest
     }
+
+    // 使える..！
+    let num_list_vii = vec![86, 32, 64, 12, 0];
+    let char_list_ii = vec!['x', 'y', 'z', 'a', 'b', 'c'];
+
+    println!("最大値i: {}", largest_ii(&num_list_vii)); //< 最大値i: 86
+    println!("最大値ii:{}", largest_ii(&char_list_ii)); //< 最大値ii:z
 }
