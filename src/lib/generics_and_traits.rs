@@ -633,4 +633,9 @@ pub fn traits() {
 
     println!("最大値i: {}", largest_ii(&num_list_vii)); //< 最大値i: 86
     println!("最大値ii:{}", largest_ii(&char_list_ii)); //< 最大値ii:z
+
+
+    // もし largest_ii関数を Copyを実装する型だけに制限したくなかったら、
+    // Copy ではなく Clone のトレイト境界を持たせる
+    // そしたら largest_ii関数に 所有権がごと与えられるスライスの各値をクローンできる
 }
