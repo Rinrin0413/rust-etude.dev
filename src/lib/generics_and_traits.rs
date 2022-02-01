@@ -651,4 +651,12 @@ pub fn traits() {
         }
         &largest // ちゃんと参照を返す
     }
+
+    // String型でも使える..！
+    let num_list_viii = vec![86, 32, 64, 12, 0];
+    let char_list_iii = vec!['x', 'y', 'z', 'a', 'b', 'c'];
+    let string_list = vec![
+        String::from("eb"),
+        String::from("cdee")
+    ];
 }
