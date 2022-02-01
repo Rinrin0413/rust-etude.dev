@@ -659,4 +659,8 @@ pub fn traits() {
         String::from("eb"),
         String::from("cdee")
     ];
+
+    println!("最大値iii: {}", largest_iii(&num_list_viii)); //< 最大値i: 86
+    println!("最大値iv:{}", largest_iii(&char_list_iii)); //< 最大値ii:z
+    println!("最大値v: {}", largest_iii(&string_list)); //< 最大値v: eb
 }
