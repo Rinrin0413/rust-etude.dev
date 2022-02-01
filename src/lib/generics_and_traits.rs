@@ -582,4 +582,30 @@ pub fn traits() {
     // デフォルトメソッドとして定義されている故 largest_ii関数で T に対して利用するには、
     // T のトレイト境界に PartialOrd を指定する必要がある。シグネチャを修正してみる
     //fn largest<T: PartialOrd>(list: &[T]) -> T {
+
+    // しかし別のエラーが降臨
+    /*
+    error[E0508]: cannot move out of type `[T]`, a non-copy slice // 訳: 型[T] を持つ非コピーのスライスからのムーブはできないよ）
+     --> src/main.rs:X:X
+      |
+    X |     let mut largest = list[0];
+      |                       ^^^^^^^
+      |                       |
+      |                       cannot move out of here // ここからムーブはできないよ！
+      |                       move occurs because `list[_]` has type `T`, which does not implement the `Copy` trait
+      |                                                    // └ 訳: この T は Copyトレイトを実装してない型だよ
+      |                       help: consider borrowing here: `&list[0]` // 訳: 借用するといいよ☞ &list[0]
+
+    error[E0507]: cannot move out of a shared reference // 訳: 共有の参照からのムーブはできねぇから！
+     --> src/main.rs:X:X
+      |
+    X |     for &item in list {
+      |         -----    ^^┗^^
+      |         ||
+      |         |data moved here // 訳: ここでデータ ムーブしてんだろ？ わかってっから！
+      |         |move occurs because `item` has type `T`, which does not implement the `Copy` trait // 訳: T が Copy`トレイト実装してねぇ型だからこうなんだよ！
+      |         help: consider removing the `&`: `item` // 訳: & 早く消せよオラァァ゛☞ item
+
+    error: aborting due to 2 previous errors
+    */
 }
