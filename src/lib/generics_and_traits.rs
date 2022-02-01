@@ -643,4 +643,12 @@ pub fn traits() {
 
     // largest_ii関数の別の実装方法は、関数がスライスの T値への参照を返すようにすること
     // 戻り値の型を T ではなく &T に変えると Clone,Copyトレイト境界は必要なって ヒープ確保も避けられる
+
+    fn largest_iii<T: PartialOrd>(list: &[T]) -> &T { // Copyトレイト境界の除去 及び 戻り値を参照に
+        let mut largest = &list[0]; // 後で item に入れて走査するので list は参照
+        for item in list { // 下でやる比較演算で `&T > T` で型の違いが出ない様に item は借用ではなくムーブ
+            if item > largest { largest = item; }
+        }
+        &largest // ちゃんと参照を返す
+    }
 }
