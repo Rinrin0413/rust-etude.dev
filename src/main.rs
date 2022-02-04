@@ -175,6 +175,7 @@ fn main()
    lib::generics_and_traits::traits(); // トレイト, ジェネリックな関数
 
    //✔ライフタイムについての説明 ソースコードは ./lib/lifetime.rs を参照
+   lib::lifetime::lifetime(); // ライフタイム
 
 
 
