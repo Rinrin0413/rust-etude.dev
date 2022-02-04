@@ -663,4 +663,10 @@ pub fn traits() {
     println!("最大値iii: {}", largest_iii(&num_list_viii)); //< 最大値i: 86
     println!("最大値iv:{}", largest_iii(&char_list_iii)); //< 最大値ii:z
     println!("最大値v: {}", largest_iii(&string_list)); //< 最大値v: eb
+
+  // トレイト境界を使用して メソッド実装を条件分けする
+    // ジェネリック型引数を持つ implブロックにトレイト境界を与えると、
+    // 「特定のトレイトを実装する型」を保持する構造体へのメソッド実装を条件分けができる
+    //例えば以下の型Pair<T> は常に new関数を実装する
+    // しかし Pair<T> は内部の型T が PartialOrdトレイト(比較を可能にする)とDisplayトレイト(出力を可能にする)を実装している時のみ cmp_displayメソッドを実装する
 }
