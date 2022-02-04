@@ -669,4 +669,22 @@ pub fn traits() {
     // 「特定のトレイトを実装する型」を保持する構造体へのメソッド実装を条件分けができる
     //例えば以下の型Pair<T> は常に new関数を実装する
     // しかし Pair<T> は内部の型T が PartialOrdトレイト(比較を可能にする)とDisplayトレイト(出力を可能にする)を実装している時のみ cmp_displayメソッドを実装する
+
+    use std::fmt::Display;
+    struct Pair<T> { x: T, y: T, }
+    impl<T> Pair<T> {
+        fn new(x: T, y: T) -> Self {
+            Self { x, y } // Self とは実装してる型自身(ここではPair<T>)
+        }
+    }
+    impl<T: Display + PartialOrd> Pair<T> {
+        fn cmp_display(&self) {
+            let txt = "The largest member is ";
+            if self.x >= self.y {
+                println!("{1}x = {0}", self.x, txt);
+            } else {
+                println!("{1}y = {0}", self.y, txt);
+            }
+        }
+    }
 }
