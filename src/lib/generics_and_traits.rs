@@ -687,4 +687,9 @@ pub fn traits() {
             }
         }
     }
+
+    // また、特定のトレイトを実装するあらゆる型に 対してのトレイト実装も可能
+    // トレイト境界を満たす あらゆる型にトレイトを実装することは ブランケット実装(blanket implementation)と呼ぶ /*#ブランケット実装*/
+    // Rust の std で広く使用されている。例えば Displayトレイトを実装するあらゆる型に ToStringトレイトが実装されている。以下の様に
+    //impl<T: Display> ToString for T {
 }
