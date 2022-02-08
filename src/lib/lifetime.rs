@@ -42,4 +42,17 @@ pub fn lifetime() {
     // r が参照している値が既にスコープを抜けるので このコードはコンパイルできない
     // つまり x の値を参照してるのに その x が既に drop(死亡) しててエラーってこと
     // こちらがエラーメッセージ
+
+    /*
+    error[E0597]: `x` does not live long enough // 訳: x の生存期間が短すぎる
+      --> src/main.rs:X:X
+       |
+    X  |         r = &x;
+       |              - borrow occurs here // 訳: 借用はここで起きている
+    X  |     }
+       |     ^ `x` dropped here while still borrowed // 訳: x は借用されている間にここでドロップ
+    ...
+    X  | }
+       | - borrowed value needs to live until here // 訳: 借用された値はここまで生きる必要がある
+    */
 }
