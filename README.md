@@ -10,8 +10,6 @@
     <summary>ブックマーク</summary>
     <div>
 
-[cl]:./src/lib/collections.rs
-
 - [板書](./src/)
     - [メイン板書](./src/main.rs)
         - [データ型](./src/lib/data_types.rs)
@@ -21,9 +19,9 @@
         - [列挙子 / match式 / if-let記法](./src/lib/enm_mch_iflet.rs)
         - [パッケージ / クレート / モジュール](./src/lib/packages_crates_modules.rs)
             - [テストライブラリwebdev](./webdev/src/)
-        - [コレクション( vector / strings / hash-maps )][cl]
-            - [統計学モジュール][cl]
-            - [ピッグ・ラテンモジュール][cl]
+        - [コレクション( vector / strings / hash-maps )](./src/lib/collections.rs)
+            - [統計学モジュール](./src/lib/collections.rs#L430)
+            - [ピッグ・ラテンモジュール](./src/lib/collections.rs#L496)
         - [エラー処理](./src/lib/error_handl.rs)
         - [ジェネリクス / トレイト](./src/lib/generics_and_traits.rs)
 
