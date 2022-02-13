@@ -24,6 +24,7 @@
             - [ピッグ・ラテンモジュール](./src/lib/collections.rs#L496)
         - [エラー処理](./src/lib/error_handl.rs)
         - [関数でのコード抽象化](./src/lib/generics_and_traits.rs) / [ジェネリクス](./src/lib/generics_and_traits.rs#L84) / [トレイト](./src/lib/generics_and_traits.rs#L300)
+        - [ライフタイム](./src/lib/lifetime.rs)
 
 <br />
 
