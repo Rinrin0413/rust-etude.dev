@@ -23,7 +23,7 @@
             - [統計学モジュール](./src/lib/collections.rs#L430)
             - [ピッグ・ラテンモジュール](./src/lib/collections.rs#L496)
         - [エラー処理](./src/lib/error_handl.rs)
-        - [ジェネリクス / トレイト](./src/lib/generics_and_traits.rs)
+        - [関数でのコード抽象化](./src/lib/generics_and_traits.rs) / [ジェネリクス](./src/lib/generics_and_traits.rs#L84) / [トレイト](./src/lib/generics_and_traits.rs#L300)
 
 <br />
 
