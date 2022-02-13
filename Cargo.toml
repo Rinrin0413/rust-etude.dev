@@ -1,6 +1,10 @@
 [package]
-name = "rust"
+name = "rust_etude_dev"
+description = "Étude d'Rust."
 version = "0.1.0"
+authors = ["Rinrin.rs rinrin0413.valley@gmail.com"]
+license = "[MIT] MIT License"
+repository = "https://github.com/Rinrin0413/rust-etude.dev"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
