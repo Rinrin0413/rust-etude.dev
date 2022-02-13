@@ -19,7 +19,7 @@
         - [列挙子](./src/lib/enm_mch_iflet.rs) / [match式](./src/lib/enm_mch_iflet.rs#L88) / [if-let記法](./src/lib/enm_mch_iflet.rs#L168)
         - [パッケージ / クレート](./src/lib/packages_crates_modules.rs) / [モジュール](./src/lib/packages_crates_modules.rs#L41)
             - [テストライブラリwebdev](./webdev/src/)
-       - [コレクション](./src/lib/collections.rs)( [vector](./src/lib/collections.rs#L14) / [strings](./src/lib/collections.rs#L113) / [hash-maps](./src/lib/collections.rs#L302) )
+        - [コレクション](./src/lib/collections.rs)( [vector](./src/lib/collections.rs#L14) / [strings](./src/lib/collections.rs#L113) / [hash-maps](./src/lib/collections.rs#L302) )
             - [統計学モジュール](./src/lib/collections.rs#L430)
             - [ピッグ・ラテンモジュール](./src/lib/collections.rs#L496)
         - [エラー処理](./src/lib/error_handl.rs)
