@@ -38,15 +38,14 @@
 
 > Rust Documents etc...
 
-- [The Rust Programming Language 日本語版](https://doc.rust-jp.rs/book-ja/)
+- [The Rust Programming Language 日本語版](https://doc.rust-jp.rs/book-ja)
 
-- [Rust By Example 日本語版](https://doc.rust-jp.rs/rust-by-example-ja/)
+- [Rust By Example 日本語版](https://doc.rust-jp.rs/rust-by-example-ja)
+- [std - Rust](https://doc.rust-lang.org/stable/std)
 
-- [The Rust Standard Library](https://doc.rust-lang.org/std/index.html)
+- [Rustの日本語ドキュメント](https://doc.rust-jp.rs)
 
-- [Rustの日本語ドキュメント](https://doc.rust-jp.rs/)
-
-- [Rust裏本](https://doc.rust-jp.rs/rust-nomicon-ja/)
+- [Rust裏本](https://doc.rust-jp.rs/rust-nomicon-ja)
 
 <br />
 
