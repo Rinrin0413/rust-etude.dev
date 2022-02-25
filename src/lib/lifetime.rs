@@ -105,4 +105,9 @@ pub fn lifetime() {
     let result = longest(string1.as_str(), string2);
     println!("The longest string is {}", result); //< The longest string is abcd
     */
+
+    // 関数に取ってほしい引数が 文字列スライス つまり参照であることに注意(&str)
+    // 何故なら longest関数に 引数の所有権を奪ってほしくない故
+    // この関数に String型のスライス と 文字列リテラル を受け取らせている
+    // 以下の様に longest関数を実装しようとしたら コンパイルはできない
 }
