@@ -133,4 +133,10 @@ pub fn lifetime() {
       = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
             // ┗ 訳: この関数の戻り値型は借用された値を含んでいるが シグネチャでそれが x由来なのか y由来のものなのか宣言していない
     */
+
+
+    // 助言(note)で 戻り値の型はジェネリックなライフタイム引数でなければならないと示している
+    // というのも、返している参照が x か y のどちらを参照しているかが コンパイラには分からない
+    // この関数の本体の ifブロックは x への参照を返し、
+    // elseブロックは y への参照を返すので 実際どちらの参照が返されるかは私たちにもわからない
 }
