@@ -110,4 +110,15 @@ pub fn lifetime() {
     // 何故なら longest関数に 引数の所有権を奪ってほしくない故
     // この関数に String型のスライス と 文字列リテラル を受け取らせている
     // 以下の様に longest関数を実装しようとしたら コンパイルはできない
+
+    /*
+                                    ┏ この参照の元が不明 
+    fn longest(x: &str, y: &str) -> &str {
+        if x.len() > y.len() {
+            x
+        } else {
+            y
+        }
+    }
+    */
 }
