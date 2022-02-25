@@ -98,4 +98,11 @@ pub fn lifetime() {
     // 2つの文字列スライスのうち 長い方を返す関数を書く
     // この関数は 2つの文字列スライスを取り 1つの文字列スライスを返す
     // longest関数の実装すれば `The longest string is abcd` と出力される
+
+    /*
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result); //< The longest string is abcd
+    */
 }
