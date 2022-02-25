@@ -121,4 +121,16 @@ pub fn lifetime() {
         }
     }
     */
+
+    // 代わりに ライフタイムについて言及するエラーが出る
+    /*
+    error[E0106]: missing lifetime specifier // 訳: ライフタイム指定子が不足している
+     --> src/main.rs:X:X
+      |
+    X | fn longest(x: &str, y: &str) -> &str {
+      |                                 ^ expected lifetime parameter // 訳: ライフタイム引数が予想される
+      |
+      = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+            // ┗ 訳: この関数の戻り値型は借用された値を含んでいるが シグネチャでそれが x由来なのか y由来のものなのか宣言していない
+    */
 }
