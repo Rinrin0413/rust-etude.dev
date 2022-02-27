@@ -190,4 +190,9 @@ pub fn lifetime() {
     let string2 = "xyz";
     let result = longest(string1.as_str(), string2);
     println!("The longest string is {}", result); //< The longest string is abcd
+
+    // これで関数シグネチャは ライフタイム'aに対して関数は2つの引数を取り、
+    // どちらも「少なくともライフタイム'aと同じだけ生きる文字列スライス」であるとコンパイラに示すことができる
+    // また、この関数シグネチャは 関数の戻り値である文字列スライスも同じく 少なくともライフタイム'aと同じだけ生きると コンパイラに教えている
+    // これらの制約は まさに私たちがコンパイラに保証して欲しかったもの
 }
