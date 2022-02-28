@@ -261,4 +261,8 @@ pub fn lifetime() {
     X  | }
        | - borrowed value needs to live until here // 訳: 借用されている値はここで生存していなければならない
     */
+
+    // このエラーは println! が result_iii を呼び出すのに、
+    // string_ii2 が外側のスコープの終端まで有効である必要があるとを示している
+    // 関数の引数と戻り値のライフタイムを 同じライフタイム引数'aで注釈したので コンパイラはこのことを知っている
 }
