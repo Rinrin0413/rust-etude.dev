@@ -225,4 +225,10 @@ pub fn lifetime() {
         let result_ii = longest(string_ii1.as_str(), string_ii2.as_str());
         println!("The longest string is {}", result_ii); //< The longest string is long string is long
     } // 内側のスコープの終端
+
+    // この例において string_ii1 は外側のスコープの終端(このファイルではmain関数の終端)まで有効で
+    // string_ii2 は内側のスコープの終わりまで有効、
+    // そして result_ii 内側のスコープの終わりまで有効な何かを参照している
+    // このコードを実行すると 借用チェッカーがこのコードを良しとする。要するに コンパイルでて、
+    // `The longest string is long string is long` と出力される
 }
