@@ -247,4 +247,18 @@ pub fn lifetime() {
     println!("The longest string is {}", result_iii); // もし string2 の方が長い文字列だった場合、
                                                       // そいつは 内側のスコープ終端で死亡しているため参照できない
     */
+
+    // 以下のエラーが出る
+    /*
+    error[E0597]: `string_iii2` does not live long enough // 訳: string_iii2 の寿命が短すぎる
+      --> src/main.rs:X:X
+       |
+    X  |         result_iii = longest(string_iii1.as_str(), string_iii2.as_str());
+       |                                                    ----------- borrow occurs here // 訳: ここで借用されている
+    X  |     }
+       |     ^ `string_iii2` dropped here while still borrowed // 訳: ここで string_iii2 は借用されたまま死亡
+    X  |     println!("The longest string is {}", result_iii);
+    X  | }
+       | - borrowed value needs to live until here // 訳: 借用されている値はここで生存していなければならない
+    */
 }
