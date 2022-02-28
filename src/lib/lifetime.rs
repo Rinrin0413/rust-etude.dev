@@ -236,4 +236,15 @@ pub fn lifetime() {
     // result_ii変数の宣言を内側のスコープの外に移すが、result_ii変数への代入は string2 の居るスコープ内に残したままにしてみる
     // それから result_ii を呼び出す println! を内側のスコープの外に、
     // 内側のスコープが終わった後に移動する。これはコンパイルできない
+
+    /*
+    let string_iii1 = String::from("long string is long"); // main終端まで生きる
+    let result_iii; // main終端まで生きる
+    {
+        let string_iii2 = String::from("xyz"); // 内側のスコープ終端で死ぬ
+        result_iii = longest(string_iii1.as_str(), string_iii2.as_str());
+    } // 内側のスコープの終端
+    println!("The longest string is {}", result_iii); // もし string2 の方が長い文字列だった場合、
+                                                      // そいつは 内側のスコープ終端で死亡しているため参照できない
+    */
 }
