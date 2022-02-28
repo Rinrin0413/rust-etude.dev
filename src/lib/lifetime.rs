@@ -216,6 +216,13 @@ pub fn lifetime() {
     // 返却される参照を 同じライフタイム引数'a で注釈したので、:
     //`-> &'a str`
     // 返却される参照も xかy のライフタイムの小さい方と同じだけ有効になる:
-    //返却されるか参照のライフタイム == min(xのライフタイム, yのライフタイム)
+    // 返却されるか参照のライフタイム == min(xのライフタイム, yのライフタイム)
     // ライフタイム注釈が異なる参照を渡すことで longest関数を制限する方法を考える
+
+    let string_ii1 = String::from("long string is long");
+    {
+        let string_ii2 = String::from("xyz");
+        let result_ii = longest(string_ii1.as_str(), string_ii2.as_str());
+        println!("The longest string is {}", result_ii); //< The longest string is long string is long
+    } // 内側のスコープの終端
 }
