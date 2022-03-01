@@ -303,4 +303,24 @@ pub fn lifetime() {
     // ここで 戻り値にライフタイム引数'a を指定しているが、
     // 戻り値のライフタイムは 引数のライフタイムと全く関係がないので この実装はコンパイルできない
     // 以下がエラー
+
+    /*
+        error[E0597]: `result` does not live long enough // 訳: result の寿命が短すぎる
+     --> src/main.rs:X:X
+      |
+    X |     result.as_str()
+      |     ^^^^^^ does not live long enough // 訳: 短命すぎる！
+    X | }
+      | - borrowed value only lives until here // 訳: 借用されたままここで死亡
+      |
+    note: borrowed value must be valid for the lifetime 'a as defined on the function body at X:X... 
+         // ┗ 訳: 借用されてる値は ライフタイム'aに対して有効でなければならない
+     --> src/main.rs:X:X
+      |
+    X | / fn longest_ii<'a>(x: &str, y: &str) -> &'a str {
+    X | |     let result = String::from("really long string");
+    X | |     result.as_str()
+    X | | }
+      | |_^
+    */
 }
