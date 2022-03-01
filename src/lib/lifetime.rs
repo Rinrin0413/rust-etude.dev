@@ -291,4 +291,12 @@ pub fn lifetime() {
     // 返される参照が 引数のどれかを参照していなければ、この関数内で生成された値を参照していることになる
     // これは その値が関数の末端でスコープを抜けるので、ダングリング参照(復習:望まぬデータの参照)になってしまう
     // コンパイルできない longest_ii関数 実装を考えてみる
+
+    /*
+                                           ┏ ダングリング参照
+    fn longest_ii<'a>(x: &str, y: &str) -> &'a str {
+        let result = String::from("really long string"); // A地点(関数の終端)で死亡
+        result.as_str()
+    } // A地点
+    */
 }
