@@ -339,4 +339,15 @@ pub fn lifetime() {
     // いままで 自己で所有する型を持つ構造体だけを定義してきた
     // 構造体に参照を保持させることvalleyもできるが、その場合 構造体定義の全参照にライフタイム注釈を付与する必要がある
     // 以下には 文字列スライスを保持する ImportantExcerpt(重要な一節)という構造体がある
+
+
+    struct ImportantExcerpt<'a> {
+        part: &'a str,
+    }
+    let novel = String::from("僕をイシュマエルとお呼び。何年か前・・・");
+    let first_sentence = novel.split('。')
+        .next()
+        .expect("`。` が見つかりませんでした");
+    let i = ImportantExcerpt { part: first_sentence };
+    println!("先頭の文: {}", i.part); //< 先頭の文: 僕をイシュマエルとお呼び
 }
