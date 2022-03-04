@@ -355,4 +355,9 @@ pub fn lifetime() {
     // ジェネリック型と同じく 構造体名の後の<>の中にジェネリックなライフタイム引数の名前を宣言することで、
     // 構造体定義の本体でライフタイム引数を使える。
     // このライフタイム注釈は、ImportantExcerptのインスタンスが partフィールドが参照している値よりも長生きしないことを意味する
+
+    // ここでは変数novel の所有する String の、最初の文への参照を保持する ImportantExcerptインスタンスを生成している
+    // novel のデータ(値)は ImportantExcerptインスタンスが生成される前に存在している
+    // 加えて ImportantExcerpt がスコープを抜けるまで novel もスコープを抜けないので、
+    // ImportantExcerptインスタンスの参照は有効となる
 }
