@@ -364,4 +364,12 @@ pub fn lifetime() {
   // ライフタイム省略
     // 全参照にはライフタイムがあり 参照を扱う関数や構造体には ライフタイム引数を指定する必要があることを学んだ
     // ですが 以下のような関数は ライフタイム注釈なしでコンパイルできる
+
+    fn first_word(arg:&str) -> &str { 
+        let bytes = arg.as_bytes();
+        for (i, &item) in bytes.iter().enumerate() { 
+            if item == b' ' { return &arg[0..i]; } 
+        }
+        &arg[..]
+    }
 }
