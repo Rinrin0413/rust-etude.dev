@@ -466,4 +466,14 @@ pub fn lifetime() {
 
     // impl の後ろのライフタイム引数宣言と 型名の後に使用するのは必須ですが、┗
     // 省略規則Iのため self への参照のライフタイムを注釈する必要はない
+
+    // ライフタイム省略規則IIIが適用される例はこちら
+    impl<'a> ImportantExcerpt<'a> {
+        //                          ┏━━━━━━━━━━━━━━━━━━━━┳━ 省略記法I により 参照が独自のライフタイムを得る
+        fn announce_and_return_part(&self, announcement: &str) -> &str {
+            //                                                    ┗ 省略記法III により self のライフタイムが代入される
+            println!("お知らせ: {}", announcement);
+            self.part
+        }
+    }
 }
