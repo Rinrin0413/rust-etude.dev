@@ -482,4 +482,14 @@ pub fn lifetime() {
     // それから 引数の1つが &self なので省略記法IIが適応されて、
     // 戻り値型は &self のライフタイムを得る
     // 全てのライフタイムが説明された
+
+    // 結果以下の様にしてくれる
+    /*
+    impl<'a> ImportantExcerpt<'a> {
+        fn announce_and_return_part<'b, 'c>(&'b self, announcement: &'c str) -> &'b str {
+            println!("お知らせ: {}", announcement);
+            self.part
+        }
+    }
+    */
 }
