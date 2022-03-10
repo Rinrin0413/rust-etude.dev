@@ -511,4 +511,19 @@ pub fn lifetime() {
 
  // ジェネリックな型引数、トレイト境界、ライフタイムを一度に
     // ジェネリック型引数, トレイト境界, ライフタイムを指定する記法を全て1関数で眺めめてみる
+
+    use std::fmt::Display;
+    //                                  ┏ ジェネリック型T を宣言          ┏ ジェネリック型T を受け取る
+    fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+    //                              ┃          ┗━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━┻━ ライフタイム'a を付与
+    //                              ┗ ライフタイム'a を宣言
+        where T: Display // where句で ジェネリック型T にトレイト境界を指定
+    {
+        println!("アナウンスてず! {}", ann); // 引数ann をアナウンスとして出力
+        if x.len() > y.len() { // max(x, y) ってやる
+            x
+        } else {
+            y
+        }
+    }
 }
