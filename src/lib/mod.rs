@@ -8,3 +8,4 @@ pub mod collections;
 pub mod error_handl;
 pub mod generics_and_traits;
 pub mod lifetime;
+pub mod testings;
