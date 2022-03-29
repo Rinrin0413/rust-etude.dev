@@ -178,7 +178,7 @@ fn main()
    lib::lifetime::lifetime(); // ライフタイム
 
    //✔自動テストについての説明 ソースコードは ./lib/testings.rs を参照
-   lib::lifetime::writing_tests(); // 自動テスト記載方法
+   lib::testings::writing_tests(); // 自動テスト記載方法
 
 
 
