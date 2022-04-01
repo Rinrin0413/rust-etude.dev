@@ -55,4 +55,7 @@ pub fn writing_tests() {
     // adder という新しいライブラリプロジェクトを生成する
     // $ cargo new adder --lib
     //      Created library `adder` project
+
+    //✔以降は ../../adder/src/lib.rs を参照
+    use adder;
 }
