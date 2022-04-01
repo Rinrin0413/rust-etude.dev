@@ -51,4 +51,8 @@ pub fn writing_tests() {
 
     // まずは、実際にはコードをテストしない 自動生成されたテンプレのテストで実験して、テストの動作の性質をいくらか学ぶ
     // その後で、以前書いたコードをテストしてみる
+
+    // adder という新しいライブラリプロジェクトを生成する
+    // $ cargo new adder --lib
+    //      Created library `adder` project
 }
