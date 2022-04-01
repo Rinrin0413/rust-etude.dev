@@ -18,7 +18,7 @@
         - [構造体](./src/lib/structure.rs)
         - [列挙子](./src/lib/enm_mch_iflet.rs) / [match式](./src/lib/enm_mch_iflet.rs#L88) / [if-let記法](./src/lib/enm_mch_iflet.rs#L168)
         - [パッケージ / クレート](./src/lib/packages_crates_modules.rs) / [モジュール](./src/lib/packages_crates_modules.rs#L41)
-            - [テストライブラリwebdev](./webdev/src/)
+            - [テストライブラリwebdev](./webdev/)
         - [コレクション](./src/lib/collections.rs)( [vector](./src/lib/collections.rs#L14) / [strings](./src/lib/collections.rs#L113) / [hash-maps](./src/lib/collections.rs#L302) )
             - [統計学モジュール](./src/lib/collections.rs#L430)
             - [ピッグ・ラテンモジュール](./src/lib/collections.rs#L496)
@@ -26,6 +26,7 @@
         - [関数でのコード抽象化](./src/lib/generics_and_traits.rs) / [ジェネリクス](./src/lib/generics_and_traits.rs#L84) / [トレイト](./src/lib/generics_and_traits.rs#L300)
         - [ライフタイム](./src/lib/lifetime.rs)
         - [テスト機能](./src/lib/testings.rs)
+            - [テストライブラリadder](./adder/)
 
 <br />
 
