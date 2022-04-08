@@ -33,3 +33,8 @@
     // test tests::it_works ... ok
     //
     // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    // Cargo がテストをコンパイルして走らせました
+    // Running の行の後から解読する
+    // `running 1 test` : テストしたテストの数を示している。次の行、
+    // `test tests::it_works ... ok` : テスト関数の名前とそのテストの実行結果(ここではok)を示している
