@@ -23,3 +23,13 @@
     // 関数本体では assert_eq!マクロをって 2 + 2 が 4 に等しいとアサーションしている
     // このアサーションは 典型的なテストの記述例を成している
     // 走らせてこのテストが通る(テストが成功する)ことを確かめる
+    
+    // $ cargo test
+    //   Compiling adder v0.1.0 (..\adder)
+    //    Finished test [unoptimized + debuginfo] target(s) in 0.33s
+    //     Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 1 test
+    // test tests::it_works ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
