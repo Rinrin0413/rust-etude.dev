@@ -58,3 +58,14 @@
 
     // テスト名の変更でどうテスト出力が変わるか確かめてみる
     // it_works関数を explorationに改名してみる
+
+    /*
+    #[cfg(test)]
+    mod tests {
+        #[test]
+        fn exploration() {
+            let result = 2 + 2;
+            assert_eq!(result, 4);
+        }
+    }
+    */
