@@ -69,3 +69,13 @@
         }
     }
     */
+    
+    // $ cargo test
+    //   Compiling adder v0.1.0 (...\adder)
+    //    Finished test [unoptimized + debuginfo] target(s) in 0.31s
+    //     Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 1 test
+    // test tests::exploration ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
