@@ -99,3 +99,26 @@
     }
     */
     // すると以下が吐かれる:
+
+    // $ cargo test 
+    //   Compiling adder v0.1.0 (...\adder)
+    //    Finished test [unoptimized + debuginfo] target(s) in 0.65s
+    //     Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 2 tests
+    // test tests::another ... FAILED
+    // test tests::exploration ... ok
+    //
+    // failures:
+    //
+    // ---- tests::another stdout ----
+    // thread 'tests::another' panicked at 'パニック！', src\lib.rs:X:X
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    //
+    //
+    // failures:
+    //     tests::another
+    //
+    // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    // error: test failed, to rerun pass '--lib'
