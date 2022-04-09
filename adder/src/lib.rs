@@ -122,3 +122,7 @@
     // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
     //
     // error: test failed, to rerun pass '--lib'
+
+
+    // まとめで ok の代わりに FAILED と書かれている。
+    // 実行結果(test tests::...) とまとめ(test result) の間に、新たに2つのフィールドが現れました
