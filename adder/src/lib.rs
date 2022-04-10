@@ -156,3 +156,8 @@
             self.width > other.width && self.height > other.height
         }
     }
+
+    // can_holdメソッドは論理値を返すので assert!マクロの出番です
+    // 以下では 幅8、高さ7 の Rectangleインスタンスを生成し、
+    // これが 幅5、高さ1 の別の Rectangleインスタンスに収まるかアサーションすることで、
+    // can_hold をのテストを書く
