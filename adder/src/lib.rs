@@ -193,3 +193,7 @@
     // test tests::larger_can_hold_smaller ... ok
     //
     // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    // 通りますね＾＾
+    // 別のテストを追加してみる
+    // 次は 小さい長方形に大きな長方形が収まらないことをアサーションします
