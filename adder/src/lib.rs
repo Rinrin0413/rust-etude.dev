@@ -179,3 +179,7 @@
             assert!(larger.can_hold(&smaller));
         }
     //} // まだテスト関数置くので閉じさせない
+
+    // テストは larger_can_hold_smaller と名付け、Rectangleインスタンスを2つ生成している
+    // そして assert!マクロを呼び出し、larger.can_hold(&smaller) の呼び出し結果(論理値)を渡しました
+    // この式は true を返し テストは通るはずです
