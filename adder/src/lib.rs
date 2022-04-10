@@ -161,3 +161,21 @@
     // 以下では 幅8、高さ7 の Rectangleインスタンスを生成し、
     // これが 幅5、高さ1 の別の Rectangleインスタンスに収まるかアサーションすることで、
     // can_hold をのテストを書く
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+    
+        #[test]
+        fn larger_can_hold_smaller() {
+            let larger = Rectangle {
+                width: 8,
+                height: 7,
+            };
+            let smaller = Rectangle {
+                width: 5,
+                height: 1,
+            };
+            assert!(larger.can_hold(&smaller));
+        }
+    //} // まだテスト関数置くので閉じさせない
