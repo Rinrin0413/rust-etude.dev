@@ -197,3 +197,17 @@
     // 通りますね＾＾
     // 別のテストを追加してみる
     // 次は 小さい長方形に大きな長方形が収まらないことをアサーションします
+
+        #[test]
+        fn smaller_cannot_hold_larger() {
+            let larger = Rectangle {
+                width: 8,
+                height: 7,
+            };
+            let smaller = Rectangle {
+                width: 5,
+                height: 1,
+            };
+            assert!(!smaller.can_hold(&larger));
+        }
+    }
