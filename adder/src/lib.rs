@@ -320,3 +320,10 @@
             assert_eq!(4, add_two(2));
         }
     }
+
+    // 長くなるので出力は一部分のみにする:
+
+    // running 1 test
+    // test tests_iii::it_adds_two ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
