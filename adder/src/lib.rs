@@ -215,3 +215,14 @@
     // 今回の場合、can_hold関数が false を返すことを期待するので、
     // assert!マクロ に渡す前に論理値を反転させる必要がある
     // !smaller.can_hold(&larger) とすることで反転させている
+
+    // $ cargo test
+    //   Compiling adder v0.1.0 (...\adder)
+    //    Finished test [unoptimized + debuginfo] target(s) in 0.30s
+    //     Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 2 tests
+    // test tests::larger_can_hold_smaller ... ok
+    // test tests::smaller_cannot_hold_larger ... ok
+    //
+    // test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
