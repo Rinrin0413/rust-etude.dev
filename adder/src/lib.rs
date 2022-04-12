@@ -308,3 +308,15 @@
 
     // 以下に 引数に2を加算して返す add_two関数がある
     // そして assert_eq!マクロでこの関数をテストしてみる
+
+    pub fn add_two(a: i32) -> i32 {a + 2 }
+    
+    #[cfg(test)]
+    mod tests_iii {
+        use super::*;
+    
+        #[test]
+        fn it_adds_two() {
+            assert_eq!(4, add_two(2));
+        }
+    }
