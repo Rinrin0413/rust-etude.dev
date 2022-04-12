@@ -268,3 +268,32 @@
             assert!(!smaller.can_hold_ii(&larger));
         }
     }
+    
+    // で、
+
+    // $ cargo test
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.28s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 3 tests
+    // test tests_ii::larger_can_hold_smaller_ii ... FAILED
+    // test tests_ii::smaller_cannot_hold_larger_ii ... FAILED
+    //
+    // failures:
+    //
+    // ---- tests_ii::larger_can_hold_smaller_ii stdout ----
+    // thread 'tests_ii::larger_can_hold_smaller_ii' panicked at 'assertion failed: larger.can_hold_ii(&smaller)', src\lib.rs:278:13
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    //
+    // ---- tests_ii::smaller_cannot_hold_larger_ii stdout ----
+    // thread 'tests_ii::smaller_cannot_hold_larger_ii' panicked at 'assertion failed: !smaller.can_hold_ii(&larger)', src\lib.rs:291:13
+    //
+    //
+    // failures:
+    //     tests_ii::larger_can_hold_smaller_ii
+    //     tests_ii::smaller_cannot_hold_larger_ii
+    //
+    // test result: FAILED. 2 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    // error: test failed, to rerun pass '--lib'
