@@ -226,3 +226,8 @@
     // test tests::smaller_cannot_hold_larger ... ok
     //
     // test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    // テストが両方通っていますね(＾___＾)
+    // さて、can_hold関数をバグらせたらどうなるでしょう
+    // 比較演算子を反転させてやりましょう
+    // やっぱ名前 can_hold_ii関数にします
