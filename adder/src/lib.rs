@@ -211,3 +211,7 @@
             assert!(!smaller.can_hold(&larger));
         }
     }
+
+    // 今回の場合、can_hold関数が false を返すことを期待するので、
+    // assert!マクロ に渡す前に論理値を反転させる必要がある
+    // !smaller.can_hold(&larger) とすることで反転させている
