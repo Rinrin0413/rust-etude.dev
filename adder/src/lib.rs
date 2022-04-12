@@ -333,3 +333,17 @@
 
     // add_two(_ii)関数バグらせますwwwww
     // 2の代わりに3でも加算させましょう
+
+    pub fn add_two_ii(a: i32) -> i32 {
+        a + 3
+    }
+
+    #[cfg(test)]
+    mod tests_iv {
+        use super::*;
+    
+        #[test]
+        fn it_adds_two_ii() {
+            assert_eq!(4, add_two_ii(2));
+        }
+    }
