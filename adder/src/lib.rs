@@ -231,3 +231,40 @@
     // さて、can_hold関数をバグらせたらどうなるでしょう
     // 比較演算子を反転させてやりましょう
     // やっぱ名前 can_hold_ii関数にします
+    
+    impl Rectangle {
+        fn can_hold_ii(&self, other: &Rectangle) -> bool {
+            self.width < other.width && self.height < other.height
+        }
+    }
+
+    #[cfg(test)]
+    mod tests_ii {
+        use super::*;
+
+        #[test]
+        fn larger_can_hold_smaller_ii() {
+            let larger = Rectangle {
+                width: 8,
+                height: 7,
+            };
+            let smaller = Rectangle {
+                width: 5,
+                height: 1,
+            };
+            assert!(larger.can_hold_ii(&smaller));
+        }
+
+        #[test]
+        fn smaller_cannot_hold_larger_ii() {
+            let larger = Rectangle {
+                width: 8,
+                height: 7,
+            };
+            let smaller = Rectangle {
+                width: 5,
+                height: 1,
+            };
+            assert!(!smaller.can_hold_ii(&larger));
+        }
+    }
