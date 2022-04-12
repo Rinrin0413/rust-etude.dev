@@ -297,3 +297,5 @@
     // test result: FAILED. 2 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
     //
     // error: test failed, to rerun pass '--lib'
+    
+    // しっかりとバグを検知している
