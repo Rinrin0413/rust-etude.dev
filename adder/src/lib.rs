@@ -436,3 +436,18 @@
     // 失敗している
     // 今回の場合、失敗メッセージで greeting関数から得た値を出力していればありがたいはず
     // やってみう
+
+    #[cfg(test)]
+    mod tests_vii {
+        use super::*;
+    
+        #[test]
+        fn greeting_contains_name_iii() {
+            let result = greeting_ii("もるか");
+            assert!(
+                result.contains("もるか"),
+                "\n> greeting_ii関数は名指しできてないよ。\n> 値: {}\n",
+                result
+            );
+        }
+    }
