@@ -347,3 +347,23 @@
             assert_eq!(4, add_two_ii(2));
         }
     }
+
+    // running 1 test
+    // test tests_iv::it_adds_two_ii ... FAILED
+    //
+    // failures:
+    //
+    // ---- tests_iv::it_adds_two_ii stdout ----
+    // thread 'main' panicked at 'assertion failed: `(left == right)`
+    //   left: `4`,
+    //   right: `5`', src/lib.rs:X:X
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+    //
+    //
+    // failures:
+    //     tests_iv::it_adds_two_ii
+    //
+    // test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
+    //
+    //
+    // error: test failed, to rerun pass '--lib'
