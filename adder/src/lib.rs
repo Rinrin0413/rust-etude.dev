@@ -367,3 +367,6 @@
     //
     //
     // error: test failed, to rerun pass '--lib'
+
+    // `(left == right)` という文言の下で leftが4、rightが5 であったと示されている
+    // ありがたいですね
