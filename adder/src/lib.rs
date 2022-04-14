@@ -381,3 +381,38 @@
     // println!するときなどのように引数を置くことができる
     // 例として、名指しで挨拶をする関数があるとして
     // 関数に渡した名前が出力に出現することをテストしたいとしする
+
+    pub fn greeting(name: &str) -> String {
+        format!("こんちゃ {}!", name)
+    }
+    
+    #[cfg(test)]
+    mod tests_v {
+        use super::*;
+    
+        #[test]
+        fn greeting_contains_name() {
+            let result = greeting("もるか");
+            assert!(result.contains("もるか"));
+        }
+    }
+
+    // 結果:
+    // test tests_v::greeting_contains_name ... ok
+
+    // 名指ししないようにしてみる
+
+    pub fn greeting_ii(name: &str) -> String {
+        String::from("こんちゃ!")
+    }
+    
+    #[cfg(test)]
+    mod tests_vi {
+        use super::*;
+    
+        #[test]
+        fn greeting_contains_name_ii() {
+            let result = greeting_ii("もるか");
+            assert!(result.contains("もるか"));
+        }
+    }
