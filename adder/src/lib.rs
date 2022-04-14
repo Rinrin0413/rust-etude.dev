@@ -416,3 +416,19 @@
             assert!(result.contains("もるか"));
         }
     }
+
+    // 結果:
+    
+    // test tests_vi::greeting_contains_name_ii ... FAILED
+    //
+    // failures:
+    //
+    // --SNIP--
+    //
+    // ---- tests_vi::greeting_contains_name_ii stdout ----
+    // thread 'tests_vi::greeting_contains_name_ii' panicked at 'assertion failed: result.contains(\"もるか\")', src\lib.rs:X:X
+    //
+    //
+    // failures:
+    //    ...
+    //    tests_iv::it_adds_two_ii
