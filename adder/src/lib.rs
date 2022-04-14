@@ -451,3 +451,11 @@
             );
         }
     }
+
+    // 結果(一部):
+
+    // ---- tests_vii::greeting_contains_name_iii stdout ----
+    // thread 'tests_vii::greeting_contains_name_iii' panicked at '
+    // > greeting_ii関数は名指しできてないよ。
+    // > 値: こんちゃ!
+    // ', src\lib.rs:X:X
