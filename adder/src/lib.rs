@@ -476,3 +476,25 @@
     // これは、テスト関数に should_panic という別の属性を追加することで行える
     // この属性は、関数内のコードがパニックした場合のみテストを通す
     // つまり、パニックしなかったら テストは失敗する
+
+    // 以下は、Guess::new のエラーハンドリングが正常に動作していることを確認している
+    pub struct Guess { value: i32 }
+    impl Guess {
+        pub fn new(value: i32) -> Guess {
+            if value < 1 || value > 100 {
+                panic!("予想値は1から100の間でなければなりませんが、{}でした。 ", value);
+            }
+            Guess { value }
+        }
+    }
+    
+    #[cfg(test)]
+    mod tests_iix {
+        use super::*;
+    
+        #[test]
+        #[should_panic]
+        fn greater_than_100() {
+            Guess::new(256);
+        }
+    }
