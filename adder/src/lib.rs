@@ -501,3 +501,5 @@
 
     // #[test]属性の次の行に #[should_panic]属性を配置している
     // これでテストを実行すると:
+
+    // test tests_iix::greater_than_100 - should panic ... ok
