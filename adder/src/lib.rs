@@ -534,3 +534,6 @@
     // テスト結果:
 
     // test tests_ix::greater_than_100_ii - should panic ... FAILED
+
+    // このように、
+    // パニックを起こせていないのでテストが通りません
