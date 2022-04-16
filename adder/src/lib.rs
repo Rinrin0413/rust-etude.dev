@@ -578,3 +578,7 @@
 
     // test tests_x::greater_than_100_iii - should panic ... ok
     // test tests_x::less_than_1 - should panic ... ok
+
+    // 検出しているみたいです
+    // エラーハンドリングをまたぶち壊してみます
+    // `value > 100` を `value > 512` に変えてやります
