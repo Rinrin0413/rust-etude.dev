@@ -573,3 +573,8 @@
             GuessIII::new(-32);
         }
     }
+
+    // テスト結果:
+
+    // test tests_x::greater_than_100_iii - should panic ... ok
+    // test tests_x::less_than_1 - should panic ... ok
