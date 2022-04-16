@@ -507,3 +507,26 @@
     // 256から Guessインスタンスを生成しようとしてパニックを起こすので、
     // テストが通っている
     // 次はエラーハンドリングを消し飛ばして実行してみる
+
+    pub struct GuessII { value: i32 }
+    impl GuessII {
+        pub fn new(value: i32) -> Guess {
+            /* // エラーハンドリングを無効化
+            if value < 1 || value > 100 {
+                panic!("予想値は1から100の間でなければなりませんが、{}でした。 ", value);
+            }
+            */
+            Guess { value }
+        }
+    }
+
+    #[cfg(test)]
+    mod tests_ix {
+        use super::*;
+    
+        #[test]
+        #[should_panic]
+        fn greater_than_100_ii() {
+            GuessII::new(256);
+        }
+    }
