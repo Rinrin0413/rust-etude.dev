@@ -582,3 +582,32 @@
     // 検出しているみたいです
     // エラーハンドリングをまたぶち壊してみます
     // `value > 100` を `value > 512` に変えてやります
+
+    pub struct GuessIV { value: i32 }
+    impl GuessIV {
+        pub fn new(value: i32) -> Guess {
+            if value < 1 {
+                panic!("予想値は1以上でなければなりませんが、{}でした。", value);
+            } else if value > 512 {
+                panic!("予想値は100以下でなければなりませんが、{}でした。", value);
+            }
+            Guess { value }
+        }
+    }
+    
+    #[cfg(test)]
+    mod tests_xi {
+        use super::*;
+    
+        #[test]
+        #[should_panic(expected = "予想値は100以下でなければなりません")]
+        fn greater_than_100_iv() {
+            GuessIV::new(256);
+        }
+
+        #[test]
+        #[should_panic(expected = "予想値は1以上でなければなりません")]
+        fn less_than_1_ii() {
+            GuessIV::new(-32);
+        }
+    }
