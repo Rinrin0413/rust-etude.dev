@@ -544,3 +544,32 @@
     // should_panic属性に expected引数を追加することでこれをカバーできます
     // このテストハーネスは、失敗メッセージに 特定のテキストが含まれていることを確かめることができる
     // expected引数で Guess を補完してみる
+
+    pub struct GuessIII { value: i32 }
+    impl GuessIII {
+        pub fn new(value: i32) -> Guess {
+            if value < 1 {
+                panic!("予想値は1以上でなければなりませんが、{}でした。", value);
+            } else if value > 100 {
+                panic!("予想値は100以下でなければなりませんが、{}でした。", value);
+            }
+            Guess { value }
+        }
+    }
+    
+    #[cfg(test)]
+    mod tests_x {
+        use super::*;
+    
+        #[test]
+        #[should_panic(expected = "予想値は100以下でなければなりません")]
+        fn greater_than_100_iii() {
+            GuessIII::new(256);
+        }
+
+        #[test]
+        #[should_panic(expected = "予想値は1以上でなければなりません")]
+        fn less_than_1() {
+            GuessIII::new(-32);
+        }
+    }
