@@ -611,3 +611,11 @@
             GuessIV::new(-32);
         }
     }
+
+    // テスト結果は:
+
+    // test tests_xi::less_than_1_ii - should panic ... ok
+    // test tests_xi::greater_than_100_iv - should panic ... FAILED
+
+    // `GuessIV::new(256);` がパニックを起こさずに 256 を取り込みやがったので、
+    // エラーは通りませんでした
