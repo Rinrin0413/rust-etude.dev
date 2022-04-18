@@ -624,3 +624,16 @@
     // これまでは、失敗するとパニックするようなテストを書いてきた
     // Result<T, E> を使うテストを書くこともできる
     // 以下は Result<T, E> を使い、パニックする代わりに Err を返すように書き直したもの：
+
+    #[cfg(test)]
+    mod tests_xii {
+
+        #[test]
+        fn it_works_ii() -> Result<(), String> {
+            if true {
+                Ok(())
+            } else {
+                Err(String::from("Error!!!"))
+            }
+        }
+    }
