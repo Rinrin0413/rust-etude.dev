@@ -179,6 +179,7 @@ fn main()
 
    //✔自動テストについての説明 ソースコードは ./lib/testings.rs を参照
    lib::testings::writing_tests(); // 自動テスト記載方法
+   lib::testings::how_to_run(); // Cargo test の詳細
 
 
 
