@@ -342,4 +342,8 @@ pub fn how_to_run() {
     //                      test, then the test runner will ignore these tests during
     //                      normal test runs. Running with --ignored or --include-ignored will run
     //                      these tests.
+
+  // テストを並行または連続して実行する
+    // 複数のテストを実行するとき、標準ではスレッドを使用して並行に走る
+    // つまり テストが早く実行し終わり、コードが機能しているいかにかかわらず、反応をより早く得られる
 }
