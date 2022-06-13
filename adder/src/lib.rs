@@ -699,3 +699,8 @@
     // thread 'tests_xiii::this_test_will_fail' panicked at 'assertion failed: `(left == right)`
     //   left: `5`,
     //   right: `10`', src\lib.rs:X:X
+
+    // `I got the value 4` という文言がどこにもありません
+    // これは成功したテストの出力される値が デフォルトでは表示されない(キャプチャされている)故
+    // これを表示させたい場合は、
+    // 出力キャプチャ機能を --nocaptureフラグで無効化できる
