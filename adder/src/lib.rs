@@ -728,3 +728,7 @@
     // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
     //
     // error: test failed, to rerun pass '--lib'
+
+    // 値の出力とテスト結果の出力がごちゃ混ぜになっているのに注意
+    // この理由は、テストが並行に実行されている故
+    // -test-threads=1オプション と --nocaptureフラグを同時び使ってみる
