@@ -659,3 +659,26 @@
     // テストが通ったことを示す文言しか見られない
     // テストが失敗すれば 残りの失敗メッセージと共に、標準出力に出力されたものが全て見える
     // 例として以下は、引数の値を出力し、10を返す関数(用途不明)と通過するテスト1つ、失敗するテスト1つ
+
+	fn prints_and_returns_10(a: i32) -> i32 {
+		//{}という値を得た
+		println!("I got the value {}", a);
+		10
+	}
+	
+	#[cfg(test)]
+	mod tests_xiii {
+		use super::*;
+	
+		#[test]
+		fn this_test_will_pass() {
+			let value = prints_and_returns_10(4);
+			assert_eq!(10, value);
+		}
+	
+		#[test]
+		fn this_test_will_fail() {
+			let value = prints_and_returns_10(8);
+			assert_eq!(5, value);
+		}
+	}
