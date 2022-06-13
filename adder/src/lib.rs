@@ -732,3 +732,27 @@
     // 値の出力とテスト結果の出力がごちゃ混ぜになっているのに注意
     // この理由は、テストが並行に実行されている故
     // -test-threads=1オプション と --nocaptureフラグを同時び使ってみる
+
+    // $ cargo test -- --nocapture --test-threads=1
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.28s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 2 tests
+    // test tests_xiii::this_test_will_fail ... I got the value 8
+    // thread 'main' panicked at 'assertion failed: `(left == right)`
+    //   left: `5`,
+    //  right: `10`', src\lib.rs:X:X
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    // FAILED
+    // test tests_xiii::this_test_will_pass ... I got the value 4
+    // ok
+    //
+    // failures:
+    //
+    // failures:
+    //     tests_xiii::this_test_will_fail
+    //
+    // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    // error: test failed, to rerun pass '--lib'
