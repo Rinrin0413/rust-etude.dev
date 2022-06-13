@@ -704,3 +704,27 @@
     // これは成功したテストの出力される値が デフォルトでは表示されない(キャプチャされている)故
     // これを表示させたい場合は、
     // 出力キャプチャ機能を --nocaptureフラグで無効化できる
+
+    // $cargo test -- --nocapture
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.31s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 2 tests
+    // I got the value 8
+    // I got the value 4
+    // thread 'tests_xiii::this_test_will_failtest tests_xiii::this_test_will_pass ... ' panicked at 'okassertion failed: `(left == right)`
+    //   left: `5`,
+    //   right: `10`
+    // ', src\lib.rs:X:X
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    // test tests_xiii::this_test_will_fail ... FAILED
+    //
+    // failures:
+    //
+    // failures:
+    //     tests_xiii::this_test_will_fail
+    //
+    // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    // error: test failed, to rerun pass '--lib'
