@@ -756,3 +756,5 @@
     // test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
     //
     // error: test failed, to rerun pass '--lib'
+
+    // 各テストごとにまとめられた。やったね！!!
