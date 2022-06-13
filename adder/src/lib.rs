@@ -682,3 +682,20 @@
 			assert_eq!(5, value);
 		}
 	}
+
+    // テスト結果(一部):
+
+    // test tests_xiii::this_test_will_pass ... ok
+    // test tests_xiii::this_test_will_fail ... FAILED
+    //
+    // --SNIP--
+    //
+    // failures:
+    //
+    // --SNIP--
+    //
+    // ---- tests_xiii::this_test_will_fail stdout ----
+    // I got the value 8
+    // thread 'tests_xiii::this_test_will_fail' panicked at 'assertion failed: `(left == right)`
+    //   left: `5`,
+    //   right: `10`', src\lib.rs:X:X
