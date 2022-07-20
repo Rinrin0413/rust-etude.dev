@@ -799,3 +799,8 @@
     // test tests_xiv::one_hundred ... ok
     //
     // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+    // one_hundred という名前のテストだけが走りました
+    // まとめ行(test result) の最後に `X filtered out` とある
+    // これは これ以外のテストがX個あることを知らせてくれている
+    
