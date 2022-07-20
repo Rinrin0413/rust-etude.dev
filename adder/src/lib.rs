@@ -764,3 +764,25 @@
     // cargo test に走らせたいテストの名前を引数として渡すことで、実行するテストを選ぶことがでる
 
     // 例として以下の add_two_iii関数用に3つテストを作成した
+
+    pub fn add_two_iii(a: i32) -> i32 { a + 2 }
+    
+    #[cfg(test)]
+    mod tests_xiv {
+        use super::*;
+    
+        #[test]
+        fn add_two_and_two() {
+            assert_eq!(4, add_two_iii(2));
+        }
+    
+        #[test]
+        fn add_three_and_two() {
+            assert_eq!(5, add_two_iii(3));
+        }
+    
+        #[test]
+        fn one_hundred() {
+            assert_eq!(102, add_two_iii(100));
+        }
+    }
