@@ -787,5 +787,15 @@
         }
     }
 
-    // 単独のテストを走らせる
-     // テスト関数の名前を cargo test に渡して、そのテストのみを実行することがでる:
+   // 単独のテストを走らせる
+    // テスト関数の名前を cargo test に渡して、そのテストのみを実行することがでる:
+
+    // $ cargo test one_hundred
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.35s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 1 test
+    // test tests_xiv::one_hundred ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
