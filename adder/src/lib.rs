@@ -823,3 +823,7 @@
     // test tests_xiv::add_two_and_two ... ok
     //
     // test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
+
+    // このコマンドでは、テスト関数名に `_and_two` を含むテストを全て実行し、
+    // それら以外のテストを全て除外した
+    
