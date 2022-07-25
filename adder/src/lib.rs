@@ -841,3 +841,7 @@
     // test tests_xiv::one_hundred ... ok
     //
     // test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
+
+  // 特に要望のない限りテストを無視する
+    // 時として、特定のテストの実行に時間がかかることがあり、それのみを cargo test の実行から除外する必要があるかもしれない
+    // 実行したいテストを列挙して指定するよりも、特定のテストを ignore属性で除外するようにできる:
