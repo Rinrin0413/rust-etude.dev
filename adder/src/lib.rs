@@ -829,3 +829,15 @@
 
     // テスト関数を含むテストモジュールの名前を指定することもできる
     // こうすることで、そのモジュール内の 全てのテストを実行することができる:
+
+    // $ cargo test tests_xiv
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.33s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 3 tests
+    // test tests_xiv::add_three_and_two ... ok
+    // test tests_xiv::add_two_and_two ... ok
+    // test tests_xiv::one_hundred ... ok
+    //
+    // test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
