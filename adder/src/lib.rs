@@ -812,3 +812,14 @@
     // テスト名の一部分を指定でき、その値に合致する全てのテストが走る
     // 例えば、先ほどのテストの2つに `_and_two` という文言を含むので、
     // cargo test _and_two と実行することで、その二つを走らせることができるはず:
+
+    // $ cargo test _and_two
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.32s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 2 tests
+    // test tests_xiv::add_three_and_two ... ok
+    // test tests_xiv::add_two_and_two ... ok
+    //
+    // test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
