@@ -864,3 +864,13 @@
     // #[test] の後ろに #[ignore] と追加するだけで、テスト実行の際に無視される
     // 上の場合では、it_works が実行されるものの、expensive_test は実行されない:
 
+    // $ cargo test
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.27s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //    
+    // running 2 tests
+    // test tests_xv::expensive_test ... ignored
+    // test tests_xv::it_works ... ok
+    //    
+    // test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; X filtered out; finished in 0.00s
