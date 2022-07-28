@@ -874,3 +874,5 @@
     // test tests_xv::it_works ... ok
     //    
     // test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; X filtered out; finished in 0.00s
+
+    // また、ignore されたテストのみを実行したかったら、`cargo test -- --ignored` とするとよい:
