@@ -888,3 +888,5 @@
     // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
 
     // ignore されたテストを実行する時間が確保出来たらこのコマンドを走らせる、ということができる
+
+    //✔以降は ../../src/lib/testings.rs の DOC.11-3 以下を参照
