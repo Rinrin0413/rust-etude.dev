@@ -876,3 +876,15 @@
     // test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; X filtered out; finished in 0.00s
 
     // また、ignore されたテストのみを実行したかったら、`cargo test -- --ignored` とするとよい:
+
+    // $ cargo test -- --ignored
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.35s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 1 test
+    // test tests_xv::expensive_test ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; X filtered out; finished in 0.00s
+
+    // ignore されたテストを実行する時間が確保出来たらこのコマンドを走らせる、ということができる
