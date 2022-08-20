@@ -64,8 +64,8 @@ pub fn scala() {
 	println!("{}", diff);
 	let prod = X*Z; // 乗法
 	println!("{}", prod);
-	let multipl = X/Z; // 除法
-	println!("{}", multipl);
+	let multiple = X/Z; // 除法
+	println!("{}", multiple);
 	let remain = X % Z; // 除法の余り
 	println!("{}", remain);
 

@@ -57,7 +57,7 @@
     //    mod display {
     //        fn show_icon() {}
     //
-    //        fn show_haeder() {}
+    //        fn show_header() {}
     //    }
     //    mod animation {
     //        fn rotate_icon() {}
@@ -74,7 +74,7 @@
     // └── front_end
     //     ├── display
     //     │   ├── show_icon
-    //     │   └── show_haeder
+    //     │   └── show_header
     //     └── serving
     //         ├── rotate_icon
     //         └── scale_up_header_in_hover

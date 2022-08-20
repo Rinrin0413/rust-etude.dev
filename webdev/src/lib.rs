@@ -4,7 +4,7 @@ mod front_end {
     pub mod display {
         pub fn show_icon() {}
 
-        fn show_haeder() {}
+        fn show_header() {}
     }
     pub mod animation {
         fn rotate_icon() {}
