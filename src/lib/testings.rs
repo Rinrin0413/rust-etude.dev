@@ -395,4 +395,14 @@ pub fn how_to_run() {
     // しかし、単体テストはコードと同じファイルに存在するので、#[cfg(test)] を使用してコンパイル結果に含まれないよう指定する
 
     // adderライブラリを生成した際に、Cargo が lib.rs に以下のコードを生成しました:
+
+    /*
+    #[cfg(test)]
+    mod tests {
+        #[test]
+        fn it_works() {
+            assert_eq!(2 + 2, 4);
+        }
+    }
+    */
 }
