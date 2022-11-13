@@ -896,3 +896,21 @@
     // 他の言語では非公開関数をテストするのは困難又は不可能だったりする
     // Rust の場合は 非公開関数をテストすることは可能です
     // 以下の非公開関数 internal_adder のテストを考えてみる
+
+    fn internal_adder(a: i32, b: i32) -> i32 {
+        a + b
+    }
+
+    pub fn add_two_iv(a: i32) -> i32 {
+        internal_adder(a, 2)
+    }
+    
+    #[cfg(test)]
+    mod tests_xvi {
+        use super::*;
+    
+        #[test]
+        fn internal() {
+            assert_eq!(4, internal_adder(2, 2));
+        }
+    }
