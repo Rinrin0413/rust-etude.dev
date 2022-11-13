@@ -914,3 +914,6 @@
             assert_eq!(4, internal_adder(2, 2));
         }
     }
+
+    // 正直 internal で internal_adder関数の挙動は保証されている気がします(主観)
+    // 非公開関数はテストするべきではないと思うなら、Rust はそれを強制しません...
