@@ -935,3 +935,4 @@
 
     // testsディレクトリに integration_test.rs というファイルを作成する
 
+    //✓以降は ../tests/integration_test.rs を参照
