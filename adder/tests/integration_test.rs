@@ -51,3 +51,12 @@
     // ここでも、テスト関数の名前を引数として cargo test に指定することができる
     // 特定の結合テストファイルのテストを全て走らせるには cargo test に --test引数を置いて、その後にファイル名を続けて置く:
 
+    // $ cargo test --test integration_test
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.37s
+    //      Running tests\integration_test.rs (target\debug\deps\integration_test-cc68398b02743d86.exe)
+    //
+    // running 1 test
+    // test it_adds_two ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
