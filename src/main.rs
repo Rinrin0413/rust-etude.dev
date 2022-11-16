@@ -4,7 +4,7 @@
 // 2連スラッシュを打つととそこからその行の後ろはコメントアウトと見なされる。
 /* コンパイラに無視されます */
 
-mod lib; // data_types.jsonを関連付けてる
+mod others; // ./others配下を読む
 
 // main関数
 // コンパイルされたバイナリが実行されるとこの関数が呼び出されます
@@ -47,8 +47,8 @@ fn main()
     println!("{}", atai*2); // 2倍にしてみる
 
    //✔データ型のソースコードは ./lib/data_types.rs を参照
-    lib::data_types::scala(); // スカラ型
-    lib::data_types::complex(); // 複合型
+    others::data_types::scala(); // スカラ型
+    others::data_types::complex(); // 複合型
     
    // println!関数特集
     // pythonの f"{}" みたいなやつ。
@@ -124,62 +124,62 @@ fn main()
     println!("{}", plus_one(16)); 
 
    //✔フロー制御(条件分岐やループ)のソースコードは ./lib/flow_control.rs を参照
-    lib::flow_control::bi_if(); // if
-    lib::flow_control::lp_loop(); // loop
-    lib::flow_control::lp_while(); // while
-    lib::flow_control::lp_for(); // for
+    others::flow_control::bi_if(); // if
+    others::flow_control::lp_loop(); // loop
+    others::flow_control::lp_while(); // while
+    others::flow_control::lp_for(); // for
 
    //✔変換のスコープやString型, 所有権についての説明, ソースコードは ./lib/ownership.rs を参照
-    lib::ownership::val_and_scope(); // 変数とスコープ
-    lib::ownership::type_string(); // String型
-    lib::ownership::interact_method(); // 変数とデータの相互作用法
-    lib::ownership::fun_and_ownership(); //所有権と関数
-    lib::ownership::return_and_scope(); // 戻り値とスコープ
+    others::ownership::val_and_scope(); // 変数とスコープ
+    others::ownership::type_string(); // String型
+    others::ownership::interact_method(); // 変数とデータの相互作用法
+    others::ownership::fun_and_ownership(); //所有権と関数
+    others::ownership::return_and_scope(); // 戻り値とスコープ
 
    //✔参照や借用についての説明, ソースコードは同じく ./lib/ownership.rs を参照
-    lib::ownership::ref_and_bor(); // 参照と借用
-    lib::ownership::mutable_ref(); // 可変な参照
+    others::ownership::ref_and_bor(); // 参照と借用
+    others::ownership::mutable_ref(); // 可変な参照
 
    //✔スライス型について説明、ソースコードも同じく ./lib/ownership.rs を参照
-    lib::ownership::slice(); // スライス型
-    lib::ownership::string_slice(); // 文字列スライス
-    lib::ownership::stringslice_in_arg(); // 引数での文字列スライス
-    lib::ownership::other_slice(); // その他のスライス
+    others::ownership::slice(); // スライス型
+    others::ownership::string_slice(); // 文字列スライス
+    others::ownership::stringslice_in_arg(); // 引数での文字列スライス
+    others::ownership::other_slice(); // その他のスライス
 
    //✔構造体についての説明、ソースコードは ./lib/structure.rs を参照
-    lib::structure::structure(); // 構造体とインスタンス化
-    lib::structure::ex_refactoring(); // 構造化を用いたリファクタリング
-    lib::structure::method(); // メソッド
-    lib::structure::relate_fn(); // 関連関数
+    others::structure::structure(); // 構造体とインスタンス化
+    others::structure::ex_refactoring(); // 構造化を用いたリファクタリング
+    others::structure::method(); // メソッド
+    others::structure::relate_fn(); // 関連関数
 
    //✔Enum やパターンマッチングについての説明、ソースコードは ./lib/enumerate.rs を参照
-    lib::enm_mch_iflet::enumerate(); // 列挙型
-    lib::enm_mch_iflet::match_fc(); // match式
-    lib::enm_mch_iflet::if_let(); // if let記法
+    others::enm_mch_iflet::enumerate(); // 列挙型
+    others::enm_mch_iflet::match_fc(); // match式
+    others::enm_mch_iflet::if_let(); // if let記法
 
    //✔パッケージやクレート, モジュールについての説明、ソースコードは ./lib/enumerate.rs を参照
 
    //✔std のコレクションについての説明、ソースコードは ./lib/collections.rs を参照
-    lib::collections::vector(); // ベクタ
-    lib::collections::string(); // 文字列
-    lib::collections::hash_map(); // ハッシュマップ
+    others::collections::vector(); // ベクタ
+    others::collections::string(); // 文字列
+    others::collections::hash_map(); // ハッシュマップ
 
    //✔エラー処理についての説明、ソースコードは ./lib/error_handl.rs を参照
-    lib::error_handl::panic(); // パニック
-    lib::error_handl::result(); // Result
-    lib::error_handl::panic_or_not(); // パニックの利点欠点
+    others::error_handl::panic(); // パニック
+    others::error_handl::result(); // Result
+    others::error_handl::panic_or_not(); // パニックの利点欠点
 
    //✔ジェネリクスやトレイトについての説明 ソースコードは ./lib/generics_and_traits.rs を参照
-   lib::generics_and_traits::abstract_by_fun(); // 関数での抽象化
-   lib::generics_and_traits::generics(); // ジェネリクス
-   lib::generics_and_traits::traits(); // トレイト, ジェネリックな関数
+   others::generics_and_traits::abstract_by_fun(); // 関数での抽象化
+   others::generics_and_traits::generics(); // ジェネリクス
+   others::generics_and_traits::traits(); // トレイト, ジェネリックな関数
 
    //✔ライフタイムについての説明 ソースコードは ./lib/lifetime.rs を参照
-   lib::lifetime::lifetime(); // ライフタイム
+   others::lifetime::lifetime(); // ライフタイム
 
    //✔自動テストについての説明 ソースコードは ./lib/testings.rs を参照
-   lib::testings::writing_tests(); // 自動テスト記載方法
-   lib::testings::how_to_run(); // Cargo test の詳細
+   others::testings::writing_tests(); // 自動テスト記載方法
+   others::testings::how_to_run(); // Cargo test の詳細
 
 
 
