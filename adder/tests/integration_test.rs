@@ -35,3 +35,7 @@
     // running 0 tests
     //
     // test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    
+    // 大きく分けて3つの区域で出力がされている
+    // 単体テスト, 結合テスト, ドックテストをです
+    // 単体テストの部分は lib.rs にある tests_xvi::internalテストです
