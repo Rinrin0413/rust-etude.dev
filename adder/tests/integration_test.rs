@@ -9,3 +9,6 @@
 
     // コードの頂点に `extern crate adder` とあるが、これは各々ライブラリをインポートしている
     // 今回の場合は adderライブラリをインポートしている
+
+    // tests/integration_test.rs のあらゆるコードは #[cfg(test)]注釈する必要がない
+    // Cargo が testsディレクトリを特別に扱い、cargo testを走らせた時にのみこのディレクトリのファイルをコンパイルする:
