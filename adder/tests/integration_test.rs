@@ -39,3 +39,6 @@
     // 大きく分けて3つの区域で出力がされている
     // 単体テスト, 結合テスト, ドックテストをです
     // 単体テストの部分は lib.rs にある tests_xvi::internalテストです
+
+    // 結合テストは `Running tests\integration_test.rs` より始まる行からです
+    // `Doc-tests adder` という区域が始まる直前に、結合テストのまとめのサマリー行がある
