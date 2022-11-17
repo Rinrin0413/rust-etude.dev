@@ -117,3 +117,6 @@
     // setup関数のコードを /common/mod.rs に移動して common.rs を削除すると、(今回は分かりづらくなるので先頭に DELETED_ とつけるだけで)
     // テスト出力に common用の区域は表示されなくなる
     // testsディレクトリのサブディレクトリ(ここではcommon)内のファイルは、個別クレートとしてコンパイルされたり テスト出力に区域が表示されることがない
+
+    // /common/mod.rs のコードを呼び出してみる
+    // 以下は integration_test.rs内の it_adds_two_iiテストから setup関数を呼び出す例:
