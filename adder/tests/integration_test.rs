@@ -110,3 +110,10 @@
     // running 0 tests
     //
     // test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    // common が running 0 tests とテスト結果に表示されるのは、他の結合テストファイルと何らかのコードを共有したかったから(かわいい)
+    // common がテスト出力に出現するのを防ぐには、(かわいそう)
+    // common.rs を作成する代わりに /common/mod.rsを作成する
+    // setup関数のコードを /common/mod.rs に移動して common.rs を削除すると、(今回は分かりづらくなるので先頭に DELETED_ とつけるだけで)
+    // テスト出力に common用の区域は表示されなくなる
+    // testsディレクトリのサブディレクトリ(ここではcommon)内のファイルは、個別クレートとしてコンパイルされたり テスト出力に区域が表示されることがない
