@@ -81,3 +81,32 @@
 
     // これで再度テストを実行すると、
     // common.rs がテスト関数を含んだり setup関数を呼んだりしていないのに、テスト出力に common.rs用の区域が見えるはずです:
+
+    // $ cargo test
+    //    Compiling adder v0.1.0 (...\adder)
+    //     Finished test [unoptimized + debuginfo] target(s) in 0.28s
+    //      Running unittests (target\debug\deps\adder-3829d87ced07c552.exe)
+    //
+    // running 1 test
+    // test tests_xvi::internal ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    //      Running tests\common.rs (target\debug\deps\common-5f4291f1bd779aa6.exe)
+    //
+    // running 0 tests
+    //
+    // test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    //      Running tests\integration_test.rs (target\debug\deps\integration_test-cc68398b02743d86.exe)
+    //
+    // running 1 test
+    // test it_adds_two ... ok
+    //
+    // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+    //
+    //    Doc-tests adder
+    //
+    // running 0 tests
+    //
+    // test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
