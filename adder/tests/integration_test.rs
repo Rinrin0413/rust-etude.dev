@@ -129,3 +129,5 @@
         common::setup();
         assert_eq!(4, adder::add_two(2));
     }
+
+    // `mod common;` をすることで テスト関数内で common::setup()関数を呼び出すことができる
