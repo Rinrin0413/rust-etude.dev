@@ -120,3 +120,12 @@
 
     // /common/mod.rs のコードを呼び出してみる
     // 以下は integration_test.rs内の it_adds_two_iiテストから setup関数を呼び出す例:
+
+    //extern crate adder; // もうある
+    mod common;
+    
+    #[test]
+    fn it_adds_two_ii() {
+        common::setup();
+        assert_eq!(4, adder::add_two(2));
+    }
