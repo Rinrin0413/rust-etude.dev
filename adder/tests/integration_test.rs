@@ -60,3 +60,7 @@
     // test it_adds_two ... ok
     //
     // test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   // 結合テスト内のサブモジュール
+    // 結合テストを追加していくと、testsディレクトリに複数のファイルを作成して 体系化したくなるかもしれない
+    // テスト対象となる機能によって テスト関数をグループ化させることができる
