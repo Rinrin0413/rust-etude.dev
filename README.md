@@ -1,14 +1,10 @@
-## Étude d'Rust.
+## これは何?
 
-    Rust のドキュメントの板書です。  
-    Rinrin の自己解釈で溢れているの注意  
-    活用してもいいですが情報の誤字や間違い等の責任は一切負いません。
-
-贵樣も Rustacean(甲殻類) |こなリなさい.
+Rust勉強してたときの板書の一部  
+勝手な自己解釈で溢れているの注意
 
 <details>
-    <summary>ブックマーク</summary>
-    <div>
+    <summary>もくじ</summary>
 
 - [板書](./src/)
     - [メイン板書](./src/main.rs)
@@ -28,17 +24,14 @@
         - [テスト機能](./src/lib/testings.rs)
             - [テストライブラリadder](./adder/)
 
-<br />
+<!-- <br />
 
-- [自己解釈 Markdowns](./assets/md/jp_docs/)
-    - [日本語入門書の自己解釈](./assets/md/jp_docs/0.導入.md)
+- [自己解釈シリーズ](./assets/md/jp_docs/)
+    - [日本語入門書](./assets/md/jp_docs/0.導入.md) -->
 
-    </div>
 </details>
 
-<br />
-
-> Rust Documents etc...
+## 参考文献とか
 
 - [The Rust Programming Language 日本語版](https://doc.rust-jp.rs/book-ja)
 - [Rust By Example 日本語版](https://doc.rust-jp.rs/rust-by-example-ja)
@@ -46,7 +39,3 @@
 - [std - Rust](https://doc.rust-lang.org/stable/std)
 - [Rustの日本語ドキュメント](https://doc.rust-jp.rs)
 - [Rust裏本](https://doc.rust-jp.rs/rust-nomicon-ja)
-
-<br />
-
-[![MIT](https://img.shields.io/github/license/Rinrin0413/rust-etude.dev?color=%23A11D32&style=for-the-badge)](./LICENSE)
