@@ -1,5 +1,2 @@
 **target/
 **Cargo.lock
-
-git-commit.cmd
-git-commit.sh
